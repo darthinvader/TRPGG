@@ -2,7 +2,7 @@
   "name": "dnd-forge",
   "version": "1.0.0",
   "description": "DnD Forge is a Website for helping players and DM's run their games.",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
