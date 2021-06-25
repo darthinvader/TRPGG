@@ -4,7 +4,8 @@
   "description": "DnD Forge is a Website for helping players and DM's run their games.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "sass": "^1.35.1"
   },
   "dependencies": {
-    "core-js": "^3.15.1"
+    "core-js": "^3.15.1",
+    "regenerator-runtime": "^0.13.7"
   }
 }
