@@ -1,5 +1,5 @@
 .books {
+  width: 100%;
   display: grid;
-  grid-auto-columns: 10rem;
-  grid-row: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
 }
