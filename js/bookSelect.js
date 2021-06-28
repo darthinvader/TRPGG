@@ -2,8 +2,7 @@ selectors = Array.from(document.querySelectorAll(".selector"));
 books = document.querySelectorAll(".book");
 books.forEach((book) => (book.hideCounter = 0));
 
-console.log(books);
-const isElementSelected = function (el) {
+const elementNotSelected = function (el) {
   return !el.classList.contains("selector__selected");
 };
 
@@ -16,7 +15,10 @@ const showAllBooks = function () {
 };
 
 const hideOrShowBooks = function (ev) {
-  if (selectors.every(isElementSelected)) {
+  // If all selectors are diselected then that means
+  // that this one that was selected was the first one
+  // thus we hide all book to reveal only the once with the same category
+  if (selectors.every(elementNotSelected)) {
     hideAllBooks();
   }
 
@@ -26,8 +28,10 @@ const hideOrShowBooks = function (ev) {
   element.classList.contains("selector__selected")
     ? showBooks(keyword)
     : hideBooks(keyword);
-
-  if (selectors.every(isElementSelected)) {
+  // If all the selectors are diselected after the element has been clicked
+  // then it means that this selector was the last and was diselected
+  // thus we show them all the selectors
+  if (selectors.every(elementNotSelected)) {
     showAllBooks();
   }
 };
@@ -37,11 +41,6 @@ const showBookAndUpdateCounter = function (book) {
   book.hideCounter++;
 };
 
-const hideBook = function (book) {
-  book.hideCounter--;
-  book.hideCounter || book.classList.add("hidden");
-};
-
 const showBooks = function (keyword) {
   books.forEach((book) => {
     JSON.parse(book.dataset["keywords"]).indexOf(keyword) > -1 &&
@@ -49,10 +48,15 @@ const showBooks = function (keyword) {
   });
 };
 
+const hideBookAndUpdateCounter = function (book) {
+  book.hideCounter--;
+  book.hideCounter || book.classList.add("hidden");
+};
+
 const hideBooks = function (keyword) {
   books.forEach((book) => {
     JSON.parse(book.dataset["keywords"]).indexOf(keyword) > -1 &&
-      hideBook(book);
+      hideBookAndUpdateCounter(book);
   });
 };
 
