@@ -32,7 +32,12 @@ const hideOrShowBooks = function (ev) {
   }
 };
 
-const showBooks = function (keyword) {};
+const showBooks = function (keyword) {
+  books.forEach((book) => {
+    JSON.parse(book.dataset["keywords"]).indexOf(keyword) > -1 &&
+      book.classList.remove("hidden");
+  });
+};
 
 const hideBooks = function (keyword) {};
 
