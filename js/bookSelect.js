@@ -1,8 +1,8 @@
 selectors = Array.from(document.querySelectorAll(".selector"));
 books = document.querySelectorAll(".book");
+books.forEach((book) => (book.hideCounter = 0));
 
-console.log(JSON.parse(books[1].dataset["keywords"]));
-
+console.log(books);
 const isElementSelected = function (el) {
   return !el.classList.contains("selector__selected");
 };
@@ -32,17 +32,27 @@ const hideOrShowBooks = function (ev) {
   }
 };
 
+const showBookAndUpdateCounter = function (book) {
+  book.classList.remove("hidden");
+  book.hideCounter++;
+};
+
+const hideBook = function (book) {
+  book.hideCounter--;
+  book.hideCounter || book.classList.add("hidden");
+};
+
 const showBooks = function (keyword) {
   books.forEach((book) => {
     JSON.parse(book.dataset["keywords"]).indexOf(keyword) > -1 &&
-      book.classList.remove("hidden");
+      showBookAndUpdateCounter(book);
   });
 };
 
 const hideBooks = function (keyword) {
   books.forEach((book) => {
     JSON.parse(book.dataset["keywords"]).indexOf(keyword) > -1 &&
-      book.classList.add("hidden");
+      hideBook(book);
   });
 };
 
