@@ -39,7 +39,12 @@ const showBooks = function (keyword) {
   });
 };
 
-const hideBooks = function (keyword) {};
+const hideBooks = function (keyword) {
+  books.forEach((book) => {
+    JSON.parse(book.dataset["keywords"]).indexOf(keyword) > -1 &&
+      book.classList.add("hidden");
+  });
+};
 
 selectors.forEach((element) => {
   element.addEventListener("click", hideOrShowBooks);
