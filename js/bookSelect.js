@@ -1,9 +1,9 @@
-selectors = Array.from(document.querySelectorAll(".selector"));
+categories = Array.from(document.querySelectorAll(".category"));
 books = document.querySelectorAll(".book");
 books.forEach((book) => (book.hideCounter = 0));
 
 const elementNotSelected = function (el) {
-  return !el.classList.contains("selector__selected");
+  return !el.classList.contains("category__selected");
 };
 
 const hideAllBooks = function () {
@@ -15,23 +15,23 @@ const showAllBooks = function () {
 };
 
 const hideOrShowBooks = function (ev) {
-  // If all selectors are diselected then that means
+  // If all categories are diselected then that means
   // that this one that was selected was the first one
   // thus we hide all book to reveal only the once with the same category
-  if (selectors.every(elementNotSelected)) {
+  if (categories.every(elementNotSelected)) {
     hideAllBooks();
   }
 
   element = ev.srcElement;
   keyword = element.dataset.keyword;
-  element.classList.toggle("selector__selected");
-  element.classList.contains("selector__selected")
+  element.classList.toggle("category__selected");
+  element.classList.contains("category__selected")
     ? showBooks(keyword)
     : hideBooks(keyword);
-  // If all the selectors are diselected after the element has been clicked
-  // then it means that this selector was the last and was diselected
-  // thus we show them all the selectors
-  if (selectors.every(elementNotSelected)) {
+  // If all the categories are diselected after the element has been clicked
+  // then it means that this category was the last and was diselected
+  // thus we show them all the categories
+  if (categories.every(elementNotSelected)) {
     showAllBooks();
   }
 };
@@ -60,6 +60,6 @@ const hideBooks = function (keyword) {
   });
 };
 
-selectors.forEach((element) => {
+categories.forEach((element) => {
   element.addEventListener("click", hideOrShowBooks);
 });
