@@ -7,8 +7,10 @@
 }
 
 .selectors {
-  margin: 1em;
+  padding: 0.5rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  border-bottom: 0.3rem solid black;
+  background-color: #222222;
 }

@@ -1,4 +1,12 @@
+@use '../abstracts/function' as function;
+
 .selector {
-  padding: 1rem;
-  border-radius: 3rem;
+  padding: 0.6rem 3rem;
+  color: #aaa;
+  font-size: 1.6rem;
+
+  &:hover {
+    color: white;
+    background-color: black;
+  }
 }
