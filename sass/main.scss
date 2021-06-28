@@ -3,3 +3,7 @@
 @use 'components/book';
 @use 'pages/books';
 @use 'components/selector';
+
+.hidden {
+  display: none;
+}
