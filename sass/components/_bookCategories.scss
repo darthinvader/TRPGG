@@ -1,14 +1,14 @@
 @use '../abstracts/function' as function;
 
 .category {
-  padding: 0.6rem 3rem;
+  padding: 0.5rem 3rem;
   color: #aaa;
   font-size: 1.6rem;
   cursor: pointer;
 
   &:hover {
     color: white;
-    background-color: black;
+    background-color: #111;
   }
 
   &__selected {
