@@ -58,4 +58,5 @@ const parseData = async (data) => {
 };
 
 const data = getGoogleSheet();
-export default books = parseData(data);
+const books = parseData(data);
+export default books;

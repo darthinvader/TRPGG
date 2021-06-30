@@ -1,4 +1,3 @@
-import book from "./bookSelect";
 import "core-js/es/array";
-
-const booksContainer = document.querySelector(".books");
+import regeneratorRuntime from "regenerator-runtime";
+import books from "./books.js";
