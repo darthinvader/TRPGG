@@ -6,7 +6,7 @@ class Book {
   constructor(title) {
     this.title = title;
     this.description = "";
-    this.imageUrl = "";
+    this.imgUrl = "";
     this.documentUrl = "";
   }
 
@@ -14,7 +14,7 @@ class Book {
     if (col === 2) {
       this.description = inputValue;
     } else if (col === 3) {
-      this.imageUrl = inputValue;
+      this.imgUrl = inputValue;
     } else if (col === 4) {
       this.documentUrl = inputValue;
     } else if (col === 5) {
