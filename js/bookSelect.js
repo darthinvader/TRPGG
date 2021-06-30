@@ -1,7 +1,7 @@
 import "core-js/es/array";
 
-categories = Array.from(document.querySelectorAll(".category"));
-books = document.querySelectorAll(".book");
+const categories = Array.from(document.querySelectorAll(".category"));
+const books = document.querySelectorAll(".book");
 books.forEach((book) => (book.hideCounter = 0));
 
 const elementNotSelected = function (el) {
