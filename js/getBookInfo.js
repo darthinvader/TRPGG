@@ -53,8 +53,9 @@ const parseData = async (data) => {
     } else {
       accumulator[row - 2].setValue(col, inputValue);
     }
+    return accumulator;
   }, []);
 };
 
 const data = getGoogleSheet();
-const books = parseData(data);
+export default books = parseData(data);
