@@ -1,8 +1,9 @@
 import "core-js/es/array";
 
-const categories = Array.from(document.querySelectorAll(".category"));
+const categoriesElements = Array.from(document.querySelectorAll(".category"));
 const books = document.querySelectorAll(".book");
 books.forEach((book) => (book.hideCounter = 0));
+let categories = [];
 
 const elementNotSelected = function (el) {
   return !el.classList.contains("category__selected");
@@ -20,7 +21,7 @@ const hideOrShowBooks = function (ev) {
   // If all categories are diselected then that means
   // that this one that was selected was the first one
   // thus we hide all book to reveal only the once with the same category
-  if (categories.every(elementNotSelected)) {
+  if (categoriesElements.every(elementNotSelected)) {
     hideAllBooks();
   }
 
@@ -33,7 +34,7 @@ const hideOrShowBooks = function (ev) {
   // If all the categories are diselected after the element has been clicked
   // then it means that this category was the last and was diselected
   // thus we show them all the categories
-  if (categories.every(elementNotSelected)) {
+  if (categoriesElements.every(elementNotSelected)) {
     showAllBooks();
   }
 };
@@ -62,6 +63,20 @@ const hideBooks = function (keyword) {
   });
 };
 
-categories.forEach((element) => {
+categoriesElements.forEach((element) => {
   element.addEventListener("click", hideOrShowBooks);
 });
+
+const addOrRemoveFromCategories = function (ev) {
+  category = ev.srcElement.dataset.keyword;
+  if (categories.indexOf(category) > -1) {
+    categories.pop(category);
+  } else {
+    categories.push(category);
+  }
+};
+
+categoriesElements.forEach((element) => {
+  element.addEventListener("click", addOrRemoveFromCategories);
+});
+export default categories;
