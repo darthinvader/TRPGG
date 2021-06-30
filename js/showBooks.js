@@ -6,14 +6,14 @@ import categories from "./bookSelect.js";
 const booksContainer = document.querySelector(".books");
 const categoriesElements = Array.from(document.querySelectorAll(".category"));
 
+let booksFullfiled = false;
+let books = [];
+
 categoriesElements.forEach((el) => {
   el.addEventListener("click", (ev) => {
     renderBooks();
   });
 });
-let booksFullfiled = false;
-let books = [];
-console.log(booksContainer);
 
 const renderBook = (book) => {
   const html = `
@@ -63,5 +63,3 @@ const renderBooks = () => {
   booksFullfiled = true;
   renderBooks();
 })();
-
-console.log(booksFullfiled);
