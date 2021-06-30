@@ -1,9 +1,16 @@
 import "core-js/es/array";
-import regeneratorRuntime, { async } from "regenerator-runtime";
+import regeneratorRuntime from "regenerator-runtime";
 import booksPromise from "./getBookInfo.js";
 import categories from "./bookSelect.js";
 
 const booksContainer = document.querySelector(".books");
+const categoriesElements = Array.from(document.querySelectorAll(".category"));
+
+categoriesElements.forEach((el) => {
+  el.addEventListener("click", (ev) => {
+    renderBooks();
+  });
+});
 let booksFullfiled = false;
 let books = [];
 console.log(booksContainer);
@@ -26,17 +33,29 @@ const renderAllBooks = () => {
   books.forEach((book) => renderBook(book));
 };
 
-const renderBookWithCategories = () => {};
+const renderBookWithCategories = () => {
+  let booksToRender = new Set();
+
+  categories.forEach((category) => {
+    books.forEach((book) => {
+      if (book.categories.indexOf(category) > -1) {
+        booksToRender.add(book);
+      }
+    });
+  });
+  booksToRender = Array.from(booksToRender);
+  booksToRender.forEach((book) => {
+    renderBook(book);
+  });
+};
 
 const renderBooks = () => {
   // Guard Clause
-  console.log(books);
   if (!booksFullfiled) return;
-  if (!categories.length) {
-    renderAllBooks();
-  } else {
-    renderBookWithCategories();
-  }
+
+  booksContainer.innerHTML = "";
+
+  !categories.length ? renderAllBooks() : renderBookWithCategories();
 };
 
 (async () => {
