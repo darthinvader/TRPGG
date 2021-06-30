@@ -10,6 +10,8 @@ const addOrRemoveFromCategories = function (ev) {
   } else {
     categories.push(category);
   }
+
+  ev.srcElement.classList.toggle("category__selected");
 };
 
 categoriesElements.forEach((element) => {
