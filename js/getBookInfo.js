@@ -1,5 +1,5 @@
+import "core-js/es/array";
 import regeneratorRuntime from "regenerator-runtime";
-
 class Book {
   #categories = [];
 
@@ -33,18 +33,16 @@ class Book {
 }
 
 const getGoogleSheet = async function () {
-  const js = await fetch(
+  const googleSheet = await fetch(
     "https://spreadsheets.google.com/feeds/cells/1mGh5t6i60bacULLWMz3uPZZNiA_8HWz79cBC0IEQBj0/1/public/full?alt=json"
   );
-  const finalJson = await js.json();
-
-  console.log(finalJson["feed"]["entry"]);
+  const finalJson = await googleSheet.json();
   return finalJson["feed"]["entry"];
 };
 
 const parseData = async (data) => {
   data = await data;
-  const books = data.reduce((accumulator, currentValue, index, array) => {
+  return data.reduce((accumulator, currentValue, index, array) => {
     let { row, col, inputValue } = currentValue["gs$cell"];
     col = +col;
     row = +row;
@@ -55,10 +53,8 @@ const parseData = async (data) => {
     } else {
       accumulator[row - 2].setValue(col, inputValue);
     }
-
-    return accumulator;
   }, []);
 };
 
 const data = getGoogleSheet();
-parseData(data);
+const books = parseData(data);

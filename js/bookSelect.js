@@ -1,3 +1,5 @@
+import "core-js/es/array";
+
 categories = Array.from(document.querySelectorAll(".category"));
 books = document.querySelectorAll(".book");
 books.forEach((book) => (book.hideCounter = 0));
