@@ -48,6 +48,7 @@ const parseData = async (data) => {
     row = +row;
     // Guard clause
     if (row <= 1) return accumulator;
+    // Must make it more fault tolerant
     if (col === 1) {
       accumulator.push(new Book(inputValue));
     } else {
