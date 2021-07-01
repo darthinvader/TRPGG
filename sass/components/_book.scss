@@ -1,6 +1,9 @@
 .book {
   margin: 1rem;
   transition: transform 0.4s;
+  border: 1px solid #ddd;
+  box-shadow: 0.2rem 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
   &:hover {
     transform: scale(1.05);
   }
@@ -12,9 +15,6 @@
   &__img {
     width: 100%;
     padding: 1rem;
-    border: 1px solid #ddd;
-    box-shadow: 0.2rem 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.2);
-    border-radius: 1rem;
   }
 
   &__title {
@@ -29,17 +29,40 @@
 }
 
 .loader {
+  border: 1px solid #ddd;
+  box-shadow: 0.2rem 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+
   &__title {
     background: linear-gradient(270deg, gray, darkslategray);
-    width: 80%;
-    height: 10px;
+    background-size: 400% 400%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    width: 90%;
+    height: 3rem;
+
+    animation: loader 10s ease infinite;
+  }
+
+  &__description {
+    background: linear-gradient(270deg, gray, darkslategray);
+    background-size: 400% 400%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    height: 1rem;
+
+    animation: loader 10s ease infinite;
   }
 
   &__img {
     position: absolute;
     background: linear-gradient(270deg, gray, darkslategray);
     background-size: 400% 400%;
-
+    margin: 1rem;
     top: 0;
     left: 0;
     bottom: 0;
@@ -51,12 +74,6 @@
       width: 100%;
       padding-top: 130%; /* 11.5:8.5 Aspect Ratio */
       position: relative;
-    }
-    &--wrapper {
-      border: 1px solid #ddd;
-      padding: 1rem;
-      box-shadow: 0.2rem 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.2);
-      border-radius: 1rem;
     }
   }
   @keyframes loader {
