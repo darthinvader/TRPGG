@@ -48,11 +48,11 @@ const parseData = async (data) => {
     row = +row;
     // Guard clause
     if (row <= 1) return accumulator;
-    // Must make it more fault tolerant
     if (col === 1) {
       accumulator.push(new Book(inputValue));
     } else {
-      accumulator[row - 2].setValue(col, inputValue);
+      const index = accumulator.length - 1;
+      accumulator[index].setValue(col, inputValue);
     }
     return accumulator;
   }, []);
