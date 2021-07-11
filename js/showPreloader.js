@@ -15,7 +15,7 @@ const renderPreloader = () => {
   booksContainer.insertAdjacentHTML("beforeend", html);
 };
 
-for (let step = 0; step < 20; step++) {
+for (let step = 0; step < 33; step++) {
   console.l;
   renderPreloader();
 }
