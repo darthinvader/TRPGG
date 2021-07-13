@@ -1,7 +1,0 @@
-@function whiteOrBlack($bg-color) {
-  @if lightness($bg-color) > 50% {
-    @return black;
-  } @else {
-    @return white;
-  }
-}
