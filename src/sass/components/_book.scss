@@ -1,0 +1,90 @@
+.book {
+  margin: 1rem;
+  transition: transform 0.4s;
+  border: 1px solid #ddd;
+  box-shadow: 0.2rem 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &__link {
+    color: black;
+    text-decoration: none;
+  }
+
+  &__img {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__description {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+}
+
+.loader {
+  border: 1px solid #ddd;
+  box-shadow: 0.2rem 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+
+  &__title {
+    background: linear-gradient(270deg, gray, lightgray);
+    background-size: 400% 400%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    width: 90%;
+    height: 3rem;
+
+    animation: loader 10s ease infinite;
+  }
+
+  &__description {
+    background: linear-gradient(270deg, gray, lightgray);
+    background-size: 400% 400%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    height: 1rem;
+
+    animation: loader 10s ease infinite;
+  }
+
+  &__img {
+    position: absolute;
+    background: linear-gradient(270deg, gray, lightgray);
+    background-size: 400% 400%;
+    margin: 1rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    animation: loader 10s ease infinite;
+
+    &--aspect-ratio-wrapper {
+      width: 100%;
+      padding-top: 130%; /* 11.5:8.5 Aspect Ratio */
+      position: relative;
+    }
+  }
+  @keyframes loader {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}

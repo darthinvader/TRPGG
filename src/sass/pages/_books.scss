@@ -1,0 +1,19 @@
+.books {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  gap: 0.5rem;
+}
+
+.categories {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-bottom: 0.3rem solid black;
+  background-color: #222;
+
+  @media screen and (max-width: 110em) {
+    flex-wrap: wrap;
+  }
+}
