@@ -10,7 +10,9 @@ const BooksManager = (props) => {
       setBooks(response.data);
     });
   }, []);
+
   console.log(books);
+
   return <div>Hello</div>;
 };
 
