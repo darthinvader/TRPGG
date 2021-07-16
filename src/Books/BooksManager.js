@@ -26,8 +26,9 @@ const BooksManager = (props) => {
   };
 
   useEffect(() => {
-    const { REACT_APP_BOOK_JSON } = process.env;
-    axios.get(REACT_APP_BOOK_JSON).then((response) => {
+    const { REACT_APP_BOOKS_LINK: booksLink } = process.env;
+
+    axios.get(booksLink).then((response) => {
       const cleanedData = bookDataCleaner(response.data["feed"]["entry"]);
       setBooks(cleanedData);
     });
