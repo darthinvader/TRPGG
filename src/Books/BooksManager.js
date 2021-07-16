@@ -23,8 +23,7 @@ const BooksManager = (props) => {
             (activeCategory) => activeCategory !== category
           )
         )
-      : activeCategories.push(category);
-    console.log(activeCategories);
+      : setActiveCategories([...activeCategories, category]);
   };
 
   return <BookCategories setCategories={setCategories} />;
