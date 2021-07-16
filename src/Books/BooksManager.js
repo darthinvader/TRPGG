@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import { bookDataCleaner } from "./Book";
 import BookCategories from "./BookCategories/BookCategories";
+import BooksPreloader from "./BooksPreloader/BooksPreloader";
 
 const BooksManager = (props) => {
   const [books, setBooks] = useState(null);
@@ -26,7 +27,18 @@ const BooksManager = (props) => {
       : setActiveCategories([...activeCategories, category]);
   };
 
-  return <BookCategories setCategories={setCategories} />;
+  const bookRender = books ? null : (
+    <div className="booksContainer">
+      <BooksPreloader />
+    </div>
+  );
+
+  return (
+    <Fragment>
+      <BookCategories setCategories={setCategories} />
+      {bookRender}
+    </Fragment>
+  );
 };
 
 export default BooksManager;
