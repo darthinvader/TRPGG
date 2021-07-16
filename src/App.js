@@ -1,11 +1,16 @@
 import BooksManager from "./Books/BooksManager";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <BooksManager />
-      </header>
+      <Router>
+        <Switch>
+          <Route path="/books/book">
+            <BooksManager />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
