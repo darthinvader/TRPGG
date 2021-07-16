@@ -3,7 +3,7 @@ import axios from "axios";
 import { bookDataCleaner } from "./Book";
 import BookCategories from "./BookCategories/BookCategories";
 import BooksPreloader from "./BooksPreloader/BooksPreloader";
-import BooksCardsContainer from "./BooksCardContainer/BooksCardContainer";
+import BookCardsContainer from "./BookCardsContainer/BookCardsContainer";
 
 const BooksManager = (props) => {
   const [books, setBooks] = useState(null);
@@ -29,7 +29,7 @@ const BooksManager = (props) => {
   };
 
   const bookRender = books ? (
-    <BooksCardsContainer books={books} />
+    <BookCardsContainer books={books} activeCategories={activeCategories} />
   ) : (
     <BooksPreloader />
   );
