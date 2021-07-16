@@ -24,7 +24,7 @@ const BookCategories = ({ setCategories }) => {
     );
   });
 
-  return <div className="categories">{categoryElements}</div>;
+  return <div className="bookCategories">{categoryElements}</div>;
 };
 
 export default BookCategories;

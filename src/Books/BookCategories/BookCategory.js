@@ -1,6 +1,6 @@
 const BookCategory = ({ category, clicked }) => {
   return (
-    <span onClick={() => clicked(category)} className="category">
+    <span onClick={() => clicked(category)} className="bookCategory">
       {category}
     </span>
   );
