@@ -3,6 +3,7 @@ import axios from "axios";
 import { bookDataCleaner } from "./Book";
 import BookCategories from "./BookCategories/BookCategories";
 import BooksPreloader from "./BooksPreloader/BooksPreloader";
+import BooksCardsContainer from "./BooksCardContainer/BooksCardContainer";
 
 const BooksManager = (props) => {
   const [books, setBooks] = useState(null);
@@ -27,16 +28,16 @@ const BooksManager = (props) => {
       : setActiveCategories([...activeCategories, category]);
   };
 
-  const bookRender = books ? null : (
-    <div className="booksContainer">
-      <BooksPreloader />
-    </div>
+  const bookRender = books ? (
+    <BooksCardsContainer books={books} />
+  ) : (
+    <BooksPreloader />
   );
 
   return (
     <Fragment>
       <BookCategories setCategories={setCategories} />
-      {bookRender}
+      <div className="bookCardsContainer">{bookRender}</div>
     </Fragment>
   );
 };
