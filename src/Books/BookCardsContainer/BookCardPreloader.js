@@ -1,8 +1,9 @@
 import styles from "./BookCardPreloader.module.scss";
+import bookStyles from "./BookCard.module.scss";
 
 const BookCardPreloader = () => {
   return (
-    <div className={styles.BookCard}>
+    <div className={bookStyles.BookCard}>
       <div className={styles["BookCardPreloader__img--wrapper"]}>
         <div className={styles["BookCardPreloader__img--aspect-ratio-wrapper"]}>
           <div className={styles.BookCardPreloader__img}></div>

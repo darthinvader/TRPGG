@@ -2,7 +2,6 @@ import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import bookDataCleaner from "./Book";
 import BookCategories from "./BookCategories/BookCategories";
-import BooksPreloader from "./BooksPreloader/BooksPreloader";
 import BookCardsContainer from "./BookCardsContainer/BookCardsContainer";
 import styles from "./BooksManager.module.scss";
 
@@ -29,16 +28,12 @@ const BooksManager = (props) => {
       : setActiveCategories([...activeCategories, category]);
   };
 
-  const bookRender = books ? (
-    <BookCardsContainer books={books} activeCategories={activeCategories} />
-  ) : (
-    <BooksPreloader />
-  );
-
   return (
     <Fragment>
       <BookCategories setCategories={setCategories} />
-      <div className={styles.BookCardsContainer}>{bookRender}</div>
+      <div className={styles.BookCardsContainer}>
+        <BookCardsContainer books={books} activeCategories={activeCategories} />
+      </div>
     </Fragment>
   );
 };

@@ -1,6 +1,15 @@
 import BookCard from "./BookCard";
-
+import BookCardPreloader from "./BookCardPreloader";
 const BookCardsContainer = ({ books, activeCategories }) => {
+  // if books is empty, show a preloader
+  if (!books) {
+    const preloadedCards = [];
+    for (let i = 0; i < 35; i++) {
+      preloadedCards.push(<BookCardPreloader key={i} />);
+    }
+    return preloadedCards;
+  }
+
   const bookHasCategory = (book) => {
     // Guarantee that there exists at least one category
     if (activeCategories.length === 0) {
