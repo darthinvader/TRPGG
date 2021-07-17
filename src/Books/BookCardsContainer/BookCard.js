@@ -1,19 +1,21 @@
+import styles from "./BookCard.module.scss";
+
 const BookCard = ({ book }) => {
   return (
-    <div className="bookCard">
+    <div className={styles.BookCard}>
       <a
         target="_blank"
         rel="noreferrer"
         href={book.documentUrl}
-        className="bookCard__link"
+        className={styles.BookCard__link}
       >
         <img
           src={book.imgUrl}
           alt={`${book.title}Cover`}
-          className="bookCard__img"
+          className={styles.BookCard__img}
         />
-        <h2 className="bookCard__title">{book.title}</h2>
-        <p className="bookCard__description">{book.description}</p>
+        <h2 className={styles.BookCard__title}>{book.title}</h2>
+        <p className={styles.BookCard__description}>{book.description}</p>
       </a>
     </div>
   );

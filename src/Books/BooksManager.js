@@ -4,6 +4,7 @@ import bookDataCleaner from "./Book";
 import BookCategories from "./BookCategories/BookCategories";
 import BooksPreloader from "./BooksPreloader/BooksPreloader";
 import BookCardsContainer from "./BookCardsContainer/BookCardsContainer";
+import styles from "./BooksManager.module.scss";
 
 const BooksManager = (props) => {
   const [books, setBooks] = useState(null);
@@ -37,7 +38,7 @@ const BooksManager = (props) => {
   return (
     <Fragment>
       <BookCategories setCategories={setCategories} />
-      <div className="bookCardsContainer">{bookRender}</div>
+      <div className={styles.BookCardsContainer}>{bookRender}</div>
     </Fragment>
   );
 };

@@ -1,13 +1,15 @@
+import styles from "./BookCardPreloader.module.scss";
+
 const BookCardPreloader = () => {
   return (
-    <div className="bookCard bookLoader">
-      <div className="bookLoader__img--wrapper">
-        <div className="bookLoader__img--aspect-ratio-wrapper">
-          <div className="bookLoader__img"></div>
+    <div className={styles.BookCard + " " + styles.BookCardPreloader}>
+      <div className={styles["BookCardPreloader__img--wrapper"]}>
+        <div className={styles["BookCardPreloader__img--aspect-ratio-wrapper"]}>
+          <div className={styles.BookCardPreloader__img}></div>
         </div>
       </div>
-      <div className="bookLoader__title"></div>
-      <div className="bookLoader__description"></div>
+      <div className={styles.BookCardPreloader__title}></div>
+      <div className={styles.BookCardPreloader__description}></div>
     </div>
   );
 };

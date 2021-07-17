@@ -1,34 +1,4 @@
-.bookCard {
-  margin: 1rem;
-  transition: transform 0.4s;
-  border: 1px solid #ddd;
-  box-shadow: 0.2rem 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.2);
-  border-radius: 1rem;
-  &:hover {
-    transform: scale(1.05);
-  }
-  &__link {
-    color: black;
-    text-decoration: none;
-  }
-
-  &__img {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  &__title {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  &__description {
-    text-align: center;
-    font-size: 1.4rem;
-  }
-}
-
-.bookLoader {
+.BookCardPreloader {
   border: 1px solid #ddd;
   box-shadow: 0.2rem 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
@@ -86,5 +56,35 @@
     100% {
       background-position: 0% 50%;
     }
+  }
+}
+
+.BookCard {
+  margin: 1rem;
+  transition: transform 0.4s;
+  border: 1px solid #ddd;
+  box-shadow: 0.2rem 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &__link {
+    color: black;
+    text-decoration: none;
+  }
+
+  &__img {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__description {
+    text-align: center;
+    font-size: 1.4rem;
   }
 }
