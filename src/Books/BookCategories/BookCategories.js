@@ -1,5 +1,5 @@
 import BookCategory from "./BookCategory";
-
+import styles from "./BookCategories.module.scss";
 const BookCategories = ({ setCategories }) => {
   const categories = [
     "Base",
@@ -24,7 +24,7 @@ const BookCategories = ({ setCategories }) => {
     );
   });
 
-  return <div className="bookCategories">{categoryElements}</div>;
+  return <div className={styles.BookCategories}>{categoryElements}</div>;
 };
 
 export default BookCategories;

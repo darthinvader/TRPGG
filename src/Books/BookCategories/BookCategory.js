@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./ΒookCategory.module.scss";
 
 const BookCategory = ({ category, clicked }) => {
   const [active, setActive] = useState(false);
@@ -6,7 +7,10 @@ const BookCategory = ({ category, clicked }) => {
     clicked(category);
     setActive(!active);
   };
-  const classes = `bookCategory ${active ? "bookCategory__active" : ""}`;
+  const classes = [
+    styles.BookCategory,
+    active ? styles.BookCategory__active : "",
+  ].join(" ");
 
   return (
     <span onClick={setCategory} className={classes}>
