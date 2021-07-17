@@ -3,12 +3,12 @@ import axios from "axios";
 import bookDataCleaner from "./Book";
 import BookCategories from "./BookCategories/BookCategories";
 import BookCardsContainer from "./BookCardsContainer/BookCardsContainer";
-import styles from "./BooksManager.module.scss";
 
 const BooksManager = (props) => {
   const [books, setBooks] = useState(null);
   const [activeCategories, setActiveCategories] = useState([]);
 
+  // Get Book data
   useEffect(() => {
     const { REACT_APP_BOOKS_LINK: booksLink } = process.env;
 
@@ -18,6 +18,7 @@ const BooksManager = (props) => {
     });
   }, []);
 
+  // Get categories
   const setCategories = (category) => {
     activeCategories.includes(category)
       ? setActiveCategories(
@@ -31,9 +32,7 @@ const BooksManager = (props) => {
   return (
     <Fragment>
       <BookCategories setCategories={setCategories} />
-      <div className={styles.BookCardsContainer}>
-        <BookCardsContainer books={books} activeCategories={activeCategories} />
-      </div>
+      <BookCardsContainer books={books} activeCategories={activeCategories} />
     </Fragment>
   );
 };
