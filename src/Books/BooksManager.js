@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
-import { bookDataCleaner } from "./Book";
+import bookDataCleaner from "./Book";
 import BookCategories from "./BookCategories/BookCategories";
 import BooksPreloader from "./BooksPreloader/BooksPreloader";
 import BookCardsContainer from "./BookCardsContainer/BookCardsContainer";
