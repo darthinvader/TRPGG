@@ -2,25 +2,26 @@
   &__img {
     margin-top: -70px;
   }
-  h1 {
-    font-size: 2.6rem;
+  &__error {
+    font-size: 3rem;
   }
-  h2 {
+  &__title {
     margin: 1rem;
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
-  p {
+  &__description {
     margin: 1rem 2rem;
+    font-size: 1.6rem;
     text-align: center;
   }
-  .RetryButton {
+  &__retryButton {
     margin: 4rem 0;
     width: 50%;
     font-size: 2rem;
     background-color: rgba(44, 0, 0, 0.9);
     color: white;
   }
-  .ClosingButton {
+  &__closeButton {
     //STUFF HERE TO MAKE IT TO THE RIGHT UPPER CORNER OF THE MODAL
     position: relative;
     background-color: rgba(0, 0, 0, 0);
@@ -28,7 +29,7 @@
     right: -40%;
     border-radius: 1rem;
     border: none;
-    font-size: 120%;
+    font-size: 2rem;
     color: rgba(0, 0, 0, 0.7);
     cursor: pointer;
     &:hover {
