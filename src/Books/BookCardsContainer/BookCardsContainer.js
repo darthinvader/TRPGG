@@ -5,6 +5,7 @@ import styles from "./BookCardsContainer.module.scss";
 export const CANT_LOAD_BOOKS = "CANT_LOAD_BOOKS";
 
 const BookCardsContainer = ({ books, activeCategories }) => {
+  // If cannot load books, show nothing
   if (books === CANT_LOAD_BOOKS) {
     return null;
   }
