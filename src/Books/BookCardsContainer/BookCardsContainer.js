@@ -2,7 +2,13 @@ import BookCard from "./BookCard";
 import BookCardPreloader from "./BookCardPreloader";
 import styles from "./BookCardsContainer.module.scss";
 
+export const CANT_LOAD_BOOKS = "CANT_LOAD_BOOKS";
+
 const BookCardsContainer = ({ books, activeCategories }) => {
+  if (books === CANT_LOAD_BOOKS) {
+    return null;
+  }
+
   let cards = null;
 
   // If books are not yet downloaded, show a preloader
