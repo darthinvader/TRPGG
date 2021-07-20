@@ -7,23 +7,24 @@
   &:hover {
     transform: scale(1.05);
   }
-  &__link {
-    color: black;
-    text-decoration: none;
-  }
+}
 
-  &__img {
-    width: 100%;
-    padding: 1rem;
-  }
+.Link {
+  color: black;
+  text-decoration: none;
+}
 
-  &__title {
-    font-size: 2rem;
-    text-align: center;
-  }
+.Img {
+  width: 100%;
+  padding: 1rem;
+}
 
-  &__description {
-    text-align: center;
-    font-size: 1.4rem;
-  }
+.Title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.Description {
+  text-align: center;
+  font-size: 1.4rem;
 }

@@ -7,15 +7,15 @@ const BookCard = ({ book }) => {
         target="_blank"
         rel="noreferrer"
         href={book.documentUrl}
-        className={styles.BookCard__link}
+        className={styles.Link}
       >
         <img
           src={book.imgUrl}
           alt={`${book.title}Cover`}
-          className={styles.BookCard__img}
+          className={styles.Img}
         />
-        <h2 className={styles.BookCard__title}>{book.title}</h2>
-        <p className={styles.BookCard__description}>{book.description}</p>
+        <h2 className={styles.Title}>{book.title}</h2>
+        <p className={styles.Description}>{book.description}</p>
       </a>
     </div>
   );
