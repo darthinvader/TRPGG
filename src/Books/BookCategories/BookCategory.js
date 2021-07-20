@@ -7,10 +7,7 @@ const BookCategory = ({ category, clicked }) => {
     clicked(category);
     setActive(!active);
   };
-  const classes = [
-    styles.BookCategory,
-    active ? styles.BookCategory__active : "",
-  ].join(" ");
+  const classes = [styles.BookCategory, active ? styles.Active : ""].join(" ");
 
   return (
     <span onClick={setCategory} className={classes}>
