@@ -7,9 +7,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Link to="/books/book">Books</Link>
+            <Link to="/Books">Books</Link>
           </Route>
-          <Route path="/books/book">
+          <Route exact path="/Books">
             <BooksManager />
           </Route>
         </Switch>
