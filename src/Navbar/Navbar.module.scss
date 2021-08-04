@@ -1,1 +1,28 @@
-@use '../sass/abstracts/variables';
+@use '../sass/abstracts/variables' as variables;
+
+.Navbar {
+  background-color: variables.$navbarColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &Container {
+    max-width: 1200px;
+  }
+}
+
+.Categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+.Link {
+  color: #ccc;
+  font-size: 2rem;
+  &:hover {
+    color: white;
+  }
+}

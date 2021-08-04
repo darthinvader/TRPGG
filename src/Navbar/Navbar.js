@@ -4,9 +4,12 @@ import styles from "./Navbar.module.scss";
 const Navbar = () => {
   return (
     <div className={styles.Navbar}>
-      <ul className={styles.Category}>
-        <li>
-          <Link to="/books">Books</Link>
+      <div className={styles.NavbarContainer}></div>
+      <ul className={styles.Categories}>
+        <li className={styles.Category}>
+          <Link className={styles.Link} to="/books">
+            Books
+          </Link>
         </li>
       </ul>
     </div>
