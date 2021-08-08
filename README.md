@@ -3,7 +3,7 @@ A Tabletop RPG toolset and game companion.
 ---
 
 <h2>Resources</h2>
-The only page right now is the one that have resources for games (or Books).
+The only page right now is the one that has the resources for games (or Books).
 
 <h2>Technologies</h2>
 
