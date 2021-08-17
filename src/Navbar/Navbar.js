@@ -11,6 +11,16 @@ const Navbar = () => {
             Books
           </Link>
         </li>
+        <li className={styles.Category}>
+          <Link className={styles.Link} to="/MusicPlayer">
+            Music Player
+          </Link>
+        </li>
+        <li className={styles.Category}>
+          <Link className={styles.Link} to="/SoundEffects">
+            Sound Effects
+          </Link>
+        </li>
       </ul>
     </div>
   );
