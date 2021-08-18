@@ -1,6 +1,6 @@
-import BooksManager from "./Books/BooksManager";
+import BooksManager from "./components/Books/BooksManager";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
