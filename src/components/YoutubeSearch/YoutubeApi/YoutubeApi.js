@@ -4,7 +4,7 @@ const { REACT_APP_YOUTUBE_API_KEY: youtube_key } = process.env;
 
 const youtubeSearchRequest = axios.create({
   method: "GET",
-  baseURL: "https://youtube.googleapis.com/youtube/v3/search",
+  baseURL: "https://youtube.googleapis.com/youtube/v3",
   params: {
     part: "snippet",
     maxResults: 5,
