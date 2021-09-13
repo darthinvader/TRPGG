@@ -30,8 +30,7 @@ const firebaseConfig = {
 // Initialize Firebase
 
 const firebaseApp = initializeApp(firebaseConfig);
-
-export const analytics = getAnalytics(firebaseApp);
+// const analytics = getAnalytics(firebaseApp);
 
 const provider = new GoogleAuthProvider();
 
