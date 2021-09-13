@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  list-style-type: none;
 }
 
 .Link {
@@ -21,4 +22,14 @@
   &:hover {
     color: white;
   }
+}
+
+.UserButton {
+}
+
+.Image {
+  padding-top: 0.2rem;
+  border-radius: 50%;
+  height: 3rem;
+  width: 100%;
 }

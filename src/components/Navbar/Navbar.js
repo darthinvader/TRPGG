@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const userButton = user ? (
     <button className={styles.userButton}>
-      <img src={user.photoURL} alt="user"></img>
+      <img className={styles.Image} src={user.photoURL} alt="user"></img>
     </button>
   ) : (
     <button className={styles.userButton} onClick={signIn}>
@@ -37,7 +37,7 @@ const Navbar = () => {
             Sound Effects
           </Link>
         </li>
-        <li className={styles.Category}>{userButton}</li>
+        <li>{userButton}</li>
       </ul>
     </div>
   );
