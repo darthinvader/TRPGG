@@ -8,16 +8,15 @@
 }
 
 .Categories {
+  height: 4rem;
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  list-style-type: none;
 }
 
 .Link {
-  color: #ccc;
+  color: #bbb;
   font-size: 2rem;
   &:hover {
     color: white;
