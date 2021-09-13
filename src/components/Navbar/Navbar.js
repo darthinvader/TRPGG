@@ -1,23 +1,38 @@
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import { FcGoogle } from "react-icons/fc";
-import { auth, signIn } from "../../services/firebase-config";
-import { useState } from "react";
+import { RiLoader3Fill } from "react-icons/ri";
+import { auth, signIn, signOut } from "../../services/firebase-config";
+import { useEffect, useState } from "react";
 const Navbar = () => {
   const [user, setUser] = useState(auth.currentUser);
-  auth.onAuthStateChanged((user) => {
-    setUser(user);
-  });
+  const SignIn = () => {
+    setUser("Loading");
+    signIn();
+  };
 
-  const userButton = user ? (
-    <button className={styles.userButton}>
-      <img className={styles.Image} src={user.photoURL} alt="user"></img>
-    </button>
-  ) : (
-    <button className={styles.userButton} onClick={signIn}>
-      Sign In <FcGoogle></FcGoogle>
+  useEffect(() => {
+    auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+  }, []);
+
+  let userButton = (
+    <button className={styles.UserButton} onClick={SignIn}>
+      Sign In <FcGoogle />
     </button>
   );
+
+  if (user) {
+    userButton =
+      user === "Loading" ? (
+        <RiLoader3Fill className={styles.Loading} />
+      ) : (
+        <button className={styles.userButton} onClick={signOut}>
+          <img className={styles.Image} src={user.photoURL} alt="user"></img>
+        </button>
+      );
+  }
 
   return (
     <div className={styles.Navbar}>

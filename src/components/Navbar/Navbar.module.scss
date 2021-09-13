@@ -25,6 +25,12 @@
 }
 
 .UserButton {
+  cursor: pointer;
+  color: #bbb;
+  font-size: 2rem;
+  &:hover {
+    color: white;
+  }
 }
 
 .Image {
@@ -32,4 +38,23 @@
   border-radius: 50%;
   height: 3rem;
   width: 100%;
+}
+
+.Loading {
+  margin-top: 0.2rem;
+  font-size: 3rem;
+  color: white;
+  animation-name: spin;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
