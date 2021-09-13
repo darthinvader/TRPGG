@@ -2,6 +2,8 @@
 
 .Navbar {
   background-color: variables.$navbarColor;
+  display: flex;
+  align-items: center;
   &Container {
     max-width: 1200px;
   }
@@ -11,8 +13,8 @@
   height: 4rem;
   width: 100%;
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
   list-style-type: none;
 }
 
@@ -22,6 +24,12 @@
   &:hover {
     color: white;
   }
+}
+
+.UserLi {
+  height: 3rem;
+
+  margin-right: 1rem;
 }
 
 .UserButton {
@@ -34,14 +42,12 @@
 }
 
 .Image {
-  padding-top: 0.2rem;
   border-radius: 50%;
   height: 3rem;
   width: 100%;
 }
 
 .Loading {
-  margin-top: 0.2rem;
   font-size: 3rem;
   color: white;
   animation-name: spin;
@@ -56,5 +62,14 @@
     to {
       transform: rotate(360deg);
     }
+  }
+}
+
+.SignInButton {
+  cursor: pointer;
+  color: #bbb;
+  font-size: 2rem;
+  &:hover {
+    color: white;
   }
 }

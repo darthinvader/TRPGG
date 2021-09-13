@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
-import { FcGoogle } from "react-icons/fc";
+import { AiFillGoogleCircle } from "react-icons/ai";
 import { RiLoader3Fill } from "react-icons/ri";
 import { auth, signIn, signOut } from "../../services/firebase-config";
 import { useEffect, useState } from "react";
@@ -18,15 +18,17 @@ const Navbar = () => {
   }, []);
 
   let userButton = (
-    <button className={styles.UserButton} onClick={SignIn}>
-      Sign In <FcGoogle />
+    <button className={styles.SignInButton} onClick={SignIn}>
+      Sign In With <AiFillGoogleCircle />
     </button>
   );
 
   if (user) {
     userButton =
       user === "Loading" ? (
-        <RiLoader3Fill className={styles.Loading} />
+        <div className={styles.UserButton}>
+          <RiLoader3Fill className={styles.Loading} />
+        </div>
       ) : (
         <button className={styles.userButton} onClick={signOut}>
           <img className={styles.Image} src={user.photoURL} alt="user"></img>
@@ -52,7 +54,9 @@ const Navbar = () => {
             Sound Effects
           </Link>
         </li>
-        <li>{userButton}</li>
+      </ul>
+      <ul>
+        <li className={styles.UserLi}>{userButton}</li>
       </ul>
     </div>
   );
