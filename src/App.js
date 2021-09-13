@@ -11,9 +11,7 @@ function App() {
           <Route exact path="/">
             <Link to="/Books">Books</Link>
           </Route>
-          <Route exact path="/Books">
-            <BooksManager />
-          </Route>
+          <Route exact path="/Books"></Route>
         </Switch>
       </Router>
     </div>
