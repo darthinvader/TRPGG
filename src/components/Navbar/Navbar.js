@@ -55,7 +55,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <ul>
+      <ul style={{ listStyleType: "none" }}>
         <li className={styles.UserLi}>{userButton}</li>
       </ul>
     </div>
