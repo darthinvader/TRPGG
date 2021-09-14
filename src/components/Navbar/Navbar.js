@@ -19,7 +19,9 @@ const Navbar = () => {
 
   let userButton = (
     <button className={styles.SignInButton} onClick={SignIn}>
-      Sign In With <AiFillGoogleCircle />
+      <p>
+        Sign In With <AiFillGoogleCircle />
+      </p>
     </button>
   );
 
@@ -54,8 +56,6 @@ const Navbar = () => {
             Sound Effects
           </Link>
         </li>
-      </ul>
-      <ul>
         <li className={styles.UserLi}>{userButton}</li>
       </ul>
     </div>
