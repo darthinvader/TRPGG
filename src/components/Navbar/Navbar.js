@@ -18,10 +18,8 @@ const Navbar = () => {
   }, []);
 
   let userButton = (
-    <button className={styles.SignInButton} onClick={SignIn}>
-      <p>
-        Sign In With <AiFillGoogleCircle />
-      </p>
+    <button className={styles.UserButton} onClick={SignIn}>
+      Sign In With <AiFillGoogleCircle className={styles.Icon} />
     </button>
   );
 
