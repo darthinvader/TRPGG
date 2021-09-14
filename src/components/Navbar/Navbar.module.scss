@@ -12,6 +12,8 @@
 
 .Navbar {
   background-color: variables.$navbarColor;
+  display: flex;
+  justify-content: space-around;
 }
 
 .Categories {
@@ -21,6 +23,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: end;
   list-style-type: none;
+  width: 60%;
 }
 
 .Link {

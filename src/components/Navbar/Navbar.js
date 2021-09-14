@@ -54,6 +54,8 @@ const Navbar = () => {
             Sound Effects
           </Link>
         </li>
+      </ul>
+      <ul>
         <li className={styles.UserLi}>{userButton}</li>
       </ul>
     </div>
