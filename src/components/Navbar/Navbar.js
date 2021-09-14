@@ -39,17 +39,17 @@ const Navbar = () => {
   return (
     <div className={styles.Navbar}>
       <ul className={styles.Categories}>
-        <li className={styles.Category}>
+        <li>
           <Link className={styles.Link} to="/books">
             Books
           </Link>
         </li>
-        <li className={styles.Category}>
+        <li>
           <Link className={styles.Link} to="/MusicPlayer">
             Music Player
           </Link>
         </li>
-        <li className={styles.Category}>
+        <li>
           <Link className={styles.Link} to="/SoundEffects">
             Sound Effects
           </Link>
