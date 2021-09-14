@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Home from "./components/Home/Home";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
