@@ -13,15 +13,15 @@
 .Navbar {
   background-color: variables.$navbarColor;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .Categories {
   height: 4rem;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: end;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
   list-style-type: none;
   width: 60%;
 }
