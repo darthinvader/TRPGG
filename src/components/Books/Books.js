@@ -15,7 +15,6 @@ const Books = () => {
       setBooks(data);
     });
   }, []);
-  console.log(books);
   let bookElements = null;
   if (!books)
     bookElements = new Array(35).fill(0).map((_, index) => (
