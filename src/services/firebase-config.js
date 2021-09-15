@@ -37,8 +37,6 @@ const provider = new GoogleAuthProvider();
 export const auth = getAuth(firebaseApp);
 setPersistence(auth, browserLocalPersistence);
 
-auth.onAuthStateChanged((user) => console.log(user));
-
 export const signIn = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
