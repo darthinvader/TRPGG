@@ -6,11 +6,11 @@ const BookInfo = ({ book }) => {
       <a
         target="_blank"
         rel="noreferrer"
-        href={book.documentUrl}
+        href={book.downloadLink}
         className={styles.Link}
       >
         <img
-          src={book.imgUrl}
+          src={book.imageUrl}
           alt={`${book.title}Cover`}
           className={styles.Img}
         />
