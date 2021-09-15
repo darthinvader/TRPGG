@@ -8,7 +8,6 @@ import styles from "./Books.module.scss";
 
 const Books = () => {
   const [books, setBooks] = useState(null);
-  const [selectedCategories, setSelectedCategories] = useState(null);
   useEffect(() => {
     const bookRef = ref(database, "books");
     onValue(bookRef, (snapshot) => {
