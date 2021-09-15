@@ -5,9 +5,22 @@ import BookCard from "./BookCard/BookCard";
 import BookPreloader from "./BookPreloader/BookPreloader";
 import BookInfo from "./BookInfo/BookInfo";
 import styles from "./Books.module.scss";
+import Categories from "./Categories/Categories";
 
 const Books = () => {
   const [books, setBooks] = useState(null);
+  const [activeCategories, setActiveCategories] = useState([]);
+
+  const setCategories = (category) => {
+    activeCategories.includes(category)
+      ? setActiveCategories(
+          activeCategories.filter(
+            (activeCategory) => activeCategory !== category
+          )
+        )
+      : setActiveCategories([...activeCategories, category]);
+  };
+
   useEffect(() => {
     const bookRef = ref(database, "books");
     onValue(bookRef, (snapshot) => {
@@ -15,21 +28,40 @@ const Books = () => {
       setBooks(data);
     });
   }, []);
+
   let bookElements = null;
+  console.log(books);
   if (!books)
     bookElements = new Array(35).fill(0).map((_, index) => (
       <BookCard key={index}>
         <BookPreloader />
       </BookCard>
     ));
-  else
+  else if (activeCategories.length === 0)
     bookElements = books.map((book) => (
       <BookCard key={book.title}>
         <BookInfo book={book} />
       </BookCard>
     ));
+  else {
+    const selectedBooks = books.filter((book) =>
+      activeCategories.some((category) =>
+        book.categories.includes(category.toLowerCase())
+      )
+    );
+    bookElements = selectedBooks.map((book) => (
+      <BookCard key={book.title}>
+        <BookInfo book={book} />
+      </BookCard>
+    ));
+  }
 
-  return <div className={styles.BookCardsContainer}>{bookElements}</div>;
+  return (
+    <>
+      <Categories setCategories={setCategories} />
+      <div className={styles.BookCardsContainer}>{bookElements}</div>
+    </>
+  );
 };
 
 export default Books;

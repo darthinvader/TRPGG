@@ -1,0 +1,12 @@
+.Categories {
+  padding: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-bottom: 0.3rem solid black;
+  background-color: #222;
+
+  @media screen and (max-width: 110em) {
+    flex-wrap: wrap;
+  }
+}
