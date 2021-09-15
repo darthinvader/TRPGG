@@ -23,14 +23,17 @@ const Books = () => {
 
   useEffect(() => {
     const bookRef = ref(database, "books");
-    onValue(bookRef, (snapshot) => {
-      const data = snapshot.val();
-      setBooks(data);
-    });
+    onValue(
+      bookRef,
+      (snapshot) => {
+        const data = snapshot.val();
+        setBooks(data);
+      },
+      { onlyOnce: true }
+    );
   }, []);
 
   let bookElements = null;
-  console.log(books);
   if (!books)
     bookElements = new Array(35).fill(0).map((_, index) => (
       <BookCard key={index}>
