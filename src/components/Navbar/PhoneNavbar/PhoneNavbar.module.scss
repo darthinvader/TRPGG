@@ -1,0 +1,48 @@
+@use '../../../sass/abstracts/variables' as variables;
+
+.TopNav {
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  background-color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: variables.$navbarColor;
+}
+
+.Burger {
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.SideNav {
+  display: flex;
+  width: 20rem;
+  height: 100vh;
+  position: fixed;
+  padding: 1rem;
+  margin-top: 4rem;
+  right: 0;
+  background-color: variables.$navbarColor;
+  z-index: 10000;
+  transition: transform 0.5s;
+}
+
+.SideNavHide {
+  transform: translateX(20rem);
+}
+
+.Categories {
+  list-style-type: none;
+}
+
+.Link {
+  color: #bbb;
+  font-size: 2.5rem;
+  &:hover {
+    color: white;
+  }
+}

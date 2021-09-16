@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
-
+import useWindowDimensions from "../../customHooks/useWindowDimensions";
 import Login from "./Login/Login";
+import PhoneNavbar from "./PhoneNavbar/PhoneNavbar";
 const Navbar = () => {
+  const { width } = useWindowDimensions();
+  if (width <= 1000) {
+    return <PhoneNavbar />;
+  }
+
   return (
     <div className={styles.Navbar}>
       <ul className={styles.Categories}>
