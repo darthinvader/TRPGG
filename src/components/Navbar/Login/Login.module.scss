@@ -1,0 +1,48 @@
+@mixin icon {
+  font-size: 3rem;
+  color: white;
+}
+
+@mixin link {
+  color: #bbb;
+  font-size: 2.5rem;
+}
+
+.UserButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.7rem;
+  @include link;
+  &:hover {
+    color: white;
+  }
+}
+
+.Icon {
+  @include icon;
+}
+
+.Image {
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  height: 3rem;
+}
+
+.Loading {
+  @include icon;
+  margin-top: 0.5rem;
+  animation-name: spin;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
