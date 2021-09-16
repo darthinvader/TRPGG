@@ -1,12 +1,14 @@
+@use '../../../sass/abstracts/variables';
+
 .Categories {
   padding: 0.1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  border-bottom: 0.3rem solid black;
   background-color: #222;
+  flex-wrap: wrap;
 
-  @media screen and (max-width: 110em) {
-    flex-wrap: wrap;
+  @media screen and (max-width: variables.$mediumSize) {
+    padding-top: variables.$phoneNavbanHeight;
   }
 }

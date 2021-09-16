@@ -1,15 +1,18 @@
 @use '../../../sass/abstracts/variables' as variables;
 
-.TopNav {
+.TopNavContainer {
   width: 100%;
-  height: 4rem;
+  height: variables.$phoneNavbanHeight;
   position: fixed;
-  background-color: #ccc;
+  z-index: 10000;
+}
+
+.TopNav {
+  background-color: variables.$navbarColor;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  background-color: variables.$navbarColor;
 }
 
 .Burger {
@@ -24,7 +27,7 @@
   height: 100vh;
   position: fixed;
   padding: 1rem;
-  margin-top: 4rem;
+  margin-top: 4.1rem;
   right: 0;
   background-color: variables.$navbarColor;
   z-index: 10000;
@@ -45,4 +48,8 @@
   &:hover {
     color: white;
   }
+}
+
+.TopMargin {
+  margin-top: 3rem;
 }
