@@ -1,10 +1,5 @@
 @use '../../sass/abstracts/variables' as variables;
 
-@mixin link {
-  color: #bbb;
-  font-size: 2.5rem;
-}
-
 .Navbar {
   background-color: variables.$navbarColor;
   display: flex;
@@ -22,7 +17,8 @@
 }
 
 .Link {
-  @include link;
+  color: #bbb;
+  font-size: 2.5rem;
   &:hover {
     color: white;
   }
