@@ -1,3 +1,5 @@
+import styles from "./NameGenerators.module.scss";
+
 const NameGenerators = () => {
   const categories = [
     "Fantasy & Folklore",
@@ -8,9 +10,9 @@ const NameGenerators = () => {
     "Other Gens",
   ];
   const categoriesElement = categories.map((category) => {
-    return <li>{category}</li>;
+    return <li className={styles.Category}>{category}</li>;
   });
-  return <ul>{categoriesElement}</ul>;
+  return <ul className={styles.Categories}>{categoriesElement}</ul>;
 };
 
 export default NameGenerators;

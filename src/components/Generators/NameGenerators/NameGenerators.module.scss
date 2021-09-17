@@ -1,0 +1,18 @@
+@use '../../../sass/abstracts/variables';
+
+.Categories {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  background-color: variables.$subNavbarColor;
+  height: 4rem;
+}
+
+.Category {
+  color: variables.$navbarTextColor;
+  font-size: 2.5rem;
+  &:hover {
+    color: white;
+  }
+}
