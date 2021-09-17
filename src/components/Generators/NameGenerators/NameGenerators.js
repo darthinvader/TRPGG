@@ -1,5 +1,5 @@
 import styles from "./NameGenerators.module.scss";
-
+import { IoMdArrowDropdown } from "react-icons/io";
 const NameGenerators = () => {
   const categories = [
     "Fantasy & Folklore",
@@ -10,7 +10,12 @@ const NameGenerators = () => {
     "Other Gens",
   ];
   const categoriesElement = categories.map((category) => {
-    return <li className={styles.Category}>{category}</li>;
+    return (
+      <li className={styles.Category}>
+        {category}
+        <IoMdArrowDropdown />
+      </li>
+    );
   });
   return <ul className={styles.Categories}>{categoriesElement}</ul>;
 };

@@ -10,6 +10,8 @@
 }
 
 .Category {
+  display: flex;
+  align-items: center;
   color: variables.$navbarTextColor;
   font-size: 2.5rem;
   &:hover {
