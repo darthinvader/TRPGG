@@ -1,10 +1,16 @@
 @use '../../../sass/abstracts/variables' as variables;
 
+.TopGap {
+  margin-top: 4rem;
+}
+
 .TopNavContainer {
   width: 100%;
   height: variables.$phoneNavbanHeight;
   position: fixed;
   z-index: 10000;
+  margin-top: 0;
+  top: 0;
 }
 
 .TopNav {
@@ -13,6 +19,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+  height: 4rem;
 }
 
 .Burger {
@@ -27,7 +34,7 @@
   height: 100vh;
   position: fixed;
   padding: 1rem;
-  margin-top: 4.1rem;
+  margin-top: 0.1rem;
   right: 0;
   background-color: variables.$navbarColor;
   z-index: 10000;

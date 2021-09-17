@@ -7,8 +7,4 @@
   justify-content: space-evenly;
   background-color: #222;
   flex-wrap: wrap;
-
-  @media screen and (max-width: variables.$mediumSize) {
-    padding-top: variables.$phoneNavbanHeight;
-  }
 }

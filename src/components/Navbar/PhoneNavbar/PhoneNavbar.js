@@ -10,6 +10,7 @@ const PhoneNavbar = () => {
   const SideNav = `${styles.SideNav} ${showSideNav ? "" : styles.SideNavHide}`;
   return (
     <>
+      <div className={styles.TopGap}></div>
       <div className={styles.TopNavContainer}>
         <div className={styles.TopNav}>
           <Login />
@@ -25,13 +26,13 @@ const PhoneNavbar = () => {
       <span className={SideNav}>
         <ul className={styles.Categories}>
           <li>
-            <Link className={styles.Link} to="/Generators">
-              Generators
+            <Link className={styles.Link} to="/books">
+              Books
             </Link>
           </li>
           <li>
-            <Link className={styles.Link} to="/SoundEffects">
-              Sound Effects
+            <Link className={styles.Link} to="/Generators">
+              Generators
             </Link>
           </li>
         </ul>
