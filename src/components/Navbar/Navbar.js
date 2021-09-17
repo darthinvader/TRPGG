@@ -20,13 +20,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className={styles.Link} to="/MusicPlayer">
-              Music Player
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.Link} to="/SoundEffects">
-              Sound Effects
+            <Link className={styles.Link} to="/Generators">
+              Generators
             </Link>
           </li>
         </ul>

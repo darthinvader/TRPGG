@@ -25,13 +25,8 @@ const PhoneNavbar = () => {
       <span className={SideNav}>
         <ul className={styles.Categories}>
           <li>
-            <Link className={styles.Link} to="/books">
-              Books
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.Link} to="/MusicPlayer">
-              Music Player
+            <Link className={styles.Link} to="/Generators">
+              Generators
             </Link>
           </li>
           <li>
