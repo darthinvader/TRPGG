@@ -17,7 +17,7 @@
 }
 
 .Link {
-  color: #bbb;
+  color: variables.$navbarTextColor;
   font-size: 2.5rem;
   &:hover {
     color: white;
