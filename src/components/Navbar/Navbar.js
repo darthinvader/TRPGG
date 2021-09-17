@@ -20,7 +20,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className={styles.Link} to="/Generators">
+            <Link className={styles.Link} to="/generators">
               Generators
             </Link>
           </li>
