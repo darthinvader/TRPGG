@@ -1,4 +1,4 @@
-import styles from "./NameGenerators.module.scss";
+import styles from "./Generators.module.scss";
 import { IoMdArrowDropdown } from "react-icons/io";
 const NameGenerators = () => {
   const categories = [

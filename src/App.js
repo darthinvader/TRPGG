@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Books from "./components/Books/Books";
-import NameGenerators from "./components/Generators/NameGenerators/NameGenerators";
+import Generators from "./components/Generators/Generators";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
             <Books />
           </Route>
           <Route exact path="/generators">
-            <NameGenerators />
+            <Generators />
           </Route>
         </Switch>
       </Router>
