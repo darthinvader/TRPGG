@@ -1,5 +1,14 @@
-.Books {
+@mixin default {
   height: 0.1rem;
-  background-color: red;
   z-index: 10000;
+}
+
+.Books {
+  @include default();
+  background-color: red;
+}
+
+.Generators {
+  @include default();
+  background-color: blue;
 }
