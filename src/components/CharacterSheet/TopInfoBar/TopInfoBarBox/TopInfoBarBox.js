@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const TopInfoBarBox = ({ tooltip, text }) => {
+const TopInfoBarBox = ({ title, text }) => {
   const [textInfo, setTextInfo] = useState(text);
   return (
     <div>
-      <span>{textInfo}</span>
+      <span>{title}</span>
       <input
         type="text"
         value={textInfo}

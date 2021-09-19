@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Books from "./components/Books/Books";
+import CharacterSheet from "./components/CharacterSheet/CharacterSheet";
 import Generators from "./components/Generators/Generators";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route exact path="/generators">
             <Generators />
+          </Route>
+          <Route exact path="/characterSheet">
+            <CharacterSheet />
           </Route>
         </Switch>
       </Router>
