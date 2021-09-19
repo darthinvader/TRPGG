@@ -35,6 +35,11 @@ const PhoneNavbar = () => {
               Generators
             </Link>
           </li>
+          <li>
+            <Link className={styles.Link} to="/characterSheet">
+              Character Sheet
+            </Link>
+          </li>
         </ul>
       </span>
     </>

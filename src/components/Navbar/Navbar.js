@@ -24,6 +24,11 @@ const Navbar = () => {
               Generators
             </Link>
           </li>
+          <li>
+            <Link className={styles.Link} to="/characterSheet">
+              Character Sheet
+            </Link>
+          </li>
         </ul>
         <ul style={{ listStyleType: "none" }}>
           <li className={styles.UserLi}>
