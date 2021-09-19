@@ -5,7 +5,11 @@ const TopInfoBarBox = ({ tooltip, text }) => {
   return (
     <div>
       <span>{textInfo}</span>
-      <input type="text"></input>
+      <input
+        type="text"
+        value={textInfo}
+        onChange={(ev) => setTextInfo(ev.target.value)}
+      ></input>
     </div>
   );
 };
