@@ -13,3 +13,5 @@ const TopInfoBarBox = ({ tooltip, text }) => {
     </div>
   );
 };
+
+export default TopInfoBarBox;
