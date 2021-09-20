@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./TopInfoBarBox.module.scss";
 
 const TopInfoBarBox = ({ title, text }) => {
-  const [textInfo, setTextInfo] = useState(text);
+  const [textInfo, setTextInfo] = useState(text || "");
   return (
     <div className={styles.Container}>
       <input
