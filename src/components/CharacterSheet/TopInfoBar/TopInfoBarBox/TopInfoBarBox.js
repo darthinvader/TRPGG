@@ -1,4 +1,4 @@
-import CharacterNameInfo from "./NameInfo/CharacterNameInfo";
+import CharacterNameInfo from "./CharacterNameInfo/CharacterNameInfo";
 import styles from "./TopInfoBarBox.module.scss";
 
 const TopInfoBarBox = () => {
