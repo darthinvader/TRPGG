@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./InfoInput.module.scss";
 import { ImUnlocked, ImLock } from "react-icons/im";
-const InfoInput = ({ placeholder, input, fontSize }) => {
+const InfoInput = ({ placeholder, input, fontSize, color }) => {
   const [text, setText] = useState(input || "");
   const [lock, setLock] = useState(true);
   const textWidth = text.length + 2;
@@ -16,7 +16,7 @@ const InfoInput = ({ placeholder, input, fontSize }) => {
         onChange={(ev) => setText(ev.target.value)}
         placeholder={placeholder}
         size={size}
-        style={{ fontSize }}
+        style={{ fontSize, color }}
         disabled={lock}
       ></input>
       {lock ? (

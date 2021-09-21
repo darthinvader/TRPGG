@@ -10,6 +10,8 @@
   padding: 0;
 
   &:disabled {
+    color: inherit;
+    background-color: inherit;
   }
 }
 
