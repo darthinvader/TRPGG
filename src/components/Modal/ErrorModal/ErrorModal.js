@@ -1,4 +1,4 @@
-import Modal from "../Modal/Modal";
+import Modal from "../Modal";
 import styles from "./ErrorModal.module.scss";
 const ErrorModal = ({ onClose, onRetry, description, title }) => {
   return (
