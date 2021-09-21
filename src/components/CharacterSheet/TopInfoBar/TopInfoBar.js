@@ -5,11 +5,6 @@ const TopInfoBar = () => {
   return (
     <div className={styles.Container}>
       <TopInfoBarBox title="Character Name" />
-      <TopInfoBarBox title="Character Name" />
-      <TopInfoBarBox title="Character Name" />
-      <TopInfoBarBox title="Character Name" />
-      <TopInfoBarBox title="Character Name" />
-      <TopInfoBarBox title="Character Name" />
     </div>
   );
 };
