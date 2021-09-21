@@ -3,15 +3,15 @@ import styles from "./CharacterNameInfo.module.scss";
 
 const CharacterNameInfo = ({ CharacterName }) => {
   const [name, setName] = useState(CharacterName || "");
-  const size = name.length > 13 ? name.length : 13;
-
+  const nameWidth = name.length + 2;
+  const size = nameWidth > 13 ? nameWidth : 13;
   return (
     <input
       className={styles.Input}
       type="text"
       value={name}
       onChange={(ev) => setName(ev.target.value)}
-      placeholder={"Character Name"}
+      placeholder={"Character Names"}
       size={size}
     ></input>
   );
