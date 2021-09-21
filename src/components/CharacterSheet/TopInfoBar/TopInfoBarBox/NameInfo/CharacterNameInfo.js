@@ -11,7 +11,7 @@ const CharacterNameInfo = ({ CharacterName }) => {
       type="text"
       value={name}
       onChange={(ev) => setName(ev.target.value)}
-      placeholder={"Character Names"}
+      placeholder={"Character Name"}
       size={size}
     ></input>
   );
