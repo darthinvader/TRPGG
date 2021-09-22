@@ -1,5 +1,5 @@
 import styles from "./TopInfoBar.module.scss";
-import InfoInput from "./TopInfoBarBox/InfoInput/InfoInput";
+import InfoInput from "../../InfoInput/InfoInput";
 
 const TopInfoBar = () => {
   return (
