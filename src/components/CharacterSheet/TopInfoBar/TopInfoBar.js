@@ -1,10 +1,12 @@
 import styles from "./TopInfoBar.module.scss";
 import InfoInput from "../../InfoInput/InfoInput";
+import ImageAdd from "./ImageAdd/ImageAdd";
 
 const TopInfoBar = () => {
   return (
     <div className={styles.Container}>
       <div className={styles.Basics}>
+        <ImageAdd />
         <InfoInput placeholder="Character Name" fontSize="2.2rem" />
         <InfoInput placeholder="Class & Level" fontSize="2.2rem" />
         <InfoInput placeholder="Race" fontSize="1.8rem" />
