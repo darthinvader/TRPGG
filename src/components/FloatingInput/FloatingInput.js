@@ -8,7 +8,7 @@ const FloatingInput = ({ x, y, onSubmit, onClose }) => {
       <button className={styles.Button} onClick={onSubmit}>
         Add Image
       </button>
-      <MdClose />
+      <MdClose className={styles.Close} />
     </div>
   );
 };
