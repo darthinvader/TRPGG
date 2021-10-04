@@ -17,7 +17,7 @@ interface BookInterface {
 
 const Book: React.FC<BookInterface> = ({ book }) => {
   return (
-    <Card sx={{}}>
+    <Card sx={{ boxShadow: 6 }}>
       <CardActionArea href={book.downloadLink} target="_blank">
         <CardContent>
           <CardMedia
