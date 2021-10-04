@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { database } from "../../services/firebase-config";
 import { ref, onValue } from "firebase/database";
-import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
+// import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
+import Book from "./Book/Book";
+import { Box } from "@mui/material";
 
 const Books = () => {
   const [books, setBooks] = useState(null);
@@ -29,7 +31,123 @@ const Books = () => {
     );
   }, []);
 
-  return <SkeletonPreloader />;
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill,minmax(10em,1fr))",
+        gridGap: "16px",
+        marginTop: "16px",
+      }}
+    >
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+
+      <Book
+        book={{
+          title: "Mordenkainens Tome of Foes",
+          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
+          downloadLink: "Smth",
+          description: "Hello threre",
+        }}
+      />
+    </Box>
+  );
 };
 
 export default Books;
