@@ -1,7 +1,11 @@
-import React from "react";
+import Books from "./components/Books/Books";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Books />
+    </div>
+  );
 }
 
 export default App;
