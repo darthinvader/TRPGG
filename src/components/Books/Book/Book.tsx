@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { motion } from "framer-motion";
+import BookCard from "../BookCard/BookCard";
 
 interface BookInterface {
   book: {
@@ -18,15 +19,7 @@ interface BookInterface {
 
 const Book: React.FC<BookInterface> = ({ book }) => {
   return (
-    <Card
-      variant="outlined"
-      sx={{ boxShadow: 6 }}
-      component={motion.div}
-      whileHover={{
-        scale: 1.05,
-        transition: { duration: 0.4 },
-      }}
-    >
+    <BookCard>
       <CardActionArea href={book.downloadLink} target="_blank">
         <CardMedia
           component="img"
@@ -42,7 +35,7 @@ const Book: React.FC<BookInterface> = ({ book }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-    </Card>
+    </BookCard>
   );
 };
 
