@@ -1,11 +1,9 @@
 import {
-  Card,
   CardActionArea,
   CardContent,
   CardMedia,
   Typography,
 } from "@mui/material";
-import { motion } from "framer-motion";
 import BookCard from "../BookCard/BookCard";
 
 interface BookInterface {

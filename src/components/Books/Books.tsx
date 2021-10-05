@@ -4,6 +4,7 @@ import { ref, onValue } from "firebase/database";
 // import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
 import Book from "./Book/Book";
 import { Box } from "@mui/material";
+import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
 
 const Books = () => {
   const [books, setBooks] = useState(null);
@@ -41,6 +42,12 @@ const Books = () => {
         marginTop: "16px",
       }}
     >
+      <SkeletonPreloader />
+      <SkeletonPreloader />
+      <SkeletonPreloader />
+      <SkeletonPreloader />
+      <SkeletonPreloader />
+      <SkeletonPreloader />
       <Book
         book={{
           title: "Mordenkainens Tome of Foes",
@@ -49,6 +56,7 @@ const Books = () => {
           description: "Hello threre",
         }}
       />
+      {/*
       <Book
         book={{
           title: "Mordenkainens Tome of Foes",
@@ -145,7 +153,7 @@ const Books = () => {
           downloadLink: "Smth",
           description: "Hello threre",
         }}
-      />
+      /> */}
     </Box>
   );
 };

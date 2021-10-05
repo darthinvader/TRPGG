@@ -1,14 +1,15 @@
-import { Card, CardContent, Skeleton } from "@mui/material";
+import { CardContent, Skeleton } from "@mui/material";
+import BookCard from "../BookCard/BookCard";
 
 const SkeletonPreloader = () => {
   return (
-    <Card sx={{ width: 300 }}>
+    <BookCard>
+      <Skeleton variant="rectangular" height={225} />
       <CardContent>
-        <Skeleton variant="rectangular" />
-        <Skeleton variant="text" />
-        <Skeleton variant="text" />
+        <Skeleton variant="text" height={60} />
+        <Skeleton variant="text" height={35} />
       </CardContent>
-    </Card>
+    </BookCard>
   );
 };
 
