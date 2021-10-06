@@ -39,7 +39,7 @@ const Books = () => {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill,minmax(10em,1fr))",
         gridGap: "16px",
-        marginTop: "16px",
+        margin: "16px",
       }}
     >
       <SkeletonPreloader />
