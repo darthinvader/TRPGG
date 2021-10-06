@@ -32,16 +32,6 @@ const Books = () => {
   const [books, setBooks] = useState<BookInterface[]>([]);
   const [activeCategories, setActiveCategories] = useState<string[]>([]);
 
-  const setCategories = (category: string) => {
-    activeCategories.includes(category)
-      ? setActiveCategories(
-          activeCategories.filter(
-            (activeCategory) => activeCategory !== category
-          )
-        )
-      : setActiveCategories([...activeCategories, category]);
-  };
-
   useEffect(() => {
     const bookRef = ref(database, "books");
     onValue(
