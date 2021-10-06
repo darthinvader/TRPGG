@@ -18,7 +18,11 @@ export interface BookProp {
 const Book: React.FC<BookProp> = ({ book }) => {
   return (
     <BookCard>
-      <CardActionArea href={book.downloadLink} target="_blank">
+      <CardActionArea
+        href={book.downloadLink}
+        target="_blank"
+        sx={{ height: "100%" }}
+      >
         <CardMedia
           component="img"
           image={book.imageUrl}
