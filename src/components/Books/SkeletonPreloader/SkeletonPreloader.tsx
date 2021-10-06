@@ -4,10 +4,10 @@ import BookCard from "../BookCard/BookCard";
 const SkeletonPreloader = () => {
   return (
     <BookCard>
-      <Skeleton variant="rectangular" height={225} />
+      <Skeleton variant="rectangular" height={274} />
       <CardContent>
-        <Skeleton variant="text" height={60} />
-        <Skeleton variant="text" height={35} />
+        <Skeleton variant="text" height={96} />
+        <Skeleton variant="text" height={24} />
       </CardContent>
     </BookCard>
   );
