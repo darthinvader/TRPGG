@@ -3,11 +3,33 @@ import { database } from "../../services/firebase-config";
 import { ref, onValue } from "firebase/database";
 // import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
 import Book from "./Book/Book";
-import { Box } from "@mui/material";
+import { Autocomplete, Box, TextField } from "@mui/material";
 import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
 
+interface BookInterface {
+  title: string;
+  imageUrl: string;
+  description: string | undefined;
+  downloadLink: string;
+  categories: string[];
+}
+
+const categories = [
+  "Base",
+  "Classes",
+  "Races",
+  "Feats",
+  "Creatures",
+  "Module",
+  "Items",
+  "Spells",
+  "DM",
+  "Homebrew",
+  "Misc",
+];
+
 const Books = () => {
-  const [books, setBooks] = useState(null);
+  const [books, setBooks] = useState<BookInterface[]>([]);
   const [activeCategories, setActiveCategories] = useState<string[]>([]);
 
   const setCategories = (category: string) => {
@@ -31,130 +53,59 @@ const Books = () => {
       { onlyOnce: true }
     );
   }, []);
+  console.log(books);
+  let bookElements: JSX.Element[];
+
+  const preloader = () =>
+    new Array(35)
+      .fill(0)
+      .map((_, index) => <SkeletonPreloader key={index}></SkeletonPreloader>);
+
+  const allBooks = () =>
+    books.map((book) => <Book key={book.title} book={book}></Book>);
+
+  const filterBooks = () => {
+    const selectedBooks = books.filter((book) =>
+      activeCategories.some((category) =>
+        book.categories.includes(category.toLowerCase())
+      )
+    );
+    return selectedBooks.map((book) => (
+      <Book key={book.title} book={book}></Book>
+    ));
+  };
+
+  if (books.length === 0) bookElements = preloader();
+  else if (activeCategories.length === 0) bookElements = allBooks();
+  else {
+    bookElements = filterBooks();
+  }
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill,minmax(10em,1fr))",
-        gridGap: "16px",
-        margin: "16px",
-      }}
-    >
-      <SkeletonPreloader />
-      <SkeletonPreloader />
-      <SkeletonPreloader />
-      <SkeletonPreloader />
-      <SkeletonPreloader />
-      <SkeletonPreloader />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
+    <>
+      <Autocomplete
+        multiple
+        sx={{ margin: "16px" }}
+        id="tags-standard"
+        options={categories}
+        renderInput={(params) => (
+          <TextField {...params} variant="filled" placeholder="Categories" />
+        )}
+        onChange={(event, categories: string[]) => {
+          setActiveCategories(categories);
         }}
       />
-      {/*
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill,minmax(12em,1fr))",
+          gridGap: "16px",
+          margin: "16px",
         }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      />
-
-      <Book
-        book={{
-          title: "Mordenkainens Tome of Foes",
-          imageUrl: "https://i.imgur.com/wzQYzkUm.jpg",
-          downloadLink: "Smth",
-          description: "Hello threre",
-        }}
-      /> */}
-    </Box>
+      >
+        {bookElements}
+      </Box>
+    </>
   );
 };
 
