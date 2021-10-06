@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import BookCard from "../BookCard/BookCard";
 
-interface BookInterface {
+export interface BookProp {
   book: {
     title: string;
     imageUrl: string;
@@ -15,7 +15,7 @@ interface BookInterface {
   };
 }
 
-const Book: React.FC<BookInterface> = ({ book }) => {
+const Book: React.FC<BookProp> = ({ book }) => {
   return (
     <BookCard>
       <CardActionArea href={book.downloadLink} target="_blank">
