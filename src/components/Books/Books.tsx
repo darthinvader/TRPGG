@@ -75,11 +75,11 @@ const Books = () => {
     <>
       <Autocomplete
         multiple
+        id="tags-outlined"
         sx={{ margin: "16px" }}
-        id="tags-standard"
         options={categories}
         renderInput={(params) => (
-          <TextField {...params} variant="filled" placeholder="Categories" />
+          <TextField {...params} label="Categories" variant="filled" />
         )}
         onChange={(event, categories: string[]) => {
           setActiveCategories(categories);
