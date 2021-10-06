@@ -43,11 +43,11 @@ const Books = () => {
       { onlyOnce: true }
     );
   }, []);
-  console.log(books);
+
   let bookElements: JSX.Element[];
 
-  const preloader = () =>
-    new Array(35)
+  const skeletonBooks = () =>
+    new Array(36)
       .fill(0)
       .map((_, index) => <SkeletonPreloader key={index}></SkeletonPreloader>);
 
@@ -65,7 +65,7 @@ const Books = () => {
     ));
   };
 
-  if (books.length === 0) bookElements = preloader();
+  if (books.length === 0) bookElements = skeletonBooks();
   else if (activeCategories.length === 0) bookElements = allBooks();
   else {
     bookElements = filterBooks();
