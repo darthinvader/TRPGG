@@ -3,7 +3,8 @@ import { database } from "../../services/firebase-config";
 import { ref, onValue } from "firebase/database";
 // import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
 import Book from "./Book/Book";
-import { Autocomplete, Box, TextField } from "@mui/material";
+import { Box, TextField } from "@mui/material";
+import Autocomplete from "@mui/material/Autocomplete";
 import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
 
 interface BookInterface {
@@ -75,16 +76,22 @@ const Books = () => {
     <>
       <Autocomplete
         multiple
-        id="tags-outlined"
+        id="tags-standard"
         sx={{ margin: "16px" }}
         options={categories}
         renderInput={(params) => (
-          <TextField {...params} label="Categories" variant="filled" />
+          <TextField
+            {...params}
+            variant="standard"
+            label="Categories"
+            placeholder="Category"
+          />
         )}
         onChange={(event, categories: string[]) => {
           setActiveCategories(categories);
         }}
       />
+
       <Box
         sx={{
           display: "grid",
