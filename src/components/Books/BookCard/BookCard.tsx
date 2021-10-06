@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 const BookCard: React.FC<{ children: React.ReactNode }> = (props) => {
   return (
     <Card
-      variant="outlined"
       sx={{ boxShadow: 6 }}
       component={motion.div}
       whileHover={{
