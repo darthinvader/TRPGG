@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
-import { createTheme } from "@mui/material";
+import { createTheme, CssBaseline } from "@mui/material";
 import Books from "./components/Books/Books";
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   const theme = createTheme({
     palette: {
-      mode: "light",
+      mode: "dark",
     },
   });
 
@@ -15,6 +15,8 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <Navbar />
+        <CssBaseline />
+
         <Switch>
           <Route exact path="/"></Route>
           <Route exact path="/books">
