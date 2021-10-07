@@ -1,9 +1,9 @@
 import { List, ListItem } from "@mui/material";
 import { Link } from "react-router-dom";
 import { yellow } from "@mui/material/colors";
-import { Box } from "@mui/system";
+import { Box, darken } from "@mui/system";
 import { useTheme } from "@emotion/react";
-
+import ThemeSwitch from "./ThemeSwitch";
 interface Navbar {
   links: { link: string; title: string }[];
   switchTheme: () => void;
@@ -15,7 +15,7 @@ const BigNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
     <ListItem
       component={Link}
       to={link.link}
-      sx={{ color: "white", fontSize: 32 }}
+      sx={{ color: theme.palette.text.primary, fontSize: 32 }}
     >
       {link.title}
     </ListItem>
@@ -27,11 +27,15 @@ const BigNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          bgcolor: theme.palette.background.paper + 100,
+          bgcolor: darken(theme.palette.background.paper, 0.15),
           height: 50,
         }}
       >
-        <List>{NavbarLinks}</List>
+        <List sx={{ maxWidth: 1200 }}>{NavbarLinks}</List>
+
+        <List>
+          <ThemeSwitch switchTheme={switchTheme} />
+        </List>
       </Box>
       <Box sx={{ bgcolor: yellow[400], height: "1px", zIndex: 100 }}></Box>
     </>
