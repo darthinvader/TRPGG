@@ -4,6 +4,7 @@ import { yellow } from "@mui/material/colors";
 import { Box, darken } from "@mui/system";
 import { useTheme } from "@emotion/react";
 import ThemeSwitch from "./ThemeSwitch";
+import Login from "./Login";
 interface Navbar {
   links: { link: string; title: string }[];
   switchTheme: () => void;
@@ -33,8 +34,9 @@ const BigNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
       >
         <List sx={{ maxWidth: 1200 }}>{NavbarLinks}</List>
 
-        <List>
+        <List sx={{ display: "flex" }}>
           <ThemeSwitch switchTheme={switchTheme} />
+          <Login></Login>
         </List>
       </Box>
       <Box sx={{ bgcolor: yellow[400], height: "1px", zIndex: 100 }}></Box>
