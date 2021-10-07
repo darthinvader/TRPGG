@@ -4,7 +4,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import BookCard from "../BookCard/BookCard";
+import BookCard from "./BookCard";
 
 export interface BookProp {
   book: {

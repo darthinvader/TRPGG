@@ -1,5 +1,5 @@
 import { CardContent, Skeleton } from "@mui/material";
-import BookCard from "../BookCard/BookCard";
+import BookCard from "./BookCard";
 
 const SkeletonPreloader = () => {
   return (

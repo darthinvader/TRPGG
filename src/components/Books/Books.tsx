@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { database } from "../../services/firebase-config";
 import { ref, onValue } from "firebase/database";
 // import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
-import Book from "./Book/Book";
+import Book from "./Book";
 import { Autocomplete, Box, TextField } from "@mui/material";
-import SkeletonPreloader from "./SkeletonPreloader/SkeletonPreloader";
+import SkeletonPreloader from "./SkeletonPreloader";
 
 interface BookInterface {
   title: string;
