@@ -1,5 +1,5 @@
 import GoogleIcon from "@mui/icons-material/Google";
-import { IconButton, ListItem } from "@mui/material";
+import { IconButton, ListItem, Tooltip } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import { auth, signIn, signOut } from "../../services/firebase-config";
 import Avatar from "@mui/material/Avatar";
@@ -68,24 +68,32 @@ const Login = () => {
     ) : (
       <AccountCircleIcon sx={{ width: 30, height: 30 }} />
     );
-    userButton = <IconButton onClick={SignOut}>{avatar}</IconButton>;
+    userButton = (
+      <Tooltip title="Sign Out">
+        <IconButton onClick={SignOut}>{avatar}</IconButton>
+      </Tooltip>
+    );
   } else if (loading) {
     userButton = (
-      <motion.div
-        style={{ display: "flex", padding: 8 }}
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <RiLoader3Fill size={30}></RiLoader3Fill>
-      </motion.div>
+      <Tooltip title="Signing In/Loading">
+        <motion.div
+          style={{ display: "flex", padding: 8 }}
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
+          <RiLoader3Fill size={30}></RiLoader3Fill>
+        </motion.div>
+      </Tooltip>
     );
   } else {
     userButton = (
-      <IconButton onClick={SignIn}>
-        <GoogleIcon
-          sx={{ color: theme.palette.text.primary, width: 30, height: 30 }}
-        ></GoogleIcon>
-      </IconButton>
+      <Tooltip title="Sign In">
+        <IconButton onClick={SignIn}>
+          <GoogleIcon
+            sx={{ color: theme.palette.text.primary, width: 30, height: 30 }}
+          ></GoogleIcon>
+        </IconButton>
+      </Tooltip>
     );
   }
   return <ListItem sx={{ display: "flex" }}>{userButton}</ListItem>;
