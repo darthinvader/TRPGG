@@ -2,11 +2,11 @@ import GoogleIcon from "@mui/icons-material/Google";
 import { IconButton, ListItem } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import { auth, signIn, signOut } from "../../services/firebase-config";
-import LoopIcon from "@mui/icons-material/Loop";
 import Avatar from "@mui/material/Avatar";
 import { useEffect, useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { motion } from "framer-motion";
+import { RiLoader3Fill } from "react-icons/ri";
 
 function stringToColor(string: string) {
   let hash = 0;
@@ -32,6 +32,8 @@ function stringAvatar(name: string) {
   return {
     sx: {
       bgcolor: stringToColor(name),
+      width: 30,
+      height: 30,
     },
     children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
   };
@@ -60,22 +62,29 @@ const Login = () => {
   let userButton: JSX.Element;
   if (user) {
     const avatar = user.photoURL ? (
-      <Avatar src={user.photoURL} alt="user" />
+      <Avatar sx={{ width: 30, height: 30 }} src={user.photoURL} alt="user" />
     ) : user.displayName ? (
       <Avatar {...stringAvatar(user.displayName)}></Avatar>
     ) : (
-      <AccountCircleIcon />
+      <AccountCircleIcon sx={{ width: 30, height: 30 }} />
     );
     userButton = <IconButton onClick={SignOut}>{avatar}</IconButton>;
   } else if (loading) {
     userButton = (
-      <motion.div animate={{ rotate: 360 }} transition={{ duration: 2 }}>
-        <LoopIcon></LoopIcon>
+      <motion.div
+        style={{ display: "flex " }}
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, duration: 2 }}
+      >
+        <RiLoader3Fill size={30}></RiLoader3Fill>
       </motion.div>
     );
   } else {
     userButton = (
-      <IconButton sx={{ color: theme.palette.text.primary }} onClick={SignIn}>
+      <IconButton
+        sx={{ color: theme.palette.text.primary, width: 30, height: 30 }}
+        onClick={SignIn}
+      >
         <GoogleIcon></GoogleIcon>
       </IconButton>
     );
