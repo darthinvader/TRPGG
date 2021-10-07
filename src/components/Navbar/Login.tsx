@@ -72,7 +72,7 @@ const Login = () => {
   } else if (loading) {
     userButton = (
       <motion.div
-        style={{ display: "flex " }}
+        style={{ display: "flex", padding: 8 }}
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 2 }}
       >
@@ -81,14 +81,13 @@ const Login = () => {
     );
   } else {
     userButton = (
-      <IconButton
-        sx={{ color: theme.palette.text.primary, width: 30, height: 30 }}
-        onClick={SignIn}
-      >
-        <GoogleIcon></GoogleIcon>
+      <IconButton onClick={SignIn}>
+        <GoogleIcon
+          sx={{ color: theme.palette.text.primary, width: 30, height: 30 }}
+        ></GoogleIcon>
       </IconButton>
     );
   }
-  return <ListItem>{userButton}</ListItem>;
+  return <ListItem sx={{ display: "flex" }}>{userButton}</ListItem>;
 };
 export default Login;
