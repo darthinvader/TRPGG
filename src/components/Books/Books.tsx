@@ -89,7 +89,6 @@ const Books = () => {
           setActiveCategories(categories);
         }}
       />
-
       <Box
         sx={{
           display: "grid",
