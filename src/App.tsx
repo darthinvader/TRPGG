@@ -28,7 +28,7 @@ function App() {
     },
   });
 
-  const [currentTheme, setCurrentTheme] = useState(themeSelection.Light);
+  const [currentTheme, setCurrentTheme] = useState(themeSelection.Dark);
 
   const switchTheme = () => {
     setCurrentTheme((theme) => {
