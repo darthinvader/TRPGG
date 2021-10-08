@@ -1,10 +1,10 @@
 import { Box, darken } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
-import ThemeSwitch from "./ThemeSwitch";
-import Login from "./Login";
+import ThemeSwitch from "../ThemeSwitch";
+import Login from "../Login";
 import { List } from "@mui/material";
-import NavbarLinks from "./NavbarLinks";
-import NavLine from "./NavLine";
+import NavbarLinks from "../NavbarLinks";
+import NavLine from "../NavLine";
 
 interface Navbar {
   links: { link: string; title: string }[];
