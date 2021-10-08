@@ -3,9 +3,9 @@ import { useTheme } from "@mui/material/styles";
 import ThemeSwitch from "../ThemeSwitch";
 import Login from "../Login";
 import { List } from "@mui/material";
-import NavbarLinks from "../NavbarLinks";
 import NavLine from "../NavLine";
 import GapCloser from "./GapCloser";
+import ModalBar from "./ModalBar";
 
 interface Navbar {
   links: { link: string; title: string }[];
@@ -21,7 +21,7 @@ const PhoneNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
         sx={{
           position: "fixed",
           width: "100%",
-          zIndex: "10000",
+          zIndex: "2",
           top: 0,
         }}
       >
@@ -34,12 +34,10 @@ const PhoneNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
             height: 50,
           }}
         >
-          <List sx={{ display: "flex" }}>
-            <Login />
+          <ModalBar links={links} />
+          <List sx={{ display: "flex", justifyContent: "end" }}>
             <ThemeSwitch switchTheme={switchTheme} />
-          </List>
-          <List sx={{ display: "flex" }}>
-            <NavbarLinks links={links} />
+            <Login />
           </List>
         </Box>
         <NavLine />
