@@ -21,6 +21,7 @@ const NavbarLinks: React.FC<Links> = ({ links }) => {
           sx={{
             color: theme.custom.text,
             fontSize: 20,
+            transition: "color 0.3s",
             "&:hover": {
               color: theme.palette.text.primary,
             },
