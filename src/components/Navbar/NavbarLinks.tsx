@@ -8,7 +8,6 @@ interface Links {
 
 const NavbarLinks: React.FC<Links> = ({ links }) => {
   const theme = useTheme();
-  console.log(theme);
   const linkElements = links.map((link) => (
     <ListItem key={link.link}>
       <Link
