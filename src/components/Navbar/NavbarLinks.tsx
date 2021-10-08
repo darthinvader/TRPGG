@@ -7,7 +7,7 @@ interface Links {
 }
 
 const NavbarLinks: React.FC<Links> = ({ links }) => {
-  const theme = useTheme(); //TODO change theme from any to theme (right now theme doesn't work because interface is empty)
+  const theme = useTheme();
   console.log(theme);
   const linkElements = links.map((link) => (
     <ListItem key={link.link}>

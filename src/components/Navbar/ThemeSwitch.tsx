@@ -7,7 +7,7 @@ interface ThemeSwitchProps {
 }
 
 const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ switchTheme }) => {
-  const theme: any = useTheme(); //TODO change theme from any to theme (right now theme doesn't work because interface is empty)
+  const theme = useTheme();
   return (
     <ListItem sx={{ cursor: "pointer" }} onClick={switchTheme}>
       <Tooltip title="Dark Mode On/Off">

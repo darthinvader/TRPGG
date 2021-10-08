@@ -10,8 +10,7 @@ interface Navbar {
 }
 
 const BigNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
-  const theme = useTheme(); //TODO change theme from any to theme (right now theme doesn't work because interface is empty)
-
+  const theme = useTheme();
   return (
     <>
       <Box

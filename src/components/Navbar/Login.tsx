@@ -57,7 +57,7 @@ const Login = () => {
       setUser(currentUser);
     });
   }, []);
-  const theme: any = useTheme(); //TODO change theme from any to theme (right now theme doesn't work because interface is empty)
+  const theme = useTheme();
 
   let userButton: JSX.Element;
   if (user) {
