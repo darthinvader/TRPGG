@@ -43,7 +43,7 @@ const PhoneNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
             <Login />
             <ThemeSwitch switchTheme={switchTheme} />
           </List>
-          <List>
+          <List sx={{ display: "flex" }}>
             <NavbarLinks links={links} />
           </List>
         </Box>
