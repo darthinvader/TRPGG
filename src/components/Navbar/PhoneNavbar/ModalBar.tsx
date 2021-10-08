@@ -29,7 +29,7 @@ const ModalBar: React.FC<ModalBarProps> = ({ links }) => {
             gridTemplateColumns: "1fr 1fr",
             gridColumnGap: 32,
             gridRowGap: 32,
-            bgcolor: darken(theme.palette.background.paper, 0.15),
+            bgcolor: theme.custom.navbar,
           }}
         >
           <NavbarLinks links={links} />

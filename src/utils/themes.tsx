@@ -1,17 +1,19 @@
 import { darkScrollbar } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import { grey, indigo } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
   interface Theme {
     custom: {
       text: string;
+      navbar: string;
     };
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {
     custom?: {
       text?: string;
+      navbar?: string;
     };
   }
 }
@@ -22,6 +24,7 @@ export const lightTheme = createTheme({
   },
   custom: {
     text: grey[800],
+    navbar: grey[300],
   },
 });
 
@@ -31,6 +34,7 @@ export const darkTheme = createTheme({
   },
   custom: {
     text: grey[400],
+    navbar: grey[900],
   },
   components: {
     MuiCssBaseline: {
@@ -41,7 +45,7 @@ export const darkTheme = createTheme({
   },
 });
 
-export const blueTheme = createTheme({
+export const darkBlueTheme = createTheme({
   palette: {
     mode: "dark",
     background: {
@@ -51,6 +55,7 @@ export const blueTheme = createTheme({
   },
   custom: {
     text: grey[400],
+    navbar: "#00162b",
   },
   components: {
     MuiCssBaseline: {

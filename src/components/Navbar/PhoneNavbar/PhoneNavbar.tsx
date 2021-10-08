@@ -30,7 +30,7 @@ const PhoneNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            bgcolor: darken(theme.palette.background.paper, 0.15),
+            bgcolor: theme.custom.navbar,
             height: 50,
           }}
         >
