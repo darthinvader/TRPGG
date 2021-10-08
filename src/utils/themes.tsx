@@ -33,7 +33,7 @@ export const darkTheme = createTheme({
     mode: "dark",
   },
   custom: {
-    text: grey[400],
+    text: grey[300],
     navbar: grey[900],
   },
   components: {
