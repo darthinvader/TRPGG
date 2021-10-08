@@ -1,9 +1,7 @@
-import { List, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import ThemeSwitch from "./ThemeSwitch";
-import Login from "./Login";
-import NavLine from "./NavLine";
-import NavbarLinks from "./NavbarLinks";
+import NavLine from "../NavLine";
+import BigNavbarContent from "./BigNavbarContent";
 interface Navbar {
   links: { link: string; title: string }[];
   switchTheme: () => void;
@@ -22,14 +20,7 @@ const BigNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
           height: 50,
         }}
       >
-        <List sx={{ maxWidth: 1200, display: "flex" }}>
-          <NavbarLinks links={links} />
-        </List>
-
-        <List sx={{ display: "flex" }}>
-          <ThemeSwitch switchTheme={switchTheme} />
-          <Login />
-        </List>
+        <BigNavbarContent links={links} switchTheme={switchTheme} />
       </Box>
       <NavLine />
     </>

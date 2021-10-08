@@ -1,5 +1,5 @@
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-import BigNavbar from "./BigNavbar";
+import BigNavbar from "./BigNavbar/BigNavbar";
 import PhoneNavbar from "./PhoneNavbar/PhoneNavbar";
 
 const links = [
