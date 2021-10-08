@@ -11,17 +11,18 @@ const NavbarLinks: React.FC<Links> = ({ links }) => {
   const theme: any = useTheme(); //TODO change theme from any to theme (right now theme doesn't work because interface is empty)
   console.log(theme);
   const linkElements = links.map((link) => (
-    <Link to={link.link} key={link.link} style={{ textDecoration: "none" }}>
-      <ListItem
-        component={motion.div}
-        sx={{ color: theme.custom.text, fontSize: 20 }}
-        whileHover={{
-          color: theme.palette.text.primary,
+    <ListItem key={link.link} component={motion.p}>
+      <Link
+        to={link.link}
+        style={{
+          color: theme.custom.text,
+          fontSize: 20,
+          textDecoration: "none",
         }}
       >
         {link.title}
-      </ListItem>
-    </Link>
+      </Link>
+    </ListItem>
   ));
   return <>{linkElements}</>;
 };
