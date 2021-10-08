@@ -9,12 +9,15 @@ The only page right now is the one that has the resources for games (or Books).
 <h2>Technologies</h2>
 
 - [React](https://facebook.github.io/react/)
-- [Scss](http://sass-lang.com/)
+- [Typescript](https://www.typescriptlang.org)
+- [Material-UI](https://mui.com)
+- [Framer-Motion](https://www.framer.com/motion/)
 - [Axios](https://www.npmjs.com/package/axios)
 - [SPA](https://en.wikipedia.org/wiki/Single-page_application)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [react-router](https://reactrouter.com)
 - [axios](https://www.npmjs.com/package/axios)
+- [firebase](https://firebase.google.com)
 
 ---
 
