@@ -1,6 +1,6 @@
 import GoogleIcon from "@mui/icons-material/Google";
 import { IconButton, ListItem, Tooltip } from "@mui/material";
-import { useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { auth, signIn, signOut } from "../../services/firebase-config";
 import Avatar from "@mui/material/Avatar";
 import { useEffect, useState } from "react";

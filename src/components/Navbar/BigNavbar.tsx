@@ -1,5 +1,5 @@
 import { List, Box, darken } from "@mui/material";
-import { useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import ThemeSwitch from "./ThemeSwitch";
 import Login from "./Login";
 import NavLine from "./NavLine";
