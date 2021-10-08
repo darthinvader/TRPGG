@@ -40,3 +40,23 @@ export const darkTheme = createTheme({
     },
   },
 });
+
+export const blueTheme = createTheme({
+  palette: {
+    mode: "dark",
+    background: {
+      paper: "#00162b",
+      default: "#00162b",
+    },
+  },
+  custom: {
+    text: grey[400],
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: darkScrollbar(),
+      },
+    },
+  },
+});
