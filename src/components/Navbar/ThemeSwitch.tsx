@@ -1,8 +1,6 @@
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { ListItem } from "@mui/material";
-import { IconButton, Tooltip } from "@mui/material";
-import { useTheme } from "@emotion/react";
+import { ListItem, useTheme, IconButton, Tooltip } from "@mui/material";
 
 interface ThemeSwitchProps {
   switchTheme: () => void;

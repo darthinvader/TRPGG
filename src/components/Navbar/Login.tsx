@@ -1,6 +1,6 @@
 import GoogleIcon from "@mui/icons-material/Google";
 import { IconButton, ListItem, Tooltip } from "@mui/material";
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material";
 import { auth, signIn, signOut } from "../../services/firebase-config";
 import Avatar from "@mui/material/Avatar";
 import { useEffect, useState } from "react";
@@ -58,7 +58,7 @@ const Login = () => {
     });
   }, []);
   const theme: any = useTheme(); //TODO change theme from any to theme (right now theme doesn't work because interface is empty)
-  console.log(user);
+
   let userButton: JSX.Element;
   if (user) {
     const avatar = user.photoURL ? (

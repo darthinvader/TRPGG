@@ -2,7 +2,10 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import BigNavbar from "./BigNavbar";
 import PhoneNavbar from "./PhoneNavbar";
 
-const links = [{ link: "/books", title: "Books" }];
+const links = [
+  { link: "/books", title: "Books" },
+  { link: "/gen", title: "Generators" },
+];
 
 interface NavbarProps {
   switchTheme: () => void;

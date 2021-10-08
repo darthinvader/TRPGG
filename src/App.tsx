@@ -1,7 +1,8 @@
-import { ThemeProvider } from "@emotion/react";
-import { createTheme, CssBaseline, darkScrollbar } from "@mui/material";
+import { ThemeProvider } from "@mui/styles";
+import { CssBaseline } from "@mui/material";
 import Books from "./components/Books/Books";
 import Navbar from "./components/Navbar/Navbar";
+import { lightTheme as light, darkTheme as dark } from "./utils/themes";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState } from "react";
 enum themeSelection {
@@ -10,23 +11,8 @@ enum themeSelection {
 }
 
 function App() {
-  const lightTheme = createTheme({
-    palette: {
-      mode: "light",
-    },
-  });
-  const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-    },
-    components: {
-      MuiCssBaseline: {
-        styleOverrides: {
-          body: darkScrollbar(),
-        },
-      },
-    },
-  });
+  const lightTheme = light;
+  const darkTheme = dark;
 
   const [currentTheme, setCurrentTheme] = useState(themeSelection.Dark);
 

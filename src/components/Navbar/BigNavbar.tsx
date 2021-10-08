@@ -1,6 +1,5 @@
-import { List } from "@mui/material";
-import { Box, darken } from "@mui/system";
-import { useTheme } from "@emotion/react";
+import { List, Box, darken } from "@mui/material";
+import { useTheme } from "@mui/material";
 import ThemeSwitch from "./ThemeSwitch";
 import Login from "./Login";
 import NavLine from "./NavLine";
@@ -24,7 +23,7 @@ const BigNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
           height: 50,
         }}
       >
-        <List sx={{ maxWidth: 1200 }}>
+        <List sx={{ maxWidth: 1200, display: "flex" }}>
           <NavbarLinks links={links} />
         </List>
 
