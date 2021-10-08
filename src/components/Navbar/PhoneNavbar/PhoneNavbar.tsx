@@ -1,4 +1,4 @@
-import { Box, darken } from "@mui/system";
+import { Box } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
 import ThemeSwitch from "../ThemeSwitch";
 import Login from "../Login";

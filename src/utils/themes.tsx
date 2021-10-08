@@ -1,5 +1,5 @@
 import { darkScrollbar } from "@mui/material";
-import { grey, indigo } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
