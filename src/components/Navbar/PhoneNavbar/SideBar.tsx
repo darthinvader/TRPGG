@@ -1,9 +1,9 @@
-interface SideBarProps {
+interface ModalBarProps {
   links: { link: string; title: string }[];
 }
 
-const SideBar: React.FC<SideBarProps> = ({ links }) => {
+const ModalBar: React.FC<ModalBarProps> = ({ links }) => {
   return <></>;
 };
 
-export default SideBar;
+export default ModalBar;

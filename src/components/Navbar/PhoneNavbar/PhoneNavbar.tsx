@@ -5,6 +5,7 @@ import Login from "../Login";
 import { List } from "@mui/material";
 import NavbarLinks from "../NavbarLinks";
 import NavLine from "../NavLine";
+import GapCloser from "./GapCloser";
 
 interface Navbar {
   links: { link: string; title: string }[];
@@ -15,12 +16,7 @@ const PhoneNavbar: React.FC<Navbar> = ({ links, switchTheme }) => {
   const theme = useTheme();
   return (
     <>
-      <Box
-        sx={{
-          height: 50,
-          bgcolor: darken(theme.palette.background.paper, 0.15),
-        }}
-      ></Box>
+      <GapCloser />
       <Box
         sx={{
           position: "fixed",
