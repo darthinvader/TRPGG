@@ -5,6 +5,7 @@ import PhoneNavbar from "./PhoneNavbar/PhoneNavbar";
 const links = [
   { link: "/books", title: "Books" },
   { link: "/gen", title: "Generators" },
+  { link: "/characterSheet", title: "Character Sheet" },
 ];
 
 interface NavbarProps {

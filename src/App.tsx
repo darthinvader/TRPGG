@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { lightTheme as light, darkTheme as dark } from "./utils/themes";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState } from "react";
+import CharacterSheet from "./components/CharacterSheet/CharacterSheet";
 enum themeSelection {
   Light,
   Dark,
@@ -36,6 +37,9 @@ function App() {
           <Route exact path="/"></Route>
           <Route exact path="/books">
             <Books />
+          </Route>
+          <Route exact path="/characterSheet">
+            <CharacterSheet />
           </Route>
         </Switch>
       </ThemeProvider>
