@@ -8,6 +8,7 @@ import SignInButton from "./SignInButton";
 const Login = () => {
   const [user, setUser] = useState(auth.currentUser);
   const [loading, setLoading] = useState(false);
+
   const SignIn = () => {
     setLoading(true);
     const didSignIn = signIn();
