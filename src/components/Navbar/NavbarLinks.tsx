@@ -12,7 +12,7 @@ const NavbarLinks: React.FC<Links> = ({ links }) => {
   const { pathname } = useLocation();
 
   const linkElements = links.map((link) => (
-    <ListItem key={link.link}>
+    <ListItem key={link.link} style={{ whiteSpace: "nowrap" }}>
       <Link
         to={link.link}
         style={{

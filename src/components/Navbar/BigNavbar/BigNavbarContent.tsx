@@ -10,7 +10,7 @@ interface Navbar {
 const BigNavbarContent: React.FC<Navbar> = ({ links, switchTheme }) => {
   return (
     <>
-      <List sx={{ maxWidth: 1200, display: "flex" }}>
+      <List sx={{ display: "flex" }}>
         <NavbarLinks links={links} />
       </List>
 
