@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
 import ThemeSwitch from "../ThemeSwitch";
-import Login from "../Login";
+import Login from "../Login/Login";
 import { List } from "@mui/material";
 import NavLine from "../NavLine";
 import GapCloser from "./GapCloser";

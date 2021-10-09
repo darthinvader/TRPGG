@@ -1,6 +1,6 @@
 import { List } from "@mui/material";
 import ThemeSwitch from "../ThemeSwitch";
-import Login from "../Login";
+import Login from "../Login/Login";
 import NavbarLinks from "../NavbarLinks";
 interface Navbar {
   links: { link: string; title: string }[];
