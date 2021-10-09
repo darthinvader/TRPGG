@@ -44,7 +44,12 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const SignIn = () => {
     setLoading(true);
-    signIn();
+    const didSignIn = signIn();
+    didSignIn.then((k) => {
+      if (!k) {
+        setLoading(false);
+      }
+    });
   };
 
   const SignOut = () => {

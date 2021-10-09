@@ -38,7 +38,7 @@ export const auth = getAuth(firebaseApp);
 setPersistence(auth, browserLocalPersistence);
 
 export const signIn = () => {
-  signInWithPopup(auth, provider)
+  return signInWithPopup(auth, provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -48,6 +48,7 @@ export const signIn = () => {
         const user = result.user;
         console.log(credential, token, user);
       }
+      return true;
     })
     .catch((error) => {
       // Handle Errors here.
@@ -58,6 +59,7 @@ export const signIn = () => {
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
       console.error(errorCode, errorMessage, email, credential);
+      return false;
     });
 };
 
