@@ -1,4 +1,4 @@
-interface AbilityBonuses {
+interface AbilityBonus {
   Strengh: number;
   Dexterity: number;
   Constitution: number;
@@ -7,4 +7,4 @@ interface AbilityBonuses {
   Charisma: number;
 }
 
-export default AbilityBonuses;
+export default AbilityBonus;
