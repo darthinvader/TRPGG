@@ -1,4 +1,4 @@
-enum Sizes {
+enum Size {
   Tiny = "Tiny",
   Small = "Small",
   Medium = "Medium",
@@ -7,4 +7,4 @@ enum Sizes {
   Gargantuan = "Gargantuan",
   Varies = "Varies",
 }
-export default Sizes;
+export default Size;
