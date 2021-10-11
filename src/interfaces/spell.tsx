@@ -25,6 +25,7 @@ export default interface Spell {
   rangeInFeet: number;
   rangeInMeters: number;
   spellAttack?: AttackType;
+  atHigherLevels?: string;
   components: {
     verbal: boolean;
     somatic: boolean;
