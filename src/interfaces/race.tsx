@@ -4,6 +4,7 @@ import Language from "./language";
 import MovementType from "./movementType";
 import RaceTrait from "./raceTrait";
 import Size from "./size";
+import Spell from "./spell";
 
 interface Race {
   size: Size[];
@@ -17,6 +18,7 @@ interface Race {
   source: string;
   creatureType: CreatureType;
   adultAge: number;
+  innateSpells: Spell[];
 }
 
 export default Race;
