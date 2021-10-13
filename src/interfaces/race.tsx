@@ -19,6 +19,7 @@ interface Race {
   creatureType: CreatureType;
   adultAge: number;
   innateSpells: Spell[];
+  name: string;
 }
 
 export default Race;
