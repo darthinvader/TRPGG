@@ -46,4 +46,8 @@ interface Spell {
   miscTags?: MiscSpellTag[];
   srd?: boolean | string;
   scalingLevelDice?: ScalingLevelDice[];
+  entries?: object | string | number;
+  entriesAtHigherLevel?: object | string | number;
 }
+
+export default Spell;
