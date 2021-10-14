@@ -9,3 +9,5 @@ enum MiscSpellTag {
   TP = "Teleport",
   FMV = "Forces Movement",
 }
+
+export default MiscSpellTag;
