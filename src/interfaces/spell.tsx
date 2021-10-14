@@ -28,12 +28,12 @@ interface Spell {
   components: Components;
   duration: Duration[];
   classes: Class[];
+  source: Source;
+  otherSources?: Source[];
   subClasses?: SubClass[];
   races?: Race[];
   backgrounds?: Background[];
   eldritchInvocations?: EldritchInvocation[];
-  source: Source;
-  otherSources?: Source[];
   damageInflict?: DamageType[];
   damageResist?: DamageType[];
   damageImmune?: DamageType[];
