@@ -1,13 +1,13 @@
 enum RangeType {
-  Special = "Special",
-  Point = "Point",
-  Line = "Line",
-  Cube = "Cube",
-  Cone = "Cone",
-  Radius = "Radius",
-  Sphere = "Sphere",
-  Hemisphere = "Hemisphere",
-  Cylinder = "Cylinder",
+  Special = "special",
+  Point = "point",
+  Line = "line",
+  Cube = "cube",
+  Cone = "cone",
+  Radius = "radius",
+  Sphere = "sphere",
+  Hemisphere = "hemisphere",
+  Cylinder = "cylinder",
 }
 
 enum DistanceType {
