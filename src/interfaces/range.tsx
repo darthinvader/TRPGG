@@ -24,7 +24,7 @@ enum DistanceType {
 
 interface Distance {
   type: DistanceType;
-  amount: number;
+  amount?: number;
   typeSecondary?: DistanceType;
   amountSecondary?: number;
 }
