@@ -1,9 +1,9 @@
-import Ability from "./ability";
-import AreaTag from "./areaTag";
+import Ability from "../ability";
+import AreaTag from "../areaTag";
 import Background from "./backgroundForSpell";
 import Class, { SubClass } from "./classForSpell";
 import Components from "./components";
-import Condition from "./condition";
+import Condition from "../condition";
 import DamageType from "./damageType";
 import Duration from "./duration";
 import EldritchInvocation from "./eldritchInvocationForSpell";
@@ -11,10 +11,10 @@ import MiscSpellTag from "./miscSpellTag";
 import Race from "./raceForSpell";
 import Range from "./range";
 import ScalingLevelDice from "./scalingLevelDice";
-import Source from "./source";
+import Source from "../source";
 import SpellAttack from "./spellAttack";
 import SpellSchool from "./spellSchool";
-import Time from "./time";
+import Time from "../time";
 
 interface Spell {
   name: string;
