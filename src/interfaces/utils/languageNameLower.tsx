@@ -1,0 +1,27 @@
+enum LanguageNameLower {
+  Abyssal = "abyssal",
+  Aquan = "aquan",
+  Auran = "auran",
+  Celestial = "celestial",
+  Common = "common",
+  DeepSpeech = "deep speech",
+  Draconic = "draconic",
+  Druidic = "druidic",
+  Dwarvish = "dwarvish",
+  Elvish = "elvish",
+  Giant = "giant",
+  Gnomish = "gnomish",
+  Goblin = "goblin",
+  Halfling = "halfling",
+  Ignan = "ignan",
+  infernal = "infernal",
+  Orc = "orc",
+  Other = "other",
+  Primordial = "primordial",
+  Sylvan = "sylvan",
+  Terran = "terran",
+  ThievesCant = "thieves' cant",
+  Undercommon = "undercommon",
+}
+
+export default LanguageNameLower;
