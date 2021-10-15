@@ -1,4 +1,4 @@
-enum LanguageNameLower {
+enum Language {
   Abyssal = "abyssal",
   Aquan = "aquan",
   Auran = "auran",
@@ -24,4 +24,4 @@ enum LanguageNameLower {
   Undercommon = "undercommon",
 }
 
-export default LanguageNameLower;
+export default Language;
