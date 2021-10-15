@@ -27,6 +27,7 @@ enum Tool {
   VehiclesLand = "vehicles (land)",
   VehiclesWater = "vehicles (water)",
   VehiclesAir = "vehicles (air)",
+  PoisonersKit = "poisoner's kit",
 }
 
 export default Tool;
