@@ -1,4 +1,4 @@
-import Ability from "../ability";
+import Ability from "./ability";
 import Pact from "./pact";
 import Patron from "./patron";
 
