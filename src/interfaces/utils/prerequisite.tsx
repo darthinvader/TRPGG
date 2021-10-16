@@ -25,7 +25,7 @@ interface Prerequisite {
   Ability?: Ability;
   Spellcasting?: boolean;
   Psionics?: boolean;
-  Proficiency?: object;
+  Proficiency?: Object;
 }
 
 export default Prerequisite;
