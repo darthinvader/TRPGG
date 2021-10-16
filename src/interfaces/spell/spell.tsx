@@ -4,7 +4,7 @@ import Background from "./backgroundForSpell";
 import Class, { SubClass } from "./classForSpell";
 import Components from "./components";
 import Condition from "../utils/condition";
-import DamageType from "./damageType";
+import DamageType from "../utils/damageType";
 import Duration from "./duration";
 import EldritchInvocation from "./eldritchInvocationForSpell";
 import MiscSpellTag from "./miscSpellTag";
