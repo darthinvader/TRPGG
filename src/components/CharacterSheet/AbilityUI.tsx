@@ -1,25 +1,15 @@
-import { TextField, Typography, useTheme } from "@mui/material";
-import { ReactComponent as AbilityVector } from "./ability.svg";
-import { ReactComponent as AbilityDarkModeVector } from "./abilityDarkMode.svg";
+import { TextField, Typography } from "@mui/material";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Box } from "@mui/system";
 import { useState } from "react";
+import AbilityInputBackground from "./AbilityInputBackground";
 
 interface Props {
   abilityName: string;
 }
 
 const AbilityUI: React.FC<Props> = ({ abilityName }) => {
-  const theme = useTheme();
-  let AbilityBackground: JSX.Element;
-  if (theme.palette.mode === "light") {
-    AbilityBackground = <AbilityVector style={{ height: 150, width: 150 }} />;
-  } else {
-    AbilityBackground = (
-      <AbilityDarkModeVector style={{ height: 150, width: 150 }} />
-    );
-  }
   const [Ability, setAbility] = useState("");
   const setAbilityWithCap = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
@@ -110,7 +100,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
       >
         {calculateModifier()}
       </Typography>
-      {AbilityBackground}
+      <AbilityInputBackground />
     </Box>
   );
 };
