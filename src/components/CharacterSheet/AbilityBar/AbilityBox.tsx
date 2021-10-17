@@ -25,6 +25,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
       setAbility(e.target.value);
     }
   };
+  
   const calculateModifier = () => {
     if (Ability !== "") {
       return Math.floor((+Ability - 10) / 2);

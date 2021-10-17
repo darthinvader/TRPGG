@@ -1,14 +1,9 @@
-import AbilityUI from "./AbilityUI";
+import AbilityBar from "./AbilityBar/AbilityBar";
 
 const CharacterSheet = () => {
   return (
     <>
-      <AbilityUI abilityName="Strength" />
-      <AbilityUI abilityName="Dexterity" />
-      <AbilityUI abilityName="Constitution" />
-      <AbilityUI abilityName="Intelligence" />
-      <AbilityUI abilityName="Wisdom" />
-      <AbilityUI abilityName="Charisma" />
+      <AbilityBar />
     </>
   );
 };
