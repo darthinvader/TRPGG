@@ -9,6 +9,7 @@ import Ability from "../utils/ability";
 import ContainedItem from "./containedItem";
 import Capacity from "./capacity";
 import RequiresAttunementTags from "./requiresAttunementTags";
+import PoisonTypes from "../utils/poisonType";
 
 interface Item {
   name: string;

@@ -4,3 +4,5 @@ enum PoisonTypes {
   Inhaled = "Inhaled",
   Contact = "contact",
 }
+
+export default PoisonTypes;
