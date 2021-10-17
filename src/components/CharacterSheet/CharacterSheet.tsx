@@ -1,10 +1,13 @@
+import { Container, Grid } from "@mui/material";
 import AbilityBar from "./AbilityBar/AbilityBar";
 
 const CharacterSheet = () => {
   return (
-    <>
-      <AbilityBar />
-    </>
+    <Container maxWidth="xl">
+      <Grid container>
+        <AbilityBar />
+      </Grid>
+    </Container>
   );
 };
 

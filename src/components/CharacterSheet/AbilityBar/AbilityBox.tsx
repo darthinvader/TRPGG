@@ -25,7 +25,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
       setAbility(e.target.value);
     }
   };
-  
+
   const calculateModifier = () => {
     if (Ability !== "") {
       return Math.floor((+Ability - 10) / 2);
@@ -38,7 +38,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
     <Box
       sx={{
         position: "relative",
-        width: 150,
+        width: 125,
         display: "flex",
         justifyContent: "center",
       }}
@@ -46,8 +46,10 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
       <Typography
         sx={{
           position: "absolute",
-          width: 150,
+          top: 10,
+          width: 125,
           textAlign: "center",
+          fontSize: 14,
         }}
         variant="subtitle1"
       >
@@ -71,13 +73,12 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
         `}
         sx={{
           position: "absolute",
-          top: 40,
+          top: 37,
           width: 100,
-          fontSize: 30,
         }}
         InputProps={{
           disableUnderline: true,
-          style: { fontSize: 25 },
+          style: { fontSize: 23 },
         }}
         inputProps={{
           style: {
@@ -93,9 +94,9 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
       <Typography
         sx={{
           position: "absolute",
-          width: 150,
+          width: 125,
           textAlign: "center",
-          top: 107,
+          top: 87,
         }}
         variant="h6"
       >

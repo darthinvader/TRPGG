@@ -6,9 +6,9 @@ import { ReactComponent as AbilityDarkModeVector } from "./abilityDarkMode.svg";
 const AbilityInputBackground = () => {
   const theme = useTheme();
   if (theme.palette.mode === "light") {
-    return <AbilityVector style={{ height: 150, width: 150 }} />;
+    return <AbilityVector style={{ height: 125, width: 125 }} />;
   } else {
-    return <AbilityDarkModeVector style={{ height: 150, width: 150 }} />;
+    return <AbilityDarkModeVector style={{ height: 125, width: 125 }} />;
   }
 };
 
