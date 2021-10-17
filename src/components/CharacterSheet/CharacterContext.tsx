@@ -12,7 +12,7 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
   const [character, setCharacter] = useState<any>({});
   return (
     <CharacterContext.Provider value={character}>
-      <CharacterUpdateContext.Provider value={"hmm"}>
+      <CharacterUpdateContext.Provider value={setCharacter}>
         {children}
       </CharacterUpdateContext.Provider>
     </CharacterContext.Provider>
