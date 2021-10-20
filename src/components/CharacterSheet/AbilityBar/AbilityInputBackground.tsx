@@ -1,6 +1,6 @@
 import { useTheme } from "@mui/material";
-import { ReactComponent as AbilityVector } from "./ability.svg";
-import { ReactComponent as AbilityDarkModeVector } from "./abilityDarkMode.svg";
+import { ReactComponent as AbilityVector } from "./svgs/ability.svg";
+import { ReactComponent as AbilityDarkModeVector } from "./svgs/abilityDarkMode.svg";
 
 const AbilityInputBackground = () => {
   const theme = useTheme();
