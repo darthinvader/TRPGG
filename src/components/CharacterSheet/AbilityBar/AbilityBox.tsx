@@ -1,4 +1,4 @@
-import { TextField, Typography } from "@mui/material";
+import { TextField, Typography, Grid } from "@mui/material";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Box } from "@mui/system";
@@ -35,75 +35,77 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
   };
 
   return (
-    <Box
-      sx={{
-        position: "relative",
-        width: 125,
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <Typography
+    <Grid item>
+      <Box
         sx={{
-          position: "absolute",
-          top: 10,
+          position: "relative",
           width: 125,
-          textAlign: "center",
-          fontSize: 14,
+          display: "flex",
+          justifyContent: "center",
         }}
-        variant="subtitle1"
       >
-        {abilityName}
-      </Typography>
-      <TextField
-        css={css`
-          input {
-            border: 0;
-          }
-          /* Chrome, Safari, Edge, Opera */
-          input::-webkit-outer-spin-button,
-          input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-          /* Firefox */
-          input[type="number"] {
-            -moz-appearance: textfield;
-          }
-        `}
-        sx={{
-          position: "absolute",
-          top: 37,
-          width: 100,
-        }}
-        InputProps={{
-          disableUnderline: true,
-          style: { fontSize: 23 },
-        }}
-        inputProps={{
-          style: {
+        <Typography
+          sx={{
+            position: "absolute",
+            top: 10,
+            width: 125,
             textAlign: "center",
-          },
-        }}
-        value={Ability}
-        onChange={setAbilityWithCap}
-        type="number"
-        variant="standard"
-        placeholder="Score"
-      ></TextField>
-      <Typography
-        sx={{
-          position: "absolute",
-          width: 125,
-          textAlign: "center",
-          top: 87,
-        }}
-        variant="h6"
-      >
-        {calculateModifier()}
-      </Typography>
-      <AbilityInputBackground />
-    </Box>
+            fontSize: 14,
+          }}
+          variant="subtitle1"
+        >
+          {abilityName}
+        </Typography>
+        <TextField
+          css={css`
+            input {
+              border: 0;
+            }
+            /* Chrome, Safari, Edge, Opera */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            /* Firefox */
+            input[type="number"] {
+              -moz-appearance: textfield;
+            }
+          `}
+          sx={{
+            position: "absolute",
+            top: 37,
+            width: 100,
+          }}
+          InputProps={{
+            disableUnderline: true,
+            style: { fontSize: 23 },
+          }}
+          inputProps={{
+            style: {
+              textAlign: "center",
+            },
+          }}
+          value={Ability}
+          onChange={setAbilityWithCap}
+          type="number"
+          variant="standard"
+          placeholder="Score"
+        ></TextField>
+        <Typography
+          sx={{
+            position: "absolute",
+            width: 125,
+            textAlign: "center",
+            top: 87,
+          }}
+          variant="h6"
+        >
+          {calculateModifier()}
+        </Typography>
+        <AbilityInputBackground />
+      </Box>
+    </Grid>
   );
 };
 export default AbilityUI;
