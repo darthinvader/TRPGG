@@ -9,8 +9,6 @@ const AbilityInputBackground = () => {
   } else {
     return (
       <AbilityDarkModeVector
-        // fill="#333"
-        // stroke="blue"
         style={{ height: 125, width: 125, color: "blue" }}
       />
     );
