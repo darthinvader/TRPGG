@@ -17,20 +17,21 @@ const NavbarLinks: React.FC<Links> = ({ links }) => {
         to={link.link}
         style={{
           textDecoration: "none",
-          color: "white",
-          borderBottom: pathname.includes(link.link)
-            ? `1px solid ${theme.custom.text}`
-            : "none",
-          paddingBottom: 2,
         }}
       >
         <Typography
           sx={{
-            color: theme.custom.text,
+            color: pathname.includes(link.link)
+              ? theme.palette.text.primary
+              : theme.custom.text,
             fontSize: 20,
             transition: "color 0.3s",
+            borderBottom: pathname.includes(link.link)
+              ? `1px solid ${theme.custom.text}`
+              : "none",
             "&:hover": {
               color: theme.palette.text.primary,
+              borderBottom: `1px solid ${theme.custom.text}`,
             },
           }}
         >
