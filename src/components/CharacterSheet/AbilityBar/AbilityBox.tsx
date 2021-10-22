@@ -1,9 +1,9 @@
 import { TextField, Typography, Grid } from "@mui/material";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Box } from "@mui/system";
 import { useState } from "react";
 import AbilityInputBackground from "./AbilityInputBackground";
+import { Box } from "@mui/system";
 
 interface Props {
   abilityName: string;
@@ -11,6 +11,7 @@ interface Props {
 
 const AbilityUI: React.FC<Props> = ({ abilityName }) => {
   const [Ability, setAbility] = useState("");
+
   const setAbilityWithCap = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
@@ -58,9 +59,6 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
         </Typography>
         <TextField
           css={css`
-            input {
-              border: 0;
-            }
             /* Chrome, Safari, Edge, Opera */
             input::-webkit-outer-spin-button,
             input::-webkit-inner-spin-button {
@@ -72,26 +70,28 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
               -moz-appearance: textfield;
             }
           `}
-          sx={{
-            position: "absolute",
-            top: 37,
-            width: 100,
-          }}
           InputProps={{
             disableUnderline: true,
-            style: { fontSize: 23 },
           }}
           inputProps={{
             style: {
               textAlign: "center",
+              fontSize: 21,
             },
+          }}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            position: "absolute",
+            top: 37,
+            width: 90,
           }}
           value={Ability}
           onChange={setAbilityWithCap}
           type="number"
           variant="standard"
           placeholder="Score"
-        ></TextField>
+        />
         <Typography
           sx={{
             position: "absolute",
@@ -103,6 +103,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
         >
           {calculateModifier()}
         </Typography>
+
         <AbilityInputBackground />
       </Box>
     </Grid>

@@ -7,11 +7,7 @@ const AbilityInputBackground = () => {
   if (theme.palette.mode === "light") {
     return <AbilityVector style={{ height: 125, width: 125 }} />;
   } else {
-    return (
-      <AbilityDarkModeVector
-        style={{ height: 125, width: 125, color: "blue" }}
-      />
-    );
+    return <AbilityDarkModeVector style={{ height: 125, width: 125 }} />;
   }
 };
 
