@@ -3,7 +3,7 @@ import AbilityUI from "./AbilityBox";
 
 const AbilityBar = () => {
   return (
-    <Grid container direction="row">
+    <Grid container direction="row" spacing={2}>
       <AbilityUI abilityName="Strength" />
       <AbilityUI abilityName="Dexterity" />
       <AbilityUI abilityName="Constitution" />

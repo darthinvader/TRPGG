@@ -20,7 +20,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
       setAbility("");
     } else if (ability > 100) {
       setAbility("100");
-    } else if (ability < 0) {
+    } else if (ability <= 0) {
       setAbility("0");
     } else {
       setAbility(e.target.value);
@@ -29,7 +29,8 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
 
   const calculateModifier = () => {
     if (Ability !== "") {
-      return Math.floor((+Ability - 10) / 2);
+      const modifier = Math.floor((+Ability - 10) / 2);
+      return modifier > 0 ? `+${modifier}` : modifier;
     } else {
       return "";
     }
@@ -40,7 +41,6 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
       <Box
         sx={{
           position: "relative",
-          width: 125,
           display: "flex",
           justifyContent: "center",
         }}
@@ -49,7 +49,6 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
           sx={{
             position: "absolute",
             top: 10,
-            width: 125,
             textAlign: "center",
             fontSize: 14,
           }}
@@ -84,7 +83,6 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
             alignItems: "center",
             position: "absolute",
             top: 37,
-            width: 90,
           }}
           value={Ability}
           onChange={setAbilityWithCap}
@@ -95,7 +93,6 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
         <Typography
           sx={{
             position: "absolute",
-            width: 125,
             textAlign: "center",
             top: 87,
           }}
