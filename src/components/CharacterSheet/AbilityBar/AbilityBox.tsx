@@ -1,9 +1,9 @@
-import { TextField, Typography, Grid } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 import { useState } from "react";
 import AbilityInputBackground from "./AbilityInputBackground";
 import { Box } from "@mui/system";
+import BareInput from "../../../utilComponents/BareInput";
 
 interface Props {
   abilityName: string;
@@ -56,22 +56,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
         >
           {abilityName}
         </Typography>
-        <TextField
-          css={css`
-            /* Chrome, Safari, Edge, Opera */
-            input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button {
-              -webkit-appearance: none;
-              margin: 0;
-            }
-            /* Firefox */
-            input[type="number"] {
-              -moz-appearance: textfield;
-            }
-          `}
-          InputProps={{
-            disableUnderline: true,
-          }}
+        <BareInput
           inputProps={{
             style: {
               textAlign: "center",
@@ -87,7 +72,6 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
           value={Ability}
           onChange={setAbilityWithCap}
           type="number"
-          variant="standard"
           placeholder="Score"
         />
         <Typography
