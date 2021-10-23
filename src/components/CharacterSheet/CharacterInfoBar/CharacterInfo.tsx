@@ -1,11 +1,11 @@
 import BareInput from "../../../utilComponents/BareInput";
+import ClassAndLevelContainer from "./ClassAndLevelContainer";
 
 const CharacterInfo = () => {
   return (
     <>
       <BareInput placeholder="Character Name" />
-      {/* <BareInput placeholder="Class" />
-      <BareInput placeholder="Level" /> Modular Classes and Level System for Multiclassing*/}
+      {/* <ClassAndLevelContainer /> */}
       <BareInput placeholder="Background" />
       <BareInput placeholder="Race" />
       <BareInput placeholder="Alignment" />
