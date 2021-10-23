@@ -5,7 +5,7 @@ import CharacterInfoBar from "./CharacterInfoBar/CharacterInfoBar";
 const CharacterSheet = () => {
   return (
     <Container maxWidth="xl">
-      <div style={{ marginTop: "16  px" }}>
+      <div style={{ marginTop: "16px" }}>
         <CharacterInfoBar />
       </div>
       <div style={{ marginTop: "16px" }}>
