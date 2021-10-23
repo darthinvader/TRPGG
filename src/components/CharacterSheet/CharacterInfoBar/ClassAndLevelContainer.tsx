@@ -5,12 +5,13 @@ const ClassAndLevelContainer = () => {
   return (
     <span
       style={{
-        display: "inline-block",
+        display: "flex",
+        flexDirection: "column",
         overflowY: "auto",
-        height: 108,
+        height: 124,
         border: "1px solid white",
         padding: "8px 16px",
-        gap: 16,
+        gap: 8,
       }}
     >
       <ClassAndLevel />
