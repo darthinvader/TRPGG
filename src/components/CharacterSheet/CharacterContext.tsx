@@ -44,6 +44,9 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
   const changeInfo = (info: string, value: string) => {
     let newCharacter = _.cloneDeep(character);
     switch (info.toLowerCase()) {
+      case "imageurl":
+        newCharacter.imageUrl = value;
+        break;
       case "name":
         newCharacter.name = value;
         break;
