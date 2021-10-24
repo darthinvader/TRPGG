@@ -6,7 +6,7 @@ import Character, {
 } from "../../interfaces/character";
 import Ability from "../../interfaces/utils/ability";
 import _ from "lodash";
-const CharacterContext = createContext<any>(null);
+const CharacterContext = createContext<Character>(emptyCharacter);
 const CharacterUpdateContext = createContext<any>(null);
 
 export const useCharacter = () => useContext(CharacterContext);
