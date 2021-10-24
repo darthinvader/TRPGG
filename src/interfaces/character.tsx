@@ -2,6 +2,7 @@ export interface AbilityScore {
   base: number | null;
   modifier: number | null;
   bonus?: { addedAmount?: number; staticAmount?: number; effect?: string }[];
+  total: number | null;
 }
 
 export interface ClassAndLevel {
@@ -41,12 +42,12 @@ export const emptyCharacter: Character = {
   skin: "",
   weight: "",
   hair: "",
-  strength: { base: null, modifier: null },
-  dexterity: { base: null, modifier: null },
-  constitution: { base: null, modifier: null },
-  intelligence: { base: null, modifier: null },
-  wisdom: { base: null, modifier: null },
-  charisma: { base: null, modifier: null },
+  strength: { base: null, modifier: null, total: null },
+  dexterity: { base: null, modifier: null, total: null },
+  constitution: { base: null, modifier: null, total: null },
+  intelligence: { base: null, modifier: null, total: null },
+  wisdom: { base: null, modifier: null, total: null },
+  charisma: { base: null, modifier: null, total: null },
 };
 
 export default Character;
