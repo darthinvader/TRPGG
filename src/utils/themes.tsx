@@ -7,6 +7,7 @@ declare module "@mui/material/styles" {
     custom: {
       text: string;
       navbar: string;
+      background: string;
     };
   }
   // allow configuration using `createTheme`
@@ -14,6 +15,7 @@ declare module "@mui/material/styles" {
     custom?: {
       text?: string;
       navbar?: string;
+      background?: string;
     };
   }
 }
@@ -25,16 +27,22 @@ export const lightTheme = createTheme({
   custom: {
     text: grey[800],
     navbar: grey[300],
+    background: grey[300],
   },
 });
 
 export const darkTheme = createTheme({
   palette: {
     mode: "dark",
+    background: {
+      default: "#101612",
+      paper: "#101612",
+    },
   },
   custom: {
     text: grey[300],
     navbar: grey[900],
+    background: grey[800],
   },
   components: {
     MuiCssBaseline: {
