@@ -1,10 +1,11 @@
 import { createContext, FC, useContext, useState } from "react";
 import Character, {
-  AbilityScore,
-  ClassAndLevel,
   emptyCharacter,
-  setAbility,
 } from "../../interfaces/character/character";
+import AbilityScore from "../../interfaces/character/abilityScore";
+import ClassAndLevel from "../../interfaces/character/classAndLevel";
+import { setAbility } from "../../interfaces/character/characterUtils";
+
 import _ from "lodash";
 const CharacterContext = createContext<Character>(emptyCharacter);
 const CharacterUpdateContext = createContext<any>(null);

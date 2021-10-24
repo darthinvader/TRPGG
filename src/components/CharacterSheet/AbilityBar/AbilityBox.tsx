@@ -13,7 +13,7 @@ interface Props {
 const AbilityUI: React.FC<Props> = ({ abilityName }) => {
   const [Ability, setAbility] = useState("");
   const character = useCharacter();
-  // const { total, modifier } = character[abilityName.toLowerCase()];
+  // const { total, modifier } = ;
   const { changeAbility } = useCharacterUpdate();
 
   const setAbilityWithCap = (
