@@ -1,5 +1,11 @@
 import { createContext, FC, useContext, useState } from "react";
-
+import Character, {
+  AbilityScore,
+  ClassAndLevel,
+  emptyCharacter,
+} from "../../interfaces/character";
+import Ability from "../../interfaces/utils/ability";
+import _ from "lodash";
 const CharacterContext = createContext<any>(null);
 const CharacterUpdateContext = createContext<any>(null);
 
@@ -9,10 +15,77 @@ export const useCharacterUpdate = () => useContext(CharacterUpdateContext);
 const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
   children,
 }) => {
-  const [character, setCharacter] = useState<any>({});
+  const [character, setCharacter] = useState<Character>(emptyCharacter);
+
+  const changeAbility = (ability: string, value: AbilityScore) => {
+    let newCharacter = _.cloneDeep(character);
+    switch (ability.toLowerCase()) {
+      case Ability.Strength.toLowerCase():
+        newCharacter.strength = value;
+        break;
+      case Ability.Dexterity.toLowerCase():
+        newCharacter.dexterity = value;
+        break;
+      case Ability.Constitution.toLowerCase():
+        newCharacter.constitution = value;
+        break;
+      case Ability.Intelligence.toLowerCase():
+        newCharacter.intelligence = value;
+        break;
+      case Ability.Wisdom.toLowerCase():
+        newCharacter.wisdom = value;
+        break;
+      case Ability.Charisma.toLowerCase():
+        newCharacter.charisma = value;
+    }
+    setCharacter(newCharacter);
+  };
+
+  const changeInfo = (info: string, value: string) => {
+    let newCharacter = _.cloneDeep(character);
+    switch (info.toLowerCase()) {
+      case "name":
+        newCharacter.name = value;
+        break;
+      case "race":
+        newCharacter.race = value;
+        break;
+      case "background":
+        newCharacter.background = value;
+        break;
+      case "age":
+        newCharacter.age = value;
+        break;
+      case "eyes":
+        newCharacter.eyes = value;
+        break;
+      case "height":
+        newCharacter.height = value;
+        break;
+      case "skin":
+        newCharacter.skin = value;
+        break;
+      case "weight":
+        newCharacter.weight = value;
+        break;
+      case "hair":
+        newCharacter.hair = value;
+        break;
+    }
+    setCharacter(newCharacter);
+  };
+
+  const changeClassAndLevel = (value: ClassAndLevel[]) => {
+    let newCharacter = _.cloneDeep(character);
+    newCharacter.classAndLevel = value;
+    setCharacter(newCharacter);
+  };
+
   return (
     <CharacterContext.Provider value={character}>
-      <CharacterUpdateContext.Provider value={setCharacter}>
+      <CharacterUpdateContext.Provider
+        value={{ changeAbility, changeInfo, changeClassAndLevel }}
+      >
         {children}
       </CharacterUpdateContext.Provider>
     </CharacterContext.Provider>
