@@ -10,6 +10,7 @@ export interface ClassAndLevel {
 }
 
 interface Character {
+  imageUrl: string;
   name: string;
   race: string;
   classAndLevel: ClassAndLevel[];
@@ -29,6 +30,7 @@ interface Character {
 }
 
 export const emptyCharacter: Character = {
+  imageUrl: "",
   name: "",
   race: "",
   classAndLevel: [],
