@@ -3,8 +3,8 @@ import Character, {
   AbilityScore,
   ClassAndLevel,
   emptyCharacter,
-} from "../../interfaces/character";
-import Ability from "../../interfaces/utils/ability";
+  setAbility,
+} from "../../interfaces/character/character";
 import _ from "lodash";
 const CharacterContext = createContext<Character>(emptyCharacter);
 const CharacterUpdateContext = createContext<any>(null);
@@ -19,25 +19,7 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
 
   const changeAbility = (ability: string, value: AbilityScore) => {
     let newCharacter = _.cloneDeep(character);
-    switch (ability.toLowerCase()) {
-      case Ability.Strength.toLowerCase():
-        newCharacter.strength = value;
-        break;
-      case Ability.Dexterity.toLowerCase():
-        newCharacter.dexterity = value;
-        break;
-      case Ability.Constitution.toLowerCase():
-        newCharacter.constitution = value;
-        break;
-      case Ability.Intelligence.toLowerCase():
-        newCharacter.intelligence = value;
-        break;
-      case Ability.Wisdom.toLowerCase():
-        newCharacter.wisdom = value;
-        break;
-      case Ability.Charisma.toLowerCase():
-        newCharacter.charisma = value;
-    }
+    newCharacter = setAbility(newCharacter, ability, value);
     setCharacter(newCharacter);
   };
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import AbilityInputBackground from "./AbilityInputBackground";
 import { Box } from "@mui/system";
 import BareInput from "../../../utilComponents/BareInput";
+import { useCharacter, useCharacterUpdate } from "../CharacterContext";
 
 interface Props {
   abilityName: string;
@@ -11,6 +12,9 @@ interface Props {
 
 const AbilityUI: React.FC<Props> = ({ abilityName }) => {
   const [Ability, setAbility] = useState("");
+  const character = useCharacter();
+  // const { total, modifier } = character[abilityName.toLowerCase()];
+  const { changeAbility } = useCharacterUpdate();
 
   const setAbilityWithCap = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
