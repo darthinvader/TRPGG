@@ -1,5 +1,6 @@
 import { Autocomplete, TextField } from "@mui/material";
 import Classes from "../../../interfaces/utils/classes";
+import BareInput from "../../../utilComponents/BareInput";
 
 const allClasses: string[] = [];
 
@@ -16,10 +17,15 @@ const ClassAndLevel = () => {
         disableClearable
         options={allClasses.map((option) => option)}
         renderInput={(params) => (
-          <TextField variant="standard" {...params} label="Class" />
+          <TextField
+            {...params}
+            InputProps={{ ...params.InputProps, disableUnderline: true }}
+            label="Class"
+            variant="standard"
+          />
         )}
       />
-      <TextField variant="standard" label="Level" sx={{ width: 70 }} />
+      <BareInput label="Level" sx={{ width: 70 }} />
     </div>
   );
 };
