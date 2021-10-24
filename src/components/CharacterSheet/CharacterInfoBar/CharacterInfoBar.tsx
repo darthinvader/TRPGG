@@ -32,7 +32,6 @@ const CharacterInfoBar = () => {
             fontSize: 16,
           },
         }}
-        variant="standard"
         label="Race"
       />
       <BareInput
@@ -60,7 +59,6 @@ const CharacterInfoBar = () => {
             fontSize: 12,
           },
         }}
-        variant="standard"
         label="Alignment"
       />
       <BareInput
@@ -74,7 +72,6 @@ const CharacterInfoBar = () => {
             fontSize: 12,
           },
         }}
-        variant="standard"
         label="Age"
       />
       <BareInput
@@ -88,7 +85,6 @@ const CharacterInfoBar = () => {
             fontSize: 12,
           },
         }}
-        variant="standard"
         label="Eyes"
       />
       <BareInput
@@ -102,7 +98,6 @@ const CharacterInfoBar = () => {
             fontSize: 12,
           },
         }}
-        variant="standard"
         label="Height"
       />
       <BareInput
@@ -116,7 +111,6 @@ const CharacterInfoBar = () => {
             fontSize: 12,
           },
         }}
-        variant="standard"
         label="Skin"
       />
       <BareInput
@@ -130,7 +124,6 @@ const CharacterInfoBar = () => {
             fontSize: 12,
           },
         }}
-        variant="standard"
         label="Weight"
       />
       <BareInput
@@ -144,7 +137,6 @@ const CharacterInfoBar = () => {
             fontSize: 12,
           },
         }}
-        variant="standard"
         label="Hair"
       />
       <ClassAndLevelContainer />
