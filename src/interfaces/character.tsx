@@ -1,10 +1,10 @@
-interface AbilityScore {
+export interface AbilityScore {
   base: number | null;
   modifier: number | null;
   bonus?: { addedAmount?: number; staticAmount?: number; effect?: string }[];
 }
 
-interface ClassAndLevel {
+export interface ClassAndLevel {
   class: string;
   level: number;
 }
@@ -12,7 +12,7 @@ interface ClassAndLevel {
 interface Character {
   name: string;
   race: string;
-  classAndLevel: ClassAndLevel;
+  classAndLevel: ClassAndLevel[];
   background: string;
   age: string;
   eyes: string;
@@ -23,7 +23,7 @@ interface Character {
   strength: AbilityScore;
   dexterity: AbilityScore;
   constitution: AbilityScore;
-  inteligence: AbilityScore;
+  intelligence: AbilityScore;
   wisdom: AbilityScore;
   charisma: AbilityScore;
 }
@@ -31,7 +31,7 @@ interface Character {
 export const emptyCharacter: Character = {
   name: "",
   race: "",
-  classAndLevel: { class: "", level: 0 },
+  classAndLevel: [],
   background: "",
   age: "",
   eyes: "",
@@ -42,7 +42,7 @@ export const emptyCharacter: Character = {
   strength: { base: null, modifier: null },
   dexterity: { base: null, modifier: null },
   constitution: { base: null, modifier: null },
-  inteligence: { base: null, modifier: null },
+  intelligence: { base: null, modifier: null },
   wisdom: { base: null, modifier: null },
   charisma: { base: null, modifier: null },
 };
