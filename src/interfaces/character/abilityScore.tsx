@@ -4,3 +4,9 @@ export default interface AbilityScore {
   bonus?: { addedAmount?: number; staticAmount?: number; effect?: string }[];
   total: number | null;
 }
+
+export const emptyAbilityScore: AbilityScore = {
+  base: null,
+  modifier: null,
+  total: null,
+};

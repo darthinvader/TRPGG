@@ -1,43 +1,41 @@
 import { Typography, Grid } from "@mui/material";
 /** @jsxImportSource @emotion/react */
-import { useState } from "react";
 import AbilityInputBackground from "./AbilityInputBackground";
 import { Box } from "@mui/system";
 import BareInput from "../../../utilComponents/BareInput";
 import { useCharacter, useCharacterUpdate } from "../CharacterContext";
+import { getAbility } from "../../../interfaces/character/characterUtils";
+import { emptyAbilityScore } from "../../../interfaces/character/abilityScore";
 
 interface Props {
   abilityName: string;
 }
 
 const AbilityUI: React.FC<Props> = ({ abilityName }) => {
-  const [Ability, setAbility] = useState("");
   const character = useCharacter();
-  // const { total, modifier } = ;
+  const { total, modifier } = getAbility(character, abilityName);
   const { changeAbility } = useCharacterUpdate();
 
   const setAbilityWithCap = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
-    let ability = +e.target.value;
-    if (e.target.value === "") {
-      setAbility("");
-    } else if (ability > 100) {
-      setAbility("100");
-    } else if (ability <= 0) {
-      setAbility("0");
-    } else {
-      setAbility(e.target.value);
-    }
-  };
+    let abilityScore = { ...emptyAbilityScore };
 
-  const calculateModifier = () => {
-    if (Ability !== "") {
-      const modifier = Math.floor((+Ability - 10) / 2);
-      return modifier > 0 ? `+${modifier}` : modifier;
-    } else {
-      return "";
+    let ability: number | null = +e.target.value;
+    if (e.target.value === "") {
+      ability = null;
+    } else if (ability > 100) {
+      ability = 100;
+    } else if (ability <= 0) {
+      ability = 0;
     }
+    abilityScore.base = ability;
+    abilityScore.total = ability;
+
+    if (abilityScore.total) {
+      abilityScore.modifier = Math.floor((abilityScore.total - 10) / 2);
+    }
+    changeAbility(abilityName, abilityScore);
   };
 
   return (
@@ -73,7 +71,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
             position: "absolute",
             top: 37,
           }}
-          value={Ability}
+          value={total}
           onChange={setAbilityWithCap}
           type="number"
           placeholder="Score"
@@ -86,7 +84,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
           }}
           variant="h6"
         >
-          {calculateModifier()}
+          {modifier ? (modifier > 0 ? `+${modifier}` : modifier) : modifier}
         </Typography>
 
         <AbilityInputBackground />

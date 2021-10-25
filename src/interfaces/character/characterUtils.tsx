@@ -1,5 +1,5 @@
 import Ability from "../utils/ability";
-import AbilityScore from "./abilityScore";
+import AbilityScore, { emptyAbilityScore } from "./abilityScore";
 import Character from "./character";
 
 export const getAbility = (character: Character, abilityName: string) => {
@@ -17,7 +17,8 @@ export const getAbility = (character: Character, abilityName: string) => {
     case Ability.Charisma.toLowerCase():
       return character.charisma;
     default:
-      return null;
+      console.error("You get an ability Score that doesnt extist");
+      return emptyAbilityScore;
   }
 };
 
