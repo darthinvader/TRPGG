@@ -4,11 +4,11 @@ enum CharacterInfo {
   Race = "race",
   Background = "background",
   Age = "age",
-  eyes = "eyes",
-  height = "height",
-  skin = "skin",
-  weight = "weight",
-  hair = "hair",
+  Eyes = "eyes",
+  Height = "height",
+  Skin = "skin",
+  Weight = "weight",
+  Hair = "hair",
 }
 
 export default CharacterInfo;
