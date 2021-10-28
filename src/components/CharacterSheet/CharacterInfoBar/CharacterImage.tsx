@@ -24,7 +24,6 @@ const CharacterImage = () => {
 
   const character = useCharacter();
   const imageUrl = character.imageUrl;
-  console.log(imageUrl);
 
   const { changeInfo } = useCharacterUpdate();
 
