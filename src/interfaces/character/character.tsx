@@ -1,6 +1,6 @@
 import AbilityScore from "./abilityScore";
 import ClassAndLevel from "./classAndLevel";
-
+import Ability from "../utils/ability";
 export default interface Character {
   imageUrl: string;
   name: string;
@@ -40,3 +40,5 @@ export const emptyCharacter: Character = {
   wisdom: { base: null, modifier: null, total: null },
   charisma: { base: null, modifier: null, total: null },
 };
+
+export type abilityKey = keyof Pick<Character, Ability>;
