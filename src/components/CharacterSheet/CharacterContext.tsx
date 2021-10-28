@@ -1,12 +1,12 @@
 import { createContext, FC, useContext, useState } from "react";
 import Character, {
+  abilityKey,
   emptyCharacter,
 } from "../../interfaces/character/character";
 import AbilityScore from "../../interfaces/character/abilityScore";
 import ClassAndLevel from "../../interfaces/character/classAndLevel";
-import { setAbility } from "../../interfaces/character/characterUtils";
-
 import _ from "lodash";
+
 const CharacterContext = createContext<Character>(emptyCharacter);
 const CharacterUpdateContext = createContext<any>(null);
 
@@ -18,13 +18,14 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
 }) => {
   const [character, setCharacter] = useState<Character>(emptyCharacter);
 
-  const changeAbility = (ability: string, value: AbilityScore) => {
+  const changeAbility = (ability: abilityKey, value: AbilityScore) => {
     let newCharacter = _.cloneDeep(character);
-    newCharacter = setAbility(newCharacter, ability, value);
+    newCharacter = { ...newCharacter, ...{ [ability]: value } };
+    console.log(newCharacter);
     setCharacter(newCharacter);
   };
 
-  const changeInfo = (info: string, value: string) => {
+  const changeInfo = (info: keyof Character, value: string) => {
     let newCharacter = _.cloneDeep(character);
     switch (info.toLowerCase()) {
       case "imageurl":

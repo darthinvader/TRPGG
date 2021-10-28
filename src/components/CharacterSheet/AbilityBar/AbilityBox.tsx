@@ -1,22 +1,21 @@
 import { Typography, Grid } from "@mui/material";
-/** @jsxImportSource @emotion/react */
 import AbilityInputBackground from "./AbilityInputBackground";
 import { Box } from "@mui/system";
 import BareInput from "../../../utilComponents/BareInput";
 import { useCharacter, useCharacterUpdate } from "../CharacterContext";
-import { getAbility } from "../../../interfaces/character/characterUtils";
 import { emptyAbilityScore } from "../../../interfaces/character/abilityScore";
+import Ability from "../../../interfaces/utils/ability";
 
 interface Props {
-  abilityName: string;
+  abilityName: Ability;
 }
 
 const AbilityUI: React.FC<Props> = ({ abilityName }) => {
   const character = useCharacter();
-  const { total, modifier } = getAbility(character, abilityName);
+  const { total, modifier } = character[abilityName];
   const { changeAbility } = useCharacterUpdate();
 
-  const setAbilityWithCap = (
+  const setAbility = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
     let abilityScore = { ...emptyAbilityScore };
@@ -53,6 +52,7 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
             top: 10,
             textAlign: "center",
             fontSize: 14,
+            textTransform: "capitalize",
           }}
           variant="subtitle1"
         >
@@ -71,8 +71,8 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
             position: "absolute",
             top: 37,
           }}
-          value={total}
-          onChange={setAbilityWithCap}
+          value={total || ""}
+          onChange={setAbility}
           type="number"
           placeholder="Score"
         />
