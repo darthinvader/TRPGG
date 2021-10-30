@@ -23,7 +23,7 @@ const CharacterImage = () => {
   };
 
   const character = useCharacter();
-  const imageUrl = character.imageUrl;
+  const imageUrl = character.info.imageUrl;
 
   const { changeInfo } = useCharacterUpdate();
 

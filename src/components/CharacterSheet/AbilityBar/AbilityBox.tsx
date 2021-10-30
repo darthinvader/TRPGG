@@ -4,15 +4,15 @@ import { Box } from "@mui/system";
 import BareInput from "../../../utilComponents/BareInput";
 import { useCharacter, useCharacterUpdate } from "../CharacterContext";
 import { emptyAbilityScore } from "../../../interfaces/character/abilityScore";
-import Ability from "../../../interfaces/utils/ability";
+import { abilityKey } from "../../../interfaces/character/character";
 
 interface Props {
-  abilityName: Ability;
+  abilityName: abilityKey;
 }
 
 const AbilityUI: React.FC<Props> = ({ abilityName }) => {
   const character = useCharacter();
-  const { total, modifier } = character[abilityName];
+  const { total, modifier } = character.abilities[abilityName];
   const { changeAbility } = useCharacterUpdate();
 
   const setAbility = (

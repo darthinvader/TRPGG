@@ -2,6 +2,7 @@ import { createContext, FC, useContext, useState } from "react";
 import Character, {
   abilityKey,
   emptyCharacter,
+  infoKey,
 } from "../../interfaces/character/character";
 import AbilityScore from "../../interfaces/character/abilityScore";
 import ClassAndLevel from "../../interfaces/character/classAndLevel";
@@ -20,45 +21,13 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
 
   const changeAbility = (ability: abilityKey, value: AbilityScore) => {
     let newCharacter = _.cloneDeep(character);
-    newCharacter = { ...newCharacter, ...{ [ability]: value } };
-    console.log(newCharacter);
+    newCharacter.abilities[ability] = value;
     setCharacter(newCharacter);
   };
 
-  const changeInfo = (info: keyof Character, value: string) => {
+  const changeInfo = (info: infoKey, value: string) => {
     let newCharacter = _.cloneDeep(character);
-    switch (info.toLowerCase()) {
-      case "imageurl":
-        newCharacter.imageUrl = value;
-        break;
-      case "name":
-        newCharacter.name = value;
-        break;
-      case "race":
-        newCharacter.race = value;
-        break;
-      case "background":
-        newCharacter.background = value;
-        break;
-      case "age":
-        newCharacter.age = value;
-        break;
-      case "eyes":
-        newCharacter.eyes = value;
-        break;
-      case "height":
-        newCharacter.height = value;
-        break;
-      case "skin":
-        newCharacter.skin = value;
-        break;
-      case "weight":
-        newCharacter.weight = value;
-        break;
-      case "hair":
-        newCharacter.hair = value;
-        break;
-    }
+    newCharacter.info[info] = value;
     setCharacter(newCharacter);
   };
 
