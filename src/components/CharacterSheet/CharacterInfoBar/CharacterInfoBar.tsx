@@ -3,7 +3,7 @@ import CharacterImage from "./CharacterImage";
 const CharacterInfoBar = () => {
   return (
     <div>
-      <div style={{ gridArea: "image" }}>
+      <div>
         <CharacterImage />
       </div>
     </div>
