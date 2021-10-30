@@ -1,5 +1,5 @@
 import { useTheme } from "@mui/material";
-import { ReactComponent as Ability } from "./svgs/Ability.svg";
+import { ReactComponent as Ability } from "./Ability.svg";
 
 const AbilityInputBackground = () => {
   const theme = useTheme();
