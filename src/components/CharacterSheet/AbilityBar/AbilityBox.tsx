@@ -27,6 +27,8 @@ const AbilityUI: React.FC<Props> = ({ abilityName }) => {
       ability = 100;
     } else if (ability <= 0) {
       ability = 0;
+    } else {
+      ability = Math.floor(ability);
     }
     abilityScore.base = ability;
     abilityScore.total = ability;
