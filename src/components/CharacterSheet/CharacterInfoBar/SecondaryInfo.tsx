@@ -1,5 +1,11 @@
+import { Typography } from "@mui/material";
+
 const SecondaryInfo = () => {
-  return <></>;
+  return (
+    <>
+      <Typography>Eyes</Typography>
+    </>
+  );
 };
 
 export default SecondaryInfo;
