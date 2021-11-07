@@ -2,20 +2,20 @@ import Tooltip from "@mui/material/Tooltip";
 import { Typography, TypographyProps, TooltipProps } from "@mui/material";
 
 interface Props {
-  text: string;
+  children: React.ReactNode;
   title: string;
   tooltipProps?: Omit<TooltipProps, "children" | "title">;
   typographyProps?: TypographyProps;
 }
 const TooltipedTypography: React.FC<Props> = ({
-  text,
+  children,
   title,
   tooltipProps,
   typographyProps,
 }) => {
   return (
     <Tooltip title={title} {...tooltipProps}>
-      <Typography {...typographyProps}>{text}</Typography>
+      <Typography {...typographyProps}>{children}</Typography>
     </Tooltip>
   );
 };
