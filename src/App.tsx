@@ -34,7 +34,9 @@ function App() {
         <CssBaseline />
         <Navbar switchTheme={switchTheme} />
         <Switch>
-          <Route exact path="/"></Route>
+          <Route exact path="/">
+            <Books />
+          </Route>
           <Route exact path="/books">
             <Books />
           </Route>
