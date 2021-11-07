@@ -14,7 +14,7 @@ const TooltipedTypography: React.FC<Props> = ({
   typographyProps,
 }) => {
   return (
-    <Tooltip title={title}  {...tooltipProps}>
+    <Tooltip title={title} {...tooltipProps}>
       <Typography {...typographyProps}>{text}</Typography>
     </Tooltip>
   );
