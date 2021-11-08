@@ -1,15 +1,21 @@
-import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import TooltipedTypography from "../../../utilComponents/TooltipedTypography";
 
 const SecondaryInfo = () => {
   return (
-    <>
-      <Typography>Eyes</Typography>
-      <Typography>Hair</Typography>
-      <Typography>Skin</Typography>
-      <Typography>Age</Typography>
-      <Typography>Height</Typography>
-      <Typography>Weight</Typography>
-    </>
+    <Box sx={{ display: "grid" }}>
+      <TooltipedTypography
+        title="Eyes"
+        tooltipProps={{ placement: "left", arrow: true }}
+      >
+        Eyes
+      </TooltipedTypography>
+      <TooltipedTypography title="Hair">Hair</TooltipedTypography>
+      <TooltipedTypography title="Skin">Skin</TooltipedTypography>
+      <TooltipedTypography title="Age">Age</TooltipedTypography>
+      <TooltipedTypography title="Height">Height</TooltipedTypography>
+      <TooltipedTypography title="Weight">Weight</TooltipedTypography>
+    </Box>
   );
 };
 
