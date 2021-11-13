@@ -23,15 +23,14 @@ const CharacterImage = () => {
   };
 
   const character = useCharacter();
-  const imageUrl = character.info.imageUrl;
-
   const { changeInfo } = useCharacterUpdate();
+  const imageUrl = character.info.imageUrl;
 
   let image: JSX.Element;
   if (imageUrl === "") {
     image = (
       <Button sx={{ border: `2px solid blue` }} onClick={handleOpen}>
-        <AddPhotoAlternateIcon sx={{ width: 100, height: 100 }} />
+        <AddPhotoAlternateIcon sx={{ width: 150, height: 150 }} />
       </Button>
     );
   } else {
@@ -41,8 +40,8 @@ const CharacterImage = () => {
         alt="Character Image"
         src={imageUrl}
         sx={{
-          height: 100,
-          width: 100,
+          height: 150,
+          width: 150,
           border: `2px solid blue`,
           cursor: "pointer",
         }}
@@ -78,7 +77,7 @@ const CharacterImage = () => {
           <Button onClick={handleClose}>Cancel</Button>
           <Button
             onClick={() => {
-              changeInfo("imageurl", imageUrlValue);
+              changeInfo("imageUrl", imageUrlValue);
               handleClose();
             }}
           >
