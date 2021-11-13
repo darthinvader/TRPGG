@@ -1,14 +1,20 @@
-import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import TooltipedTypography from "../../../utilComponents/TooltipedTypography";
 
 const BasicInfo = () => {
   return (
-    <>
-      <Typography variant="h4">Character Name</Typography>
-      <Typography>Race</Typography>
-      <Typography>Class/XX | Class/XX | Class/XX</Typography>
-      <Typography>Level XX</Typography>
-      <Typography>Character Name</Typography>
-    </>
+    <Box>
+      <TooltipedTypography title="Character Name">
+        Character Name
+      </TooltipedTypography>
+      <TooltipedTypography title="Race">Race</TooltipedTypography>
+      <TooltipedTypography title="Class & Level">
+        Class/XX | Class/XX | Class/XX
+      </TooltipedTypography>
+      <TooltipedTypography title="Total Levels">Level XX</TooltipedTypography>
+      <TooltipedTypography title="Background">Background</TooltipedTypography>
+      <TooltipedTypography title="Alignment">Alignment</TooltipedTypography>
+    </Box>
   );
 };
 
