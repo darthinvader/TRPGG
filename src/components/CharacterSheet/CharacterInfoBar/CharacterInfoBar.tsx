@@ -1,18 +1,19 @@
 import BasicInfo from "./BasicInfo";
-import CharacterImage from "./CharacterImage";
+import CharacterImage from "../CharacterImage.tsx/CharacterImage";
 import SecondaryInfo from "./SecondaryInfo";
 import EditIcon from "@mui/icons-material/Edit";
+import { Card, IconButton } from "@mui/material";
 
 const CharacterInfoBar = () => {
   return (
-    <div>
-      <div>
-        <CharacterImage />
-        <BasicInfo />
-        <SecondaryInfo />
+    <Card sx={{ display: "flex", alignItems: "center", padding: 2 }}>
+      <CharacterImage />
+      <BasicInfo />
+      <SecondaryInfo />
+      <IconButton sx={{ flexShrink: 0 }}>
         <EditIcon />
-      </div>
-    </div>
+      </IconButton>
+    </Card>
   );
 };
 

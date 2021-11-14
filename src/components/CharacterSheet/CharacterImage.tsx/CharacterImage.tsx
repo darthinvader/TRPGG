@@ -11,9 +11,16 @@ import {
 import { useCharacter, useCharacterUpdate } from "../CharacterContext";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import { useState } from "react";
+import ImageEditor from "./ImageEditor";
+
 const CharacterImage = () => {
+  const character = useCharacter();
+  const { changeInfo } = useCharacterUpdate();
+  const imageUrl = character.info.imageUrl;
+
   const [open, setOpen] = useState(false);
-  const [imageUrlValue, setImageUrlValue] = useState("");
+  const [newImageUrl, setNewImageUrlValue] = useState(imageUrl);
+
   const handleOpen = () => {
     setOpen(true);
   };
@@ -22,15 +29,11 @@ const CharacterImage = () => {
     setOpen(false);
   };
 
-  const character = useCharacter();
-  const { changeInfo } = useCharacterUpdate();
-  const imageUrl = character.info.imageUrl;
-
   let image: JSX.Element;
   if (imageUrl === "") {
     image = (
       <Button sx={{ border: `2px solid blue` }} onClick={handleOpen}>
-        <AddPhotoAlternateIcon sx={{ width: 150, height: 150 }} />
+        <AddPhotoAlternateIcon sx={{ height: 150, width: 120 }} />
       </Button>
     );
   } else {
@@ -41,8 +44,7 @@ const CharacterImage = () => {
         src={imageUrl}
         sx={{
           height: 150,
-          width: 150,
-          border: `2px solid blue`,
+          width: 120,
           cursor: "pointer",
         }}
         onClick={handleOpen}
@@ -69,15 +71,16 @@ const CharacterImage = () => {
             type="text"
             fullWidth
             variant="standard"
-            value={imageUrlValue}
-            onChange={(e) => setImageUrlValue(e.target.value)}
+            value={newImageUrl}
+            onChange={(e) => setNewImageUrlValue(e.target.value)}
           />
+          {newImageUrl ? <ImageEditor newImageUrl={newImageUrl} /> : null}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button
             onClick={() => {
-              changeInfo("imageUrl", imageUrlValue);
+              changeInfo("imageUrl", newImageUrl);
               handleClose();
             }}
           >
