@@ -7,6 +7,7 @@ import Character, {
 import AbilityScore from "../../interfaces/character/abilityScore";
 import ClassAndLevel from "../../interfaces/character/classAndLevel";
 import _ from "lodash";
+import CharacterImage from "../../interfaces/character/characterImage";
 
 const CharacterContext = createContext<Character>(emptyCharacter);
 const CharacterUpdateContext = createContext<any>(null);
@@ -18,6 +19,13 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
   children,
 }) => {
   const [character, setCharacter] = useState<Character>(emptyCharacter);
+
+  const changeImage = (value: CharacterImage) => {
+    console.log(value);
+    let newCharacter = _.cloneDeep(character);
+    newCharacter.image = value;
+    setCharacter(newCharacter);
+  };
 
   const changeAbility = (ability: abilityKey, value: AbilityScore) => {
     let newCharacter = _.cloneDeep(character);
@@ -40,7 +48,7 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
   return (
     <CharacterContext.Provider value={character}>
       <CharacterUpdateContext.Provider
-        value={{ changeAbility, changeInfo, changeClassAndLevel }}
+        value={{ changeAbility, changeInfo, changeClassAndLevel, changeImage }}
       >
         {children}
       </CharacterUpdateContext.Provider>

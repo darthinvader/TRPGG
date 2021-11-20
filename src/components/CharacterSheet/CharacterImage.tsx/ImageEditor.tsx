@@ -1,51 +1,52 @@
 import { Button, Slider } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import AvatarEditor, { Position } from "react-avatar-editor";
+import CharacterImage from "../../../interfaces/character/characterImage";
+import { useCharacter } from "../CharacterContext";
 
 interface Props {
   newImageUrl: string;
+  setImage: (image: CharacterImage) => void;
 }
 
-const ImageEditor: React.FC<Props> = ({ newImageUrl }) => {
-  const [scale, setScale] = useState(1.2);
-  const [width, setWidth] = useState(120);
-  const [height, setHeight] = useState(150);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
+  const { image } = useCharacter();
+
+  const [scale, setScale] = useState(image.scale);
+  const [width, setWidth] = useState(image.width);
+  const [height, setHeight] = useState(image.height);
+  const [offset, setOffset] = useState(image.offset);
+
+  const setImageWhole = useCallback(() => {
+    setImage({ scale, width, height, offset, imageUrl: newImageUrl });
+  }, [setImage, scale, width, height, offset, newImageUrl]);
+
+  useEffect(() => {
+    setImageWhole();
+  }, [newImageUrl, scale, width, height, offset, setImageWhole]);
 
   const getPosition = (position: Position) => {
-    setPosition(position);
-    // console.log(position.x - 1 / (2 * scale));
-    // console.log(position.y - 1 / (2 * scale));
+    const offsetX = Math.ceil((position.x - 0.5) * width);
+    const offsetY = Math.ceil((position.y - 0.5) * height);
+    setOffset({ x: offsetX, y: offsetY });
     console.log(position);
   };
 
-  const handleWidthSlideChange = (
-    event: Event,
-    newValue: number | number[]
-  ) => {
-    // Make New Value be number
+  const handleWidthSlideChange = (_: Event, newValue: number | number[]) => {
     if (typeof newValue === "number") {
       console.log(newValue);
       setWidth(newValue);
     }
   };
 
-  const handleHeightSlideChange = (
-    event: Event,
-    newValue: number | number[]
-  ) => {
-    // Make New Value be number
+  const handleHeightSlideChange = (_: Event, newValue: number | number[]) => {
     if (typeof newValue === "number") {
       console.log(newValue);
       setHeight(newValue);
     }
   };
 
-  const handleScaleSlideChange = (
-    event: Event,
-    newValue: number | number[]
-  ) => {
-    // Make New Value be number
+  const handleScaleSlideChange = (_: Event, newValue: number | number[]) => {
     if (typeof newValue === "number") {
       console.log(newValue);
       setScale(newValue);
@@ -76,7 +77,7 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl }) => {
           onChange={handleWidthSlideChange}
           aria-labelledby="input-slider"
           step={1}
-          min={0}
+          min={150}
           max={250}
         />
         <Slider
@@ -84,7 +85,7 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl }) => {
           onChange={handleHeightSlideChange}
           aria-labelledby="input-slider"
           step={1}
-          min={0}
+          min={150}
           max={250}
         />
         <Slider

@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Button,
   Dialog,
   DialogActions,
@@ -12,14 +11,17 @@ import { useCharacter, useCharacterUpdate } from "../CharacterContext";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import { useState } from "react";
 import ImageEditor from "./ImageEditor";
+import CharacterAvatarImage from "./CharacterAvatarImage";
 
 const CharacterImage = () => {
   const character = useCharacter();
-  const { changeInfo } = useCharacterUpdate();
-  const imageUrl = character.info.imageUrl;
+  const { imageUrl } = character.image;
+  const { changeImage } = useCharacterUpdate();
 
   const [open, setOpen] = useState(false);
   const [newImageUrl, setNewImageUrlValue] = useState(imageUrl);
+
+  const [image, setImage] = useState(character.image);
 
   const handleOpen = () => {
     setOpen(true);
@@ -29,31 +31,31 @@ const CharacterImage = () => {
     setOpen(false);
   };
 
-  let image: JSX.Element;
+  let avatar: JSX.Element;
   if (imageUrl === "") {
-    image = (
+    avatar = (
       <Button sx={{ border: `2px solid blue` }} onClick={handleOpen}>
         <AddPhotoAlternateIcon sx={{ height: 150, width: 120 }} />
       </Button>
     );
   } else {
-    image = (
-      <Avatar
-        variant="rounded"
-        alt="Character Image"
-        src={imageUrl}
-        sx={{
-          height: 150,
-          width: 120,
+    avatar = (
+      <div
+        style={{
           cursor: "pointer",
+          border: `2px solid blue`,
+          borderRadius: "5px",
+          overflow: "auto",
         }}
         onClick={handleOpen}
-      />
+      >
+        <CharacterAvatarImage />
+      </div>
     );
   }
   return (
     <>
-      {image}
+      {avatar}
 
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Subscribe</DialogTitle>
@@ -74,13 +76,16 @@ const CharacterImage = () => {
             value={newImageUrl}
             onChange={(e) => setNewImageUrlValue(e.target.value)}
           />
-          {newImageUrl ? <ImageEditor newImageUrl={newImageUrl} /> : null}
+          {newImageUrl ? (
+            <ImageEditor newImageUrl={newImageUrl} setImage={setImage} />
+          ) : null}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button
             onClick={() => {
-              changeInfo("imageUrl", newImageUrl);
+              console.log(image);
+              changeImage(image);
               handleClose();
             }}
           >
