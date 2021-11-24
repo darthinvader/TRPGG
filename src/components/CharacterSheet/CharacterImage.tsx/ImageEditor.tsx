@@ -1,8 +1,9 @@
-import { Button, Slider } from "@mui/material";
+import { Button, Slider, Typography } from "@mui/material";
 import { useEffect, useState, useCallback } from "react";
 import AvatarEditor, { Position } from "react-avatar-editor";
 import CharacterImage from "../../../interfaces/character/characterImage";
 import { useCharacter } from "../CharacterContext";
+import Draggable from "react-draggable";
 
 interface Props {
   newImageUrl: string;
@@ -10,68 +11,76 @@ interface Props {
 }
 
 const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
+  // Create it with draggable (Maybe we will be able to use it then)
   const { image } = useCharacter();
 
   const [scale, setScale] = useState(image.scale);
   const [width, setWidth] = useState(image.width);
   const [height, setHeight] = useState(image.height);
   const [offset, setOffset] = useState(image.offset);
-
+  const [ref, setRef] = useState<AvatarEditor | null>(null);
   const setImageWhole = useCallback(() => {
     setImage({ scale, width, height, offset, imageUrl: newImageUrl });
   }, [setImage, scale, width, height, offset, newImageUrl]);
-
   useEffect(() => {
     setImageWhole();
   }, [newImageUrl, scale, width, height, offset, setImageWhole]);
 
   const getPosition = (position: Position) => {
-    const offsetX = Math.ceil((position.x - 0.5) * width);
-    const offsetY = Math.ceil((position.y - 0.5) * height);
-    setOffset({ x: offsetX, y: offsetY });
-    console.log(position);
+    if (ref) {
+      const { x, y } = ref.getCroppingRect();
+      setOffset({ x, y });
+    } else {
+      setOffset({ x: 0.5, y: 0.5 });
+    }
   };
 
   const handleWidthSlideChange = (_: Event, newValue: number | number[]) => {
     if (typeof newValue === "number") {
-      console.log(newValue);
       setWidth(newValue);
     }
   };
 
   const handleHeightSlideChange = (_: Event, newValue: number | number[]) => {
     if (typeof newValue === "number") {
-      console.log(newValue);
       setHeight(newValue);
     }
   };
 
   const handleScaleSlideChange = (_: Event, newValue: number | number[]) => {
     if (typeof newValue === "number") {
-      console.log(newValue);
       setScale(newValue);
     }
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      <AvatarEditor
-        image={newImageUrl}
-        height={height}
-        width={width}
-        border={10}
-        color={[255, 255, 255, 0.3]}
-        scale={scale}
-        onPositionChange={getPosition}
-      />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          gap: 5,
-        }}
-      >
+    <div style={{ paddingBottom: "16px" }}>
+      <div style={{ width: "250px" }}>
+        <div
+          style={{
+            position: "relative",
+            width: `${width}px`,
+            height: `${height}px`,
+            overflow: "hidden",
+            border: "8px solid rgba(0,0,0,0.5)",
+          }}
+        >
+          <img
+            src={newImageUrl}
+            alt="Character Avatar"
+            style={{
+              width: "100%",
+              height: "auto",
+              position: "absolute",
+              transform: `scale(${scale})`,
+            }}
+          ></img>
+        </div>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+        <Typography id="input-slider" gutterBottom>
+          Volume
+        </Typography>
         <Slider
           value={width}
           onChange={handleWidthSlideChange}
@@ -79,6 +88,7 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
           step={1}
           min={150}
           max={250}
+          valueLabelDisplay="auto"
         />
         <Slider
           value={height}
@@ -96,6 +106,22 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
           min={1}
           max={10}
         />
+        {/* <Slider
+          value={scale}
+          onChange={handleScaleSlideChange}
+          aria-labelledby="input-slider"
+          step={scale}
+          min={1}
+          max={10}
+        />
+        <Slider
+          value={scale}
+          onChange={handleScaleSlideChange}
+          aria-labelledby="input-slider"
+          step={scale}
+          min={1}
+          max={10}
+        /> */}
         <Button variant="outlined">Best Fit</Button>
       </div>
     </div>

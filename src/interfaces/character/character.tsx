@@ -30,7 +30,7 @@ export default interface Character {
 export const emptyCharacter: Character = {
   image: {
     imageUrl: "",
-    offset: { x: 0, y: 0 },
+    offset: { x: 0.5, y: 0.5 },
     width: 150,
     height: 150,
     scale: 1,

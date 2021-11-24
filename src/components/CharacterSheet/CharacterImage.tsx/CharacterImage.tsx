@@ -84,7 +84,6 @@ const CharacterImage = () => {
           <Button onClick={handleClose}>Cancel</Button>
           <Button
             onClick={() => {
-              console.log(image);
               changeImage(image);
               handleClose();
             }}

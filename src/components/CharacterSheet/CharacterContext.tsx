@@ -21,7 +21,6 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
   const [character, setCharacter] = useState<Character>(emptyCharacter);
 
   const changeImage = (value: CharacterImage) => {
-    console.log(value);
     let newCharacter = _.cloneDeep(character);
     newCharacter.image = value;
     setCharacter(newCharacter);
