@@ -34,7 +34,7 @@ const CharacterImage = () => {
   let avatar: JSX.Element;
   if (imageUrl === "") {
     avatar = (
-      <Button sx={{ border: `2px solid blue` }} onClick={handleOpen}>
+      <Button onClick={handleOpen}>
         <AddPhotoAlternateIcon sx={{ height: 150, width: 120 }} />
       </Button>
     );
@@ -43,8 +43,6 @@ const CharacterImage = () => {
       <div
         style={{
           cursor: "pointer",
-          border: `2px solid blue`,
-          borderRadius: "5px",
           overflow: "auto",
         }}
         onClick={handleOpen}

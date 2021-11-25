@@ -1,6 +1,7 @@
 export default interface CharacterImage {
   imageUrl: string;
-  offset: { x: number; y: number };
+  offsetX: number;
+  offsetY: number;
   width: number;
   height: number;
   scale: number;
