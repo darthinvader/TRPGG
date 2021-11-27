@@ -105,25 +105,47 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
     }
   };
 
+  const heightFit = (ratio: number) => {
+    // Calculate the new height
+    let newHeight = width / ratio;
+    if (newHeight < 150) {
+      // If it is less than the minimum then we try to find a width
+      // that would make the height fit within the boundaries
+      // without exceeding the maximum
+      let newWidth = 150 * ratio;
+      if (newWidth > 250) {
+        newWidth = 250;
+      }
+      setWidth(newWidth);
+      newHeight = Math.max(150, newWidth / ratio);
+    }
+    setHeight(newHeight);
+  };
+
+  const widthFit = (ratio: number) => {
+    // Calculate new Width
+    let newWidth = height * ratio;
+    if (newWidth < 150) {
+      // If it is less than the minimum then we try to find a height
+      // that would make the width fit within the boundaries
+      // without exceeding the maximum
+      let newHeight = 150 / ratio;
+      if (newHeight > 250) {
+        newHeight = 250;
+      }
+      setHeight(newHeight);
+      newWidth = Math.max(150, newHeight * ratio);
+    }
+    setWidth(newWidth);
+  };
+
   const calculateBestFit = () => {
     if (imageRef && imageRef.current) {
       const ratio = imageRef.current.width / imageRef.current.height;
       if (imageRef.current.width > imageRef.current.height) {
-        let newHeight = width / ratio;
-        if (newHeight > 250) {
-          newHeight = 250;
-        } else if (newHeight < 150) {
-          newHeight = 150;
-        }
-        setHeight(newHeight);
+        heightFit(ratio);
       } else {
-        let newWidth = height * ratio;
-        if (newWidth > 250) {
-          newWidth = 250;
-        } else if (newWidth < 150) {
-          newWidth = 150;
-        }
-        setWidth(newWidth);
+        widthFit(ratio);
       }
       setScale(1);
     }
