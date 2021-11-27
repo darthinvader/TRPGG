@@ -163,14 +163,14 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
         <Slider
           value={offsetX}
           onChange={handleOffsetXSlideChange}
-          step={1}
+          step={scale}
           min={-maxOffsetX}
           max={maxOffsetX}
         />
         <Slider
           value={offsetY}
           onChange={handleOffsetYSlideChange}
-          step={1}
+          step={scale}
           min={-maxOffsetY}
           max={maxOffsetY}
         />

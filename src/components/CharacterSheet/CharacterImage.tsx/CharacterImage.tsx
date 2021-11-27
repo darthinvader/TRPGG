@@ -16,6 +16,7 @@ import CharacterAvatarImage from "./CharacterAvatarImage";
 const CharacterImage = () => {
   const character = useCharacter();
   const { imageUrl } = character.image;
+
   const { changeImage } = useCharacterUpdate();
 
   const [open, setOpen] = useState(false);
