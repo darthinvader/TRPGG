@@ -9,41 +9,39 @@ const BasicInfo = () => {
         typographyProps={{ variant: "h5" }}
         title="Character Name"
       >
-        Character Name
+        Character Name:
       </TooltipedTypography>
-      <Box sx={{ display: "flex", gap: 5 }}>
-        <TooltipedTypography
-          tooltipProps={{ placement: "left", arrow: true }}
-          typographyProps={{ variant: "h6" }}
-          title="Race"
-        >
-          Race
-        </TooltipedTypography>
-        <TooltipedTypography
-          tooltipProps={{ placement: "bottom", arrow: true }}
-          typographyProps={{ variant: "h6" }}
-          title="Class & Level"
-        >
-          Class/XX | Class/XX | Class/XX
-        </TooltipedTypography>
-      </Box>
+      <TooltipedTypography
+        tooltipProps={{ placement: "left", arrow: true }}
+        typographyProps={{ variant: "h6" }}
+        title="Race"
+      >
+        Race:
+      </TooltipedTypography>
+      <TooltipedTypography
+        tooltipProps={{ placement: "bottom", arrow: true }}
+        typographyProps={{ variant: "h6" }}
+        title="Class & Level"
+      >
+        Class/Level:
+      </TooltipedTypography>
       <TooltipedTypography
         tooltipProps={{ placement: "left", arrow: true }}
         title="Total Levels"
       >
-        Level XX
+        Level:
       </TooltipedTypography>
       <TooltipedTypography
         tooltipProps={{ placement: "left", arrow: true }}
         title="Background"
       >
-        Background
+        Background:
       </TooltipedTypography>
       <TooltipedTypography
         tooltipProps={{ placement: "left", arrow: true }}
         title="Alignment"
       >
-        Alignment
+        Alignment:
       </TooltipedTypography>
     </Box>
   );
