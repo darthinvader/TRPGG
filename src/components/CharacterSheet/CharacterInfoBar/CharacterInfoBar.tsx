@@ -1,5 +1,5 @@
 import BasicInfo from "./BasicInfo";
-import CharacterImage from "../CharacterImage.tsx/CharacterImage";
+import CharacterImage from "../CharacterImage/CharacterImage";
 import SecondaryInfo from "./SecondaryInfo";
 import EditIcon from "@mui/icons-material/Edit";
 import { Card, IconButton } from "@mui/material";
