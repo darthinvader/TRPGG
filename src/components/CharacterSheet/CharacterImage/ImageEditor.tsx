@@ -105,36 +105,67 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
     }
   };
 
+  const calculateBestFit = () => {
+    if (imageRef && imageRef.current) {
+      const ratio = imageRef.current.width / imageRef.current.height;
+      if (imageRef.current.width > imageRef.current.height) {
+        let newHeight = width / ratio;
+        if (newHeight > 250) {
+          newHeight = 250;
+        } else if (newHeight < 150) {
+          newHeight = 150;
+        }
+        setHeight(newHeight);
+      } else {
+        let newWidth = height * ratio;
+        if (newWidth > 250) {
+          newWidth = 250;
+        } else if (newWidth < 150) {
+          newWidth = 150;
+        }
+        setWidth(newWidth);
+      }
+      setScale(1);
+    }
+  };
+
   return (
-    <div style={{ paddingBottom: "16px" }}>
+    <div style={{ paddingBottom: "16px", display: "flex", gap: "16px" }}>
+      <div style={{ width: "50%" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            boxSizing: "content-box",
+            width: `${width}px`,
+            height: `${height}px`,
+            overflow: "hidden",
+            borderRadius: "5px",
+            border: "6px solid black",
+          }}
+        >
+          <img
+            src={newImageUrl}
+            alt="Character Avatar"
+            style={{
+              width: "100%",
+              height: "auto",
+              transform: `scale(${scale}) translate(${offsetX}px,${offsetY}px)`,
+            }}
+            ref={imageRef}
+          ></img>
+        </div>
+      </div>
       <div
         style={{
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          boxSizing: "content-box",
-          width: `${width}px`,
-          height: `${height}px`,
-          overflow: "hidden",
-          borderRadius: "5px",
-          border: "8px solid black",
+          flexDirection: "column",
+          width: "50%",
+          marginTop: "8px",
         }}
       >
-        <img
-          src={newImageUrl}
-          alt="Character Avatar"
-          style={{
-            width: "100%",
-            height: "auto",
-            transform: `scale(${scale}) translate(${offsetX}px,${offsetY}px)`,
-          }}
-          ref={imageRef}
-        ></img>
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-        <Typography id="input-slider" gutterBottom>
-          Volume
-        </Typography>
+        <Typography id="input-slider">Width:</Typography>
         <Slider
           value={width}
           onChange={handleWidthSlideChange}
@@ -144,6 +175,7 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
           max={250}
           valueLabelDisplay="auto"
         />
+        <Typography id="input-slider">Height:</Typography>
         <Slider
           value={height}
           onChange={handleHeightSlideChange}
@@ -151,7 +183,9 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
           step={1}
           min={150}
           max={250}
+          valueLabelDisplay="auto"
         />
+        <Typography id="input-slider">Zoom:</Typography>
         <Slider
           value={scale}
           onChange={handleScaleSlideChange}
@@ -159,22 +193,31 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
           step={0.1}
           min={1}
           max={10}
+          valueLabelDisplay="auto"
         />
+        <Typography id="input-slider">Move Left/Right:</Typography>
         <Slider
           value={offsetX}
           onChange={handleOffsetXSlideChange}
-          step={scale}
+          step={scale / 2}
           min={-maxOffsetX}
           max={maxOffsetX}
         />
+        <Typography id="input-slider">Move Up/Down:</Typography>
         <Slider
           value={offsetY}
           onChange={handleOffsetYSlideChange}
-          step={scale}
+          step={scale / 2}
           min={-maxOffsetY}
           max={maxOffsetY}
         />
-        <Button variant="outlined">Best Fit</Button>
+        <Button
+          variant="outlined"
+          sx={{ marginTop: "16px" }}
+          onClick={calculateBestFit}
+        >
+          Best Fit
+        </Button>
       </div>
     </div>
   );

@@ -32,8 +32,8 @@ export const emptyCharacter: Character = {
     imageUrl: "",
     offsetX: 0,
     offsetY: 0,
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
     scale: 1,
   },
 
