@@ -16,11 +16,10 @@ const CharacterInfoBar = () => {
           gap: 2,
           padding: 3,
           position: "relative",
-          backgroundColor: "theme.palette.background.paper",
           justifyContent: "space-between",
         }}
       >
-        <Box sx={{ display: "flex", gap: 1 }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <CharacterImage />
           <BasicInfo />
         </Box>
