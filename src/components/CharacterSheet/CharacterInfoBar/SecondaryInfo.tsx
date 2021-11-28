@@ -3,7 +3,7 @@ import TooltipedTypography from "../../../utilComponents/TooltipedTypography";
 
 const SecondaryInfo = () => {
   return (
-    <Box sx={{ display: "grid" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <TooltipedTypography title="Eyes">Eyes:</TooltipedTypography>
       <TooltipedTypography title="Hair">Hair:</TooltipedTypography>
       <TooltipedTypography title="Skin">Skin:</TooltipedTypography>

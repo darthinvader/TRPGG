@@ -3,7 +3,7 @@ import TooltipedTypography from "../../../utilComponents/TooltipedTypography";
 
 const BasicInfo = () => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", marginLeft: 1 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <TooltipedTypography
         tooltipProps={{ placement: "left", arrow: true }}
         typographyProps={{ variant: "h5" }}
@@ -19,7 +19,7 @@ const BasicInfo = () => {
         Race:
       </TooltipedTypography>
       <TooltipedTypography
-        tooltipProps={{ placement: "bottom", arrow: true }}
+        tooltipProps={{ placement: "left", arrow: true }}
         typographyProps={{ variant: "h6" }}
         title="Class & Level"
       >

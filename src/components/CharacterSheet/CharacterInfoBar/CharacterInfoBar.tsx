@@ -3,7 +3,8 @@ import CharacterImage from "../CharacterImage/CharacterImage";
 import SecondaryInfo from "./SecondaryInfo";
 import { Card } from "@mui/material";
 import Rests from "./Rests";
-import EditInfo from "./EditInfo";
+import EditInfo from "./EditInfo/EditInfo";
+import { Box } from "@mui/system";
 
 const CharacterInfoBar = () => {
   return (
@@ -16,10 +17,13 @@ const CharacterInfoBar = () => {
           padding: 3,
           position: "relative",
           backgroundColor: "theme.palette.background.paper",
+          justifyContent: "space-between",
         }}
       >
-        <CharacterImage />
-        <BasicInfo />
+        <Box sx={{ display: "flex", gap: 1 }}>
+          <CharacterImage />
+          <BasicInfo />
+        </Box>
         <SecondaryInfo />
         <Rests />
       </Card>
