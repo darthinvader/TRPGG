@@ -16,13 +16,11 @@ import CharacterAvatarImage from "./CharacterAvatarImage";
 const CharacterImage = () => {
   const character = useCharacter();
   const { imageUrl } = character.image;
-
   const { changeImage } = useCharacterUpdate();
+  const [newImageUrl, setNewImageUrlValue] = useState(imageUrl);
+  const [image, setImage] = useState(character.image);
 
   const [open, setOpen] = useState(false);
-  const [newImageUrl, setNewImageUrlValue] = useState(imageUrl);
-
-  const [image, setImage] = useState(character.image);
 
   const handleOpen = () => {
     setOpen(true);
@@ -55,7 +53,6 @@ const CharacterImage = () => {
   return (
     <>
       {avatar}
-
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Subscribe</DialogTitle>
         <DialogContent>
