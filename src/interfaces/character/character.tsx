@@ -15,6 +15,7 @@ export default interface Character {
     skin: string;
     weight: string;
     hair: string;
+    alignment: string;
   };
   classAndLevel: ClassAndLevel[];
   abilities: {
@@ -47,6 +48,7 @@ export const emptyCharacter: Character = {
     skin: "",
     weight: "",
     hair: "",
+    alignment: "",
   },
 
   classAndLevel: [],

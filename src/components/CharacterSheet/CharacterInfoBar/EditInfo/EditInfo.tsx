@@ -48,6 +48,9 @@ const EditInfo = () => {
         onClose={() => {
           setOpenEdit(false);
         }}
+        update={() => {
+          setOpenEdit(false);
+        }}
       />
     </Box>
   );
