@@ -21,27 +21,36 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
   const [character, setCharacter] = useState<Character>(emptyCharacter);
 
   const changeImage = (value: CharacterImage) => {
-    let newCharacter = _.cloneDeep(character);
-    newCharacter.image = value;
-    setCharacter(newCharacter);
+    setCharacter((oldCharacter) => {
+      let newCharacter = _.cloneDeep(oldCharacter);
+      newCharacter.image = value;
+      return newCharacter;
+    });
   };
 
   const changeAbility = (ability: abilityKey, value: AbilityScore) => {
-    let newCharacter = _.cloneDeep(character);
-    newCharacter.abilities[ability] = value;
-    setCharacter(newCharacter);
+    setCharacter((oldCharacter) => {
+      let newCharacter = _.cloneDeep(oldCharacter);
+      newCharacter.abilities[ability] = value;
+      return newCharacter;
+    });
   };
 
   const changeInfo = (info: infoKey, value: string) => {
-    let newCharacter = _.cloneDeep(character);
-    newCharacter.info[info] = value;
-    setCharacter(newCharacter);
+    setCharacter((oldCharacter) => {
+      let newCharacter = _.cloneDeep(oldCharacter);
+      console.log(character);
+      newCharacter.info[info] = value;
+      return newCharacter;
+    });
   };
 
   const changeClassAndLevel = (value: ClassAndLevel[]) => {
-    let newCharacter = _.cloneDeep(character);
-    newCharacter.classAndLevel = value;
-    setCharacter(newCharacter);
+    setCharacter((oldCharacter) => {
+      let newCharacter = _.cloneDeep(oldCharacter);
+      newCharacter.classAndLevel = value;
+      return newCharacter;
+    });
   };
 
   return (
