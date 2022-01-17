@@ -8,6 +8,9 @@ interface Props {
   setImage: (image: CharacterImage) => void;
 }
 
+const maxDimension = 150;
+const minDimension = 100;
+
 const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
   // Create it with draggable (Maybe we will be able to use it then)
   const { image } = useCharacter();
@@ -108,16 +111,16 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
   const heightFit = (ratio: number) => {
     // Calculate the new height
     let newHeight = width / ratio;
-    if (newHeight < 150) {
+    if (newHeight < minDimension) {
       // If it is less than the minimum then we try to find a width
       // that would make the height fit within the boundaries
       // without exceeding the maximum
-      let newWidth = 150 * ratio;
-      if (newWidth > 250) {
-        newWidth = 250;
+      let newWidth = minDimension * ratio;
+      if (newWidth > maxDimension) {
+        newWidth = maxDimension;
       }
       setWidth(newWidth);
-      newHeight = Math.max(150, newWidth / ratio);
+      newHeight = Math.max(minDimension, newWidth / ratio);
     }
     setHeight(newHeight);
   };
@@ -125,16 +128,16 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
   const widthFit = (ratio: number) => {
     // Calculate new Width
     let newWidth = height * ratio;
-    if (newWidth < 150) {
+    if (newWidth < minDimension) {
       // If it is less than the minimum then we try to find a height
       // that would make the width fit within the boundaries
       // without exceeding the maximum
-      let newHeight = 150 / ratio;
-      if (newHeight > 250) {
-        newHeight = 250;
+      let newHeight = minDimension / ratio;
+      if (newHeight > maxDimension) {
+        newHeight = maxDimension;
       }
       setHeight(newHeight);
-      newWidth = Math.max(150, newHeight * ratio);
+      newWidth = Math.max(minDimension, newHeight * ratio);
     }
     setWidth(newWidth);
   };
@@ -193,8 +196,8 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
           onChange={handleWidthSlideChange}
           aria-labelledby="input-slider"
           step={1}
-          min={150}
-          max={250}
+          min={minDimension}
+          max={maxDimension}
           valueLabelDisplay="auto"
         />
         <Typography id="input-slider">Height:</Typography>
@@ -203,8 +206,8 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
           onChange={handleHeightSlideChange}
           aria-labelledby="input-slider"
           step={1}
-          min={150}
-          max={250}
+          min={minDimension}
+          max={maxDimension}
           valueLabelDisplay="auto"
         />
         <Typography id="input-slider">Zoom:</Typography>

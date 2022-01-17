@@ -33,8 +33,8 @@ const CharacterImage = () => {
   let avatar: JSX.Element;
   if (imageUrl === "") {
     avatar = (
-      <Button onClick={handleOpen}>
-        <AddPhotoAlternateIcon sx={{ height: 150, width: 120 }} />
+      <Button onClick={handleOpen} sx={{ borderRadius: "50%" }}>
+        <AddPhotoAlternateIcon sx={{ height: 80, width: 80 }} />
       </Button>
     );
   } else {
