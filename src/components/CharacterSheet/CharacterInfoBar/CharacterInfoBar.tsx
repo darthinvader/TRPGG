@@ -1,29 +1,23 @@
 import BasicInfo from "./BasicInfo";
 import CharacterImage from "../CharacterImage/CharacterImage";
-import SecondaryInfo from "./SecondaryInfo";
 import { Card } from "@mui/material";
 import Rests from "./Rests";
 import EditInfo from "./EditInfo/EditInfo";
-import { Box } from "@mui/system";
 
 const CharacterInfoBar = () => {
   return (
     <div style={{ position: "relative" }}>
       <Card
         sx={{
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "200px 1fr 1fr",
+          gap: "16px 16px",
           alignItems: "center",
-          gap: 2,
-          padding: 3,
-          position: "relative",
-          justifyContent: "space-between",
+          padding: "10px 60px 10px 20px",
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          <CharacterImage />
-          <BasicInfo />
-        </Box>
-        <SecondaryInfo />
+        <CharacterImage />
+        <BasicInfo />
         <Rests />
       </Card>
       <EditInfo />

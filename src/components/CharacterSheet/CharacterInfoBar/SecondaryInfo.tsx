@@ -6,7 +6,14 @@ const SecondaryInfo = () => {
   const info = useCharacter().info;
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridTemplateRows: "1fr 1fr 1fr",
+        gap: "16px 16px",
+      }}
+    >
       <TooltipedTypography title="Eyes">Eyes: {info.eyes}</TooltipedTypography>
       <TooltipedTypography title="Hair">Hair: {info.hair}</TooltipedTypography>
       <TooltipedTypography title="Skin">Skin: {info.skin}</TooltipedTypography>

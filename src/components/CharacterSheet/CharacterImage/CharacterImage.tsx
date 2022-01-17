@@ -51,7 +51,7 @@ const CharacterImage = () => {
     );
   }
   return (
-    <>
+    <div>
       {avatar}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Subscribe</DialogTitle>
@@ -88,7 +88,7 @@ const CharacterImage = () => {
           </Button>
         </DialogActions>
       </Dialog>
-    </>
+    </div>
   );
 };
 export default CharacterImage;

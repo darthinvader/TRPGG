@@ -3,7 +3,15 @@ import { Button } from "@mui/material";
 import { GiCampfire, GiCampingTent } from "react-icons/gi";
 
 const Rests: React.FC = () => (
-  <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+  <Box
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      gap: 3,
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
     <Button size="large" startIcon={<GiCampingTent />}>
       Long rest
     </Button>
