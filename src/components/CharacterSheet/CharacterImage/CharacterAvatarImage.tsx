@@ -14,7 +14,7 @@ const CharacterAvatarImage: React.FC = () => {
         height: `${height}px`,
         overflow: "hidden",
         boxSizing: "content-box",
-        borderRadius: "5px",
+        borderRadius: "50%",
         border: "8px solid black",
       }}
     >

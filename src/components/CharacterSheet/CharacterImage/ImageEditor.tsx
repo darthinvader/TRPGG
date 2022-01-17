@@ -163,7 +163,7 @@ const ImageEditor: React.FC<Props> = ({ newImageUrl, setImage }) => {
             width: `${width}px`,
             height: `${height}px`,
             overflow: "hidden",
-            borderRadius: "5px",
+            borderRadius: "50%",
             border: "6px solid black",
           }}
         >
