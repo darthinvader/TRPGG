@@ -8,21 +8,18 @@ import CharacterName from "./CharacterName";
 const CharacterInfoBar = () => {
   return (
     <div style={{ position: "relative" }}>
-      <Card
-        sx={{
+      <div
+        style={{
           display: "flex",
           flexDirection: "column",
           gap: 1,
         }}
       >
-        <div style={{ justifySelf: "center", alignSelf: "center" }}>
-          <CharacterName />
-        </div>
+        <CharacterName />
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "200px 1fr 1fr",
-
             gap: "16px 16px",
             alignItems: "center",
             padding: "10px 60px 10px 20px",
@@ -32,7 +29,7 @@ const CharacterInfoBar = () => {
           <BasicInfo />
           <Rests />
         </div>
-      </Card>
+      </div>
       <EditInfo />
     </div>
   );

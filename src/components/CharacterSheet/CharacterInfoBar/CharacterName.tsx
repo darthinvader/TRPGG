@@ -7,7 +7,7 @@ const CharacterName = () => {
   return (
     <TooltipedTypography
       tooltipProps={{ placement: "left", arrow: true }}
-      typographyProps={{ variant: "h5" }}
+      typographyProps={{ variant: "h4" }}
       title="Character Name"
     >
       {character.info.name || "Character Name"}
