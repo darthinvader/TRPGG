@@ -6,6 +6,7 @@ import { lightTheme as light, darkTheme as dark } from "./utils/themes";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState } from "react";
 import CharacterSheet from "./components/CharacterSheet/CharacterSheet";
+
 enum themeSelection {
   Light,
   Dark,
