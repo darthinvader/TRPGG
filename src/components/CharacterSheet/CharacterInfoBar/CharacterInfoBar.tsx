@@ -1,6 +1,5 @@
 import BasicInfo from "./BasicInfo";
 import CharacterImage from "../CharacterImage/CharacterImage";
-import { Card } from "@mui/material";
 import Rests from "./Rests";
 import EditInfo from "./EditInfo/EditInfo";
 import CharacterName from "./CharacterName";
