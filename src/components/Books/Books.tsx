@@ -5,6 +5,14 @@ import { ref, onValue } from "firebase/database";
 import Book from "./Book";
 import { Autocomplete, Box, TextField } from "@mui/material";
 import SkeletonPreloader from "./SkeletonPreloader";
+import { styled } from "@mui/system";
+
+const BookElementsWrapper = styled(Box)({
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fill,minmax(12em,1fr))",
+  gridGap: "16px",
+  margin: "16px",
+});
 
 interface BookInterface {
   title: string;
@@ -89,16 +97,7 @@ const Books = () => {
           setActiveCategories(categories);
         }}
       />
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill,minmax(12em,1fr))",
-          gridGap: "16px",
-          margin: "16px",
-        }}
-      >
-        {bookElements}
-      </Box>
+      <BookElementsWrapper>{bookElements}</BookElementsWrapper>
     </>
   );
 };
