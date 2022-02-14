@@ -28,19 +28,18 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
     });
   };
 
-  const changeAbility = (ability: abilityKey, value: AbilityScore) => {
+  const changeAbility = (key: abilityKey, value: AbilityScore) => {
     setCharacter((oldCharacter) => {
       let newCharacter = _.cloneDeep(oldCharacter);
-      newCharacter.abilities[ability] = value;
+      newCharacter.abilities[key] = value;
       return newCharacter;
     });
   };
 
-  const changeInfo = (info: infoKey, value: string) => {
+  const changeInfo = (key: infoKey, value: string) => {
     setCharacter((oldCharacter) => {
       let newCharacter = _.cloneDeep(oldCharacter);
-      console.log(character);
-      newCharacter.info[info] = value;
+      newCharacter.info[key] = value;
       return newCharacter;
     });
   };

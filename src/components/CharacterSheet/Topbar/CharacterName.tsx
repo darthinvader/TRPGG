@@ -1,23 +1,35 @@
-import { ReactComponent as NameBar } from "../Icons/Right Top Bar.svg";
-import { useCharacter } from "../CharacterContext";
+import { ReactComponent } from "../Icons/Right Top Bar.svg";
+import { useCharacter, useCharacterUpdate } from "../CharacterContext";
 import { TextField } from "@mui/material";
+import { styled } from "@mui/system";
+
+const NameBar = styled(ReactComponent)({ fill: "white", width: "26%" });
+
+const NameTextField = styled(TextField)({
+  position: "absolute",
+  left: "2%",
+  top: "13px",
+  width: "22%",
+});
+
+const Wrapper = styled("div")({
+  position: "relative",
+});
 
 const CharacterName = () => {
-  // const { info } = useCharacter();
+  const { info } = useCharacter();
+  const { changeInfo } = useCharacterUpdate();
+
   return (
-    <div style={{ position: "relative" }}>
-      <NameBar style={{ fill: "white", width: "100% " }} />
-      <TextField
-        style={{
-          position: "absolute",
-          left: "25px",
-          top: "13px",
-          width: "100%",
-        }}
+    <Wrapper>
+      <NameBar />
+      <NameTextField
         variant="standard"
         label="Character Name"
+        value={info.name}
+        onChange={(event) => changeInfo("name", event.target.value)}
       />
-    </div>
+    </Wrapper>
   );
 };
 export default CharacterName;
