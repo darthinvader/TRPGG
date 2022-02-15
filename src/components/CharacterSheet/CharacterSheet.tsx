@@ -5,7 +5,7 @@ import Topbar from "./Topbar/Topbar";
 const CharacterSheet = () => {
   return (
     <CharacterProvider>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Topbar />
       </Container>
     </CharacterProvider>

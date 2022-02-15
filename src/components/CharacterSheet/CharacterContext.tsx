@@ -6,7 +6,7 @@ import Character, {
 } from "../../interfaces/character/character";
 import AbilityScore from "../../interfaces/character/abilityScore";
 import ClassAndLevel from "../../interfaces/character/classAndLevel";
-import _ from "lodash";
+import { cloneDeep } from "lodash";
 import CharacterImage from "../../interfaces/character/characterImage";
 
 const CharacterContext = createContext<Character>(emptyCharacter);
@@ -22,7 +22,7 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
 
   const changeImage = (value: CharacterImage) => {
     setCharacter((oldCharacter) => {
-      let newCharacter = _.cloneDeep(oldCharacter);
+      let newCharacter = cloneDeep(oldCharacter);
       newCharacter.image = value;
       return newCharacter;
     });
@@ -30,7 +30,7 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
 
   const changeAbility = (key: abilityKey, value: AbilityScore) => {
     setCharacter((oldCharacter) => {
-      let newCharacter = _.cloneDeep(oldCharacter);
+      let newCharacter = cloneDeep(oldCharacter);
       newCharacter.abilities[key] = value;
       return newCharacter;
     });
@@ -38,7 +38,7 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
 
   const changeInfo = (key: infoKey, value: string) => {
     setCharacter((oldCharacter) => {
-      let newCharacter = _.cloneDeep(oldCharacter);
+      let newCharacter = cloneDeep(oldCharacter);
       newCharacter.info[key] = value;
       return newCharacter;
     });
@@ -46,7 +46,7 @@ const CharacterProvider: FC<{ children?: React.ReactNode }> = ({
 
   const changeClassAndLevel = (value: ClassAndLevel[]) => {
     setCharacter((oldCharacter) => {
-      let newCharacter = _.cloneDeep(oldCharacter);
+      let newCharacter = cloneDeep(oldCharacter);
       newCharacter.classAndLevel = value;
       return newCharacter;
     });
