@@ -3,31 +3,22 @@ import { styled } from "@mui/system";
 import { useCharacter, useCharacterUpdate } from "../CharacterContext";
 import { ReactComponent } from "../Icons/Right Top Bar.svg";
 
-const Wrapper = styled("div")({
-  display: "inline-box",
-  width: "65%",
-  position: "relative",
-});
+const Wrapper = styled("div")({ gridColumn: "2/span 2" });
 
 const TopRightBarSVG = styled(ReactComponent)(({ theme }) => ({
   fill: theme.palette.primary.light,
 }));
 
 const TextFieldsContainer = styled("div")({
-  position: "absolute",
-  left: "7%",
-  top: "18px",
-  rowGap: "12px",
-  columnGap: "16px",
-  display: "flex",
-  flexWrap: "wrap",
+  zIndex: "10000",
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  justifyItems: "center",
 });
 
-const Field = styled(TextField)({
-  width: "45%",
-});
+const Field = styled(TextField)({});
 
-const LevelClass = styled("div")({ display: "flex", width: "45%" });
+const LevelClass = styled("div")({ display: "flex" });
 const Level = styled(TextField)({});
 const Class = styled(TextField)({});
 

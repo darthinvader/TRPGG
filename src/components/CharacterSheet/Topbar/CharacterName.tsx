@@ -3,22 +3,13 @@ import { useCharacter, useCharacterUpdate } from "../CharacterContext";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/system";
 
-const Wrapper = styled("div")({
-  display: "inline-box",
-  width: "35%",
-  position: "relative",
-});
+const Wrapper = styled("div")({ gridColumn: "1/span 1" });
 
 const NameBar = styled(ReactComponent)(({ theme }) => ({
   fill: theme.palette.primary.light,
 }));
 
-const NameTextField = styled(TextField)({
-  position: "absolute",
-  left: "7.5%",
-  top: "16px",
-  width: "85%",
-});
+const NameTextField = styled(TextField)({});
 
 const CharacterName = () => {
   const { info } = useCharacter();
