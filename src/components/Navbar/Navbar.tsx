@@ -1,5 +1,6 @@
 import { Box, List } from "@mui/material";
 import { styled } from "@mui/system";
+import Login from "./Login/Login";
 import NavbarLink from "./NavbarLink";
 import ThemeSwitch from "./ThemeSwitch";
 
@@ -36,6 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ switchTheme }) => {
       </StyledList>
       <StyledList>
         <ThemeSwitch switchTheme={switchTheme} />
+        <Login />
       </StyledList>
     </Container>
   );
