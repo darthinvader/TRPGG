@@ -1,11 +1,10 @@
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Books from "./components/Books/Books";
-import Navbar from "./components/Navbar/Navbar";
 import { lightTheme as light, darkTheme as dark } from "./utils/themes";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState } from "react";
-import CharacterSheet from "./components/CharacterSheet/CharacterSheet";
+import Navbar from "./components/Navbar/Navbar";
 
 enum themeSelection {
   Light,
@@ -42,7 +41,7 @@ function App() {
             <Books />
           </Route>
           <Route exact path="/characterSheet">
-            <CharacterSheet />
+            {/* <CharacterSheet /> */}
           </Route>
         </Switch>
       </ThemeProvider>
