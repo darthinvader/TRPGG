@@ -4,10 +4,12 @@ import useHeightPosition from "../../hooks/HeightPosition";
 import Login from "./Login/Login";
 import NavbarLink from "./NavbarLink";
 import ThemeSwitch from "./ThemeSwitch";
+import { BsBookFill } from "react-icons/bs";
+import { IoIosPaper } from "react-icons/io";
 
 export const NAVIGATION_ITEMS = [
-  { link: "/books", title: "Books" },
-  { link: "/characterSheet", title: "Character Sheet" },
+  { link: "/books", title: "Books", icon: <BsBookFill /> },
+  { link: "/characterSheet", title: "Character Sheet", icon: <IoIosPaper /> },
 ];
 
 export interface NavbarProps {

@@ -1,10 +1,12 @@
 import { ListItem, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+import { ReactNode } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import { useIsDesktop } from "../../hooks/Device";
 
 export interface NavbarLinkProps {
-  item: { link: string; title: string };
+  item: { link: string; title: string; icon: ReactNode };
 }
 
 const StyledLink = styled(Link)({
@@ -39,7 +41,19 @@ const StyledListItem = styled(ListItem)({
 
 const NavbarLink: React.FC<NavbarLinkProps> = ({ item }) => {
   const { pathname } = useLocation();
+  const isDesktop = useIsDesktop();
 
+  if (!isDesktop) {
+    return (
+      <StyledListItem key={item.link}>
+        <StyledLink to={item.link}>
+          <StyledTypography link={item.link} pathname={pathname}>
+            {item.icon}
+          </StyledTypography>
+        </StyledLink>
+      </StyledListItem>
+    );
+  }
   return (
     <StyledListItem key={item.link}>
       <StyledLink to={item.link}>
