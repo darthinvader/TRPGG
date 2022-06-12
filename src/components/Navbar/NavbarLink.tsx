@@ -58,7 +58,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({ item }) => {
     <StyledListItem key={item.link}>
       <StyledLink to={item.link}>
         <StyledTypography link={item.link} pathname={pathname}>
-          {item.title}
+          {item.icon} {item.title}
         </StyledTypography>
       </StyledLink>
     </StyledListItem>
