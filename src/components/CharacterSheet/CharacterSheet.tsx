@@ -1,6 +1,7 @@
+import CharacterName from "./CharacterName";
+
 const CharacterSheet = () => {
-  return null;
+  return <CharacterName name="Melf" />;
 };
 
 export default CharacterSheet;
-  

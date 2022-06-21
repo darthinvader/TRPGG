@@ -1,10 +1,7 @@
 import AbilityScore from "./abilityScore";
-import CharacterImage from "./characterImage";
 import ClassAndLevel from "./classAndLevel";
 
 export default interface Character {
-  image: CharacterImage;
-
   info: {
     name: string;
     race: string;
@@ -29,15 +26,6 @@ export default interface Character {
 }
 
 export const emptyCharacter: Character = {
-  image: {
-    imageUrl: "",
-    offsetX: 0,
-    offsetY: 0,
-    width: 125,
-    height: 125,
-    scale: 1,
-  },
-
   info: {
     name: "",
     race: "",
