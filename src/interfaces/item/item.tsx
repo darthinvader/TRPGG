@@ -84,7 +84,7 @@ interface Item {
   bonusSavingThrow?: string;
   bonusAbilityCheck?: string;
   bonusProficiencyBonus?: string;
-  srd?: string | boolean;
+  srd?: string | boolean;   
   packContents?: ContainedItem[];
   atomicPackContents?: boolean;
   containerCapacity?: Capacity[];

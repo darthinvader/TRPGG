@@ -21,12 +21,12 @@ The only page right now is the one that has the resources for games (or Books).
 ---
 
 <h2>Setup</h2>
-Clone this repo and run `npm install` to install the dependencies.
+Clone this repo and run `yarn install` to install the dependencies.
 
 ---
 
 <h2>Usage</h2>
 
-After installing the dependencies run `npm start` to start the app.
+After installing the dependencies run `yarn start` to start the app.
 
-If you want to deploy the app run `npm run build`.
+If you want to deploy the app run `yarn run build`.

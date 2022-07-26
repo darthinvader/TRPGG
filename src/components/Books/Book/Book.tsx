@@ -4,7 +4,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import BookCard from "./BookCard";
+import BookCard from "../BookCard";
 
 export interface BookProp {
   book: {
@@ -13,6 +13,7 @@ export interface BookProp {
     description: string | undefined;
     downloadLink: string;
   };
+  maxWidth?: number;
 }
 
 const Book: React.FC<BookProp> = ({ book }) => {

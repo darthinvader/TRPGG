@@ -9,7 +9,9 @@ export const ClassLevel = ({ info }: ClassLevelProp) => {
     <Typography>
       {info
         .map((info) => `${info.class} ${info.level}`)
-        .reduce((previousValue, currentValue) => previousValue + currentValue)}
+        .reduce(
+          (previousValue, currentValue) => `${previousValue} ${currentValue}\\`
+        )}
     </Typography>
   );
 };
